@@ -1,0 +1,22 @@
+@import './variables/global.scss';
+@import './themes/dark.scss';
+@import './themes/normal.scss';
+@import './normalize.scss';
+
+
+
+.app {
+ 
+ background-color: orange;
+ font: var(--font-m);
+ background: var(--bg-color);
+ color: var(--primary-color);
+}
+
+.link-container {
+    display: flex;
+    margin: 0px auto 20px auto;
+    padding-top: 20px;
+    width: max-content;
+    gap: 20px;
+}

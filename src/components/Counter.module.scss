@@ -1,0 +1,30 @@
+.count {
+    color: green;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    margin: auto;
+    width: min-content;
+    //border: 1px red solid;
+    font-size: 45px;
+    line-height: 60px;
+    margin-top: 20px;
+}
+
+.button__container {
+    display: flex;
+    margin: 10px auto 0 auto;
+    width: max-content;
+}
+
+.button {
+    left: 50%;
+    height: 40px;
+    width: max-content;
+    border-radius: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
