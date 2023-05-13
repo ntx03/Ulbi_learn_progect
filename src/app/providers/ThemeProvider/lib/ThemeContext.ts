@@ -1,4 +1,3 @@
-//import { ThemeContent } from './ThemeContext';
 import { createContext } from 'react';
 
 export enum Theme {
