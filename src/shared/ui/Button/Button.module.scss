@@ -1,0 +1,15 @@
+.Button {
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.clear {
+    padding: 0;
+    margin: 0 0 0 20px;
+    border: none;
+    background: none;
+    outline: none;
+}

@@ -19,7 +19,8 @@ export default (env: buildEnv) => {
 
   // порт
   const PORT = env.port || 3000;
-  // сюда подключаем весь конфиг
+
+  // !!!!!!!сюда подключаем весь конфиг
   const config: webpack.Configuration = buildWebpackConfig({
     mode: mode,
     paths,
