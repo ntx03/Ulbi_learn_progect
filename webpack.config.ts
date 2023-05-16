@@ -1,5 +1,5 @@
-import { BuildPaths, BuildMode, buildEnv } from './config/build/types/config';
-import webpack from 'webpack';
+import { type BuildPaths, type BuildMode, type buildEnv } from './config/build/types/config';
+import type webpack from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import path from 'path';
 
@@ -22,7 +22,7 @@ export default (env: buildEnv) => {
 
   // !!!!!!!сюда подключаем весь конфиг
   const config: webpack.Configuration = buildWebpackConfig({
-    mode: mode,
+    mode,
     paths,
     isDev,
     port: PORT,

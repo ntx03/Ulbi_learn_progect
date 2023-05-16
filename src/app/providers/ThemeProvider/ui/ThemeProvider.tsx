@@ -1,5 +1,6 @@
-import React, { FC, useMemo } from 'react';
+import React, { type FC, useMemo } from 'react';
 import { Theme, LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/ThemeContext';
+// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGTH;
 
 const ThemeProvider: FC = ({ children }) => {
@@ -10,8 +11,8 @@ const ThemeProvider: FC = ({ children }) => {
 
   const defaultProps = useMemo(
     () => ({
-      theme: theme,
-      setTheme: setTheme,
+      theme,
+      setTheme,
     }), [theme]);
 
   return (

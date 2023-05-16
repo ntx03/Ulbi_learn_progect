@@ -1,7 +1,5 @@
 declare module '*.scss' {
-  interface IClassNames {
-    [className: string]: string;
-  }
+  type IClassNames = Record<string, string>;
 
   const classNames: IClassNames;
 
@@ -18,4 +16,5 @@ declare module '*.png' {
   export = value;
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __IS_DEV__: boolean;
