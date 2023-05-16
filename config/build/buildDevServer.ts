@@ -10,5 +10,6 @@ export function buildDevServer(options: BuildOptions): Configuration {
     open: true,
     // если перейти по несуществующему роуту, то не пишет cannot get, а показывает что есть в компоненте app кроме того, что обернуто в Routes
     historyApiFallback: true,
+    hot: true,
   };
 }

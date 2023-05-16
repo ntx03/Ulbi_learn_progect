@@ -1,9 +1,16 @@
 import { BuildOptions } from './types/config';
-import webpack from 'webpack';
+import webpack, { web } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExctractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
-export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+  const noHotReload = (isDev: Boolean) => {
+    if (isDev) {
+      return new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin();
+    }
+  };
+
   return [
     // создает html файл, можно задавать шаблон.
     new HtmlWebpackPlugin({
@@ -16,5 +23,11 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
+    // передаем в webpack переменную из вне ( конкретно ее использыем в i18n в конфиге)
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
+    // обновляем код страницы без перезагрузки самой страницы
+    noHotReload(isDev),
   ];
 }

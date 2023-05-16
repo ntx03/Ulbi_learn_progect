@@ -1,12 +1,18 @@
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './MainPage.module.scss'
+import { useTranslation } from 'react-i18next';
 
-import './MainPage.scss';
-const MainPage = () => {
+interface MainPageProps {
+    className?: string
+}
 
+export const MainPage = ({ className }: MainPageProps) => {
+    const { t } = useTranslation('main');
     return (
-        <>
-            <h1 className="title">MAIN PAGE</h1>
-        </>
-    );
+        <div className={classNames(cls.MainPage, {}, [className])}>
+            <p className='title'>{t('Главная страница')}</p>
+        </div>
+    )
 };
 
 export default MainPage;
