@@ -1,0 +1,24 @@
+.Loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .Loader:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid var(--invert-bg-color);
+    border-color: var(--invert-bg-color) transparent var(--invert-bg-color) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes Loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
