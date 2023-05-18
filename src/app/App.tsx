@@ -6,12 +6,12 @@ import { AppRouter } from './providers/router/index';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
-
 function App() {
   const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
+      {/* eslint-disable-next-line i18next/no-literal-string */}
       <Suspense fallback="Перевод...">
         <Navbar className='' />
         <div className="content-page">

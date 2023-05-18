@@ -11,7 +11,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react'],
+  plugins: ['react', "i18next", "@typescript-eslint"],
   rules: {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -26,6 +26,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    // правило подсвечивает если нет перевода в i18next в тексте компонета
+    "i18next/no-literal-string": ['error', { markupOnly: true}],
   },
   globals: {
     __IS_DEV__: true,
