@@ -1,19 +1,17 @@
-declare module '*.scss' {
-  type IClassNames = Record<string, string>;
+declare module '*module.scss' {
+    type IClassNames = Record<string, string>;
 
-  const classNames: IClassNames;
-
-  export = classNames;
+    const classNames: IClassNames;
+    export = classNames;
 }
-
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
 declare module '*.svg' {
-  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-  export default content;
-}
+    import type React from 'react';
 
-declare module '*.png' {
-  const value: any;
-  export = value;
+    const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
+    export default SVG;
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention

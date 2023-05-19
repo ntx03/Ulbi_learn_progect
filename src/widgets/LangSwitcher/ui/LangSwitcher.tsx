@@ -11,17 +11,17 @@ interface LangSwitcherProps {
 
 export const LangSwitcher = ({ className }: LangSwitcherProps) => {
 
-  const { t, i18n } = useTranslation('translation');
+    const { t, i18n } = useTranslation('translation');
 
-  const toggle = (): void => {
-    void i18n.changeLanguage(i18n.language === "ru" ? "en" : 'ru');
-  }
-  return (
+    const toggle = (): void => {
+        void i18n.changeLanguage(i18n.language === "ru" ? "en" : 'ru');
+    }
+    return (
 
-    <Button theme={ThemeButton.CLEAR} onClick={toggle} className={classNames(cls.LangSwitcher, {}, [className ?? ''])}>{t('Язык')}</Button>
+        <Button theme={ThemeButton.CLEAR} onClick={toggle} className={classNames(cls.LangSwitcher, {}, [className ?? ''])}>{t('Язык')}</Button>
 
 
-  )
+    )
 };
 
 export default LangSwitcher;

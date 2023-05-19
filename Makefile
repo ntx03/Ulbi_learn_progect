@@ -6,3 +6,6 @@ prod:
 	
 dev: 
 	npm run build:dev
+
+test:
+	npm run unit

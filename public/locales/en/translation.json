@@ -1,7 +1,10 @@
 {
-    "Тестовый пример": "Test example",
-    "Язык": "English",
-    "Переключатель": "toggle",
-    "Не найдена": "Page not found"
-
+  "Тестовый пример": "Test example",
+  "Язык": "English",
+  "Переключатель": "toggle",
+  "Не найдена": "Page not found",
+  "Перезагрузить страницу": "Reload page please",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Главная": "Main",
+  "О нас": "About"
 }
