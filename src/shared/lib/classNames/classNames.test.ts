@@ -2,6 +2,8 @@ import {classNames} from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('with only first param', () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         expect(classNames('someClass')).toBe('someClass');
     });
 
@@ -21,7 +23,8 @@ describe('classNames', () => {
     });
     test('with mods', () => {
 
-       
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         expect(classNames('someClass', {hovered: true, scrollable: undefined}, ['class', 'class1'])).toBe(
             'someClass class class1 hovered'
         );

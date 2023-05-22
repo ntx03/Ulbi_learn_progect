@@ -41,6 +41,7 @@ module.exports = {
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-return": "off",
         "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/prefer-ts-expect-error": "off",
         // правило подсвечивает если нет перевода в i18next в тексте компонета
         'i18next/no-literal-string': [
             'error',

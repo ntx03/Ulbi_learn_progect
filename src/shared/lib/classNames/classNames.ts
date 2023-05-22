@@ -1,6 +1,6 @@
-type Mods = Record<string | string, boolean>;
+type Mods = Record<string, boolean | string>;
 
-export function classNames(cls: string, mods: Mods = {}, additional: string[] = []): string {
+export function classNames(cls: string, mods: Mods, additional: string[] = []): string {
     return [
         // основной класс cls он будет постоянный во всем проекте у компонента, где мы применяем эту функцию
         cls,

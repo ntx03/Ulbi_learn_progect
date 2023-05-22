@@ -37,9 +37,9 @@
     }
   },
   "include": [
-    "src",
+    "./src/**/*",
     "./src/app/types/global.d.ts",
-    "./config/jest/setupTest.ts",
+    "./config/jest/setupTests.ts",
     "./.eslintrc.js"
   ]
 }
