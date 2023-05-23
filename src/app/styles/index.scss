@@ -4,22 +4,24 @@
 @import "./normalize";
 
 .app {
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
-  width: 100%;
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
+    width: 100%;
+}
+
+:root {
+    --test: red;
 }
 
 .content-page {
-  width: 100%;
-  display: flex;
-  background: var(--bg-color);
-
-  // background: red;
+    width: 100%;
+    display: flex;
+    background: var(--bg-color);
 }
 
 .page-wrapper {
-  flex-grow: 1;
-  padding: 20px;
-  margin: 0;
+    flex-grow: 1;
+    padding: 20px;
+    margin: 0;
 }

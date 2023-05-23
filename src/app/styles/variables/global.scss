@@ -1,4 +1,4 @@
-:root{
+:root {
     @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap');
     --font-size-m: 16px;
     --font-line-m: 24px;
@@ -12,6 +12,6 @@
     // размеры
     --navbar-heigth: 50px;
     --sidebar-wigth: 400px;
-    --sidebar-width-collapsed:150px;
-
+    --sidebar-width-collapsed: 150px;
+    --root: red;
 }
