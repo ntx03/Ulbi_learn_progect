@@ -7,19 +7,25 @@
     position: relative;
     transition: width 0.3s;
     justify-content: space-between;
-    
 }
+
 .collapsed {
     width: var(--sidebar-width-collapsed);
 }
+
 .button {
-    width: 100px;
-    margin:  20px auto 0 auto;
+    width: 80px;
+    margin: 20px auto 0;
+    color: var(--invert-primary-color);
+    background: var(--invert-bg-color);
+    cursor: pointer;
+    font-size: 18px;
+    height: 35px;
 }
+
 .switchers {
-   // position: absolute;
-    display:flex;
+    display: flex;
     justify-content: center;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px;
     gap: 20px;
 }
