@@ -8,6 +8,7 @@ import {MainPage} from "pages/MainPage";
 const meta = {
   title: "pages/MainPage",
   component: MainPage,
+  // @ts-ignore
   tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof MainPage>;

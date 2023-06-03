@@ -7,7 +7,6 @@ import {Navbar} from "widgets/Navbar";
 const meta = {
   title: "widgets/Navbar",
   component: Navbar,
-  tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof Navbar>;
 

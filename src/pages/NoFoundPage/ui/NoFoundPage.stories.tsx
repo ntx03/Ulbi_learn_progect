@@ -8,6 +8,7 @@ import {NoFoundPage} from "pages/NoFoundPage";
 const meta = {
   title: "pages/NoFoundPage",
   component: NoFoundPage,
+  // @ts-ignore
   tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof NoFoundPage>;

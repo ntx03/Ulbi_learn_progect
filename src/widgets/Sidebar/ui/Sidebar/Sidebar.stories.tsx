@@ -8,7 +8,6 @@ import {Sidebar} from "widgets/Sidebar"; // More on how to set up stories at: ht
 const meta = {
   title: "widgets/Sidebar",
   component: Sidebar,
-  tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof Sidebar>;
 

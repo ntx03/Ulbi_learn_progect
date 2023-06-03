@@ -8,7 +8,6 @@ import {Theme} from "app/providers/ThemeProvider";
 const meta = {
   title: "shared/Loader",
   component: Loader,
-  tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof Loader>;
 

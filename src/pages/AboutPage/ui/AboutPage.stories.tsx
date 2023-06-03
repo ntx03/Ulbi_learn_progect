@@ -8,6 +8,7 @@ import {AboutPage} from "pages/AboutPage";
 const meta = {
   title: "pages/AboutPage",
   component: AboutPage,
+  // @ts-ignore
   tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof AboutPage>;

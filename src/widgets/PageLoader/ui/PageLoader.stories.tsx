@@ -8,7 +8,6 @@ import {PageLoader} from "widgets/PageLoader";
 const meta = {
   title: "widgets/pageLoader",
   component: PageLoader,
-  tags: ["autodocs"],
   argTypes: {},
 } satisfies Meta<typeof PageLoader>;
 
