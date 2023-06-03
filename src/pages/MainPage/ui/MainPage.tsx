@@ -7,13 +7,13 @@ interface MainPageProps {
 }
 
 export const MainPage = ({ className }: MainPageProps) => {
-  const { t } = useTranslation("main");
-  return (
-    <div className={classNames(cls.MainPage, {}, [className ?? ""])}>
-      {/*<BugButton/>*/}
-      <p className="title">{t("Главная страница")}</p>
-    </div>
-  );
+    const { t } = useTranslation("main");
+    return (
+        <div className={classNames(cls.MainPage, {}, [className ?? ""])}>
+            {/* <BugButton/> */}
+            <p className="title">{t("Главная страница")}</p>
+        </div>
+    );
 };
 
 export default MainPage;

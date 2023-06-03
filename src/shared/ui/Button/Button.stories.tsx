@@ -7,50 +7,50 @@ import {Theme} from "app/providers/ThemeProvider";
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 const meta = {
-  title: "shared/Button",
-  component: Button,
-  // @ts-ignore
-  tags: ["autodocs"],
-  argTypes: {},
+    title: "shared/Button",
+    component: Button,
+    // @ts-ignore
+    tags: ["autodocs"],
+    argTypes: {},
 } satisfies Meta<typeof Button>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const main: Story = {
-  args: {
+    args: {
     // @ts-ignore
-    children: "test button",
-  },
-  decorators: [],
+        children: "test button",
+    },
+    decorators: [],
 };
 export const outline: Story = {
-  args: {
+    args: {
     // @ts-ignore
-    children: "test",
-    theme: ThemeButton.OUTLINE,
-  },
+        children: "test",
+        theme: ThemeButton.OUTLINE,
+    },
 };
 export const outlineDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {
+    decorators: [ThemeDecorator(Theme.DARK)],
+    args: {
     // @ts-ignore
-    children: "test",
-    theme: ThemeButton.OUTLINE,
-  },
+        children: "test",
+        theme: ThemeButton.OUTLINE,
+    },
 };
 export const clear: Story = {
-  args: {
+    args: {
     // @ts-ignore
-    children: "test",
-    theme: ThemeButton.CLEAR,
-  },
+        children: "test",
+        theme: ThemeButton.CLEAR,
+    },
 };
 export const clearDark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {
+    decorators: [ThemeDecorator(Theme.DARK)],
+    args: {
     // @ts-ignore
-    children: "test",
-    theme: ThemeButton.CLEAR,
-  },
+        children: "test",
+        theme: ThemeButton.CLEAR,
+    },
 };

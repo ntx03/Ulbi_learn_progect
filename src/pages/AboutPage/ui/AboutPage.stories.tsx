@@ -6,21 +6,21 @@ import {AboutPage} from "pages/AboutPage";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "pages/AboutPage",
-  component: AboutPage,
-  // @ts-ignore
-  tags: ["autodocs"],
-  argTypes: {},
+    title: "pages/AboutPage",
+    component: AboutPage,
+    // @ts-ignore
+    tags: ["autodocs"],
+    argTypes: {},
 } satisfies Meta<typeof AboutPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const theme_ligth: Story = {
-  args: {},
+export const themeLight: Story = {
+    args: {},
 };
-export const theme_dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {},
+export const themeDark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK)],
+    args: {},
 };

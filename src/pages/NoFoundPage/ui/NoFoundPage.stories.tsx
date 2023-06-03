@@ -6,21 +6,21 @@ import {NoFoundPage} from "pages/NoFoundPage";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "pages/NoFoundPage",
-  component: NoFoundPage,
-  // @ts-ignore
-  tags: ["autodocs"],
-  argTypes: {},
+    title: "pages/NoFoundPage",
+    component: NoFoundPage,
+    // @ts-ignore
+    tags: ["autodocs"],
+    argTypes: {},
 } satisfies Meta<typeof NoFoundPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const theme_ligth: Story = {
-  args: {},
+export const themeLight: Story = {
+    args: {},
 };
-export const theme_dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
-  args: {},
+export const themeDark: Story = {
+    decorators: [ThemeDecorator(Theme.DARK)],
+    args: {},
 };

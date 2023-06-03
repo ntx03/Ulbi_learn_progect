@@ -5,16 +5,16 @@ import { Theme } from "../../src/app/providers/ThemeProvider";
 import { RouterDecorator } from "../../src/shared/config/storybookDecorators/routerDecorator";
 
 const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
+    parameters: {
+        actions: { argTypesRegex: "^on[A-Z].*" },
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/,
+            },
+        },
     },
-  },
-  decorators: [StyleDecorator, ThemeDecorator(Theme.LIGTH), RouterDecorator],
+    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGTH), RouterDecorator],
 };
 
 export default preview;
