@@ -29,4 +29,4 @@ jobs:
       - name: unit testing(jest)
         run: npm run test:unit
       - name: unit testing(loki)
-        run: npm run test:ui
+        run: npm run test:ui:ci
