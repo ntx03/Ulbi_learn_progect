@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-    --font-size-m: 16px;
-    --font-line-m: 24px;
-    --font-size-l: 24px;
-    --font-line-l: 32px;
     --font-family-main: "Inconsolata", monospace;
+    --font-size-m: 16px;
+    --font-size-l: 24px;
+    --font-size-xl: 32px;
+    --font-line-m: 24px;
+    --font-line-l: 32px;
+    --font-line-xl: 40px;
     --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family-main);
     --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family-main);
+    --font-xl: var(--font-line-xl) / var(--font-line-xl) var(--font-family-main);
 
     // размеры
     --navbar-heigth: 50px;
-    --sidebar-wigth: 400px;
-    --sidebar-width-collapsed: 200px;
-    --root: red;
+    --sidebar-wigth: 300px;
+    --sidebar-width-collapsed: 100px;
+
 }
