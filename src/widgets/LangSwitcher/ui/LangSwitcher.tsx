@@ -9,20 +9,20 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation("translation");
+    const { t, i18n } = useTranslation("translation");
 
-  const toggle = (): void => {
-    void i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-  };
-  return (
-    <Button
-      theme={ButtonTheme.CLEAR}
-      onClick={toggle}
-      className={classNames(cls.LangSwitcher, {}, [className ?? ""])}
-    >
-      {t(short ? "Короткая версия" : "Язык")}
-    </Button>
-  );
+    const toggle = (): void => {
+        void i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    };
+    return (
+        <Button
+            theme={ButtonTheme.CLEAR}
+            onClick={toggle}
+            className={classNames(cls.LangSwitcher, {}, [className ?? ""])}
+        >
+            {t(short ? "Короткая версия" : "Язык")}
+        </Button>
+    );
 };
 
 export default LangSwitcher;

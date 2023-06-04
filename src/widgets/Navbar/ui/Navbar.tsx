@@ -7,12 +7,12 @@ interface NavbarProps {
 }
 
 function Navbar({ className }: NavbarProps) {
-  const { t } = useTranslation("translation");
-  return (
-    <div className={classNames(cls.navbar, {}, [className ?? ""])}>
-      <div className={cls.links}></div>
-    </div>
-  );
+    const { t } = useTranslation("translation");
+    return (
+        <div className={classNames(cls.navbar, {}, [className ?? ""])}>
+            <div className={cls.links}></div>
+        </div>
+    );
 }
 
 export default Navbar;
