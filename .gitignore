@@ -1,6 +1,7 @@
 node_modules
 /build
 .idea
-/dist
 storybook-static
 dist
+.loki/report.html
+.loki/report.json
