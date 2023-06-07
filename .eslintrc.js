@@ -23,7 +23,13 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     project: "./tsconfig.strictNullChecks.json",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "strict-null-checks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "strict-null-checks",
+    "react-hooks",
+  ],
   rules: {
     "react/jsx-indent": [2, 4],
     "react/jsx-indent-props": [2, 4],
@@ -57,6 +63,8 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/restrict-template-expressions": "warn",
     "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",

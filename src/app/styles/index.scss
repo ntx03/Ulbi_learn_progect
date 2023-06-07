@@ -3,15 +3,17 @@
 @import "./themes/normal";
 @import "./normalize";
 
+body {
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
 .app {
     font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);
     width: 100%;
-}
-
-:root {
-    --test: red;
 }
 
 .content-page {
