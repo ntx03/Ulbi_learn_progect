@@ -1,10 +1,13 @@
 import { getCounter } from "entities/Counter/model/selectors/getCounter/getCounter";
+import { type StateSchema } from "app/providers/StoreProvider";
+import { type DeepPartial } from "@reduxjs/toolkit";
 
 describe("getCounter", () => {
     test("should return counter value", () => {
-        const state = {
+        const state: DeepPartial<StateSchema> = {
             counter: { value: 10 },
         };
-        expect(getCounter(state)).toEqual({ value: 10 });
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+        expect(getCounter(state as StateSchema)).toEqual({ value: 10 });
     });
 });

@@ -1,0 +1,17 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.input {
+    margin: 10px auto 0 0;
+    font-size: var(--font-m);
+}
+
+.loginBtn {
+    display: flex;
+    margin: 15px auto 0;
+    width: 100px;
+    border-radius: 10px;
+}

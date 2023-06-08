@@ -11,5 +11,7 @@
   "Войти": "SignIn",
   "Значение": "Counter value",
   "Увеличить": "increment",
-  "Уменьшить": "decrement"
+  "Уменьшить": "decrement",
+  "Имя пользователя логин": "Enter login",
+  "Введите пароль": "Enter password"
 }
