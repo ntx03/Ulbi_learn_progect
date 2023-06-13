@@ -1,32 +1,19 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
-import React, { type ReactNode, useCallback, useEffect, useState } from "react";
+import React, { type ReactNode, useCallback, useEffect } from "react";
 import Portal from "shared/ui/Portal/Portal";
-import { useTheme } from "app/providers/ThemeProvider";
 
 export interface ModalProps {
   className?: string;
   children?: ReactNode;
   isOpen: boolean;
   onClose?: () => void;
-  lazy?: boolean;
 }
 
-export const Modal = ({
-    className,
-    children,
-    isOpen,
-    onClose,
-    lazy,
-}: ModalProps) => {
+export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
     };
-
-    const { theme } = useTheme();
-
-    const [isMounted, setIsMounted] = useState(false);
-
     const closeHandler = useCallback((): void => {
         if (onClose) {
             onClose();
@@ -41,16 +28,6 @@ export const Modal = ({
         },
         [closeHandler]
     );
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-        return () => {
-            setIsMounted(false);
-        };
-    }, [isOpen]);
-
     useEffect(() => {
         if (isOpen) {
             window.addEventListener("keydown", onKeydown);
@@ -64,13 +41,9 @@ export const Modal = ({
         e.stopPropagation();
     };
 
-    if (lazy && !isMounted) {
-        return null;
-    }
-
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className ?? "", theme])}>
+            <div className={classNames(cls.Modal, mods, [className ?? ""])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}
