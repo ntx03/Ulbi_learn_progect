@@ -3,13 +3,8 @@
 @import "./themes/normal";
 @import "./normalize";
 
-body {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
-}
-
-.app {
+.app,
+.app_modal {
     font: var(--font-m);
     background: var(--bg-color);
     color: var(--primary-color);

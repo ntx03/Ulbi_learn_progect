@@ -8,6 +8,8 @@
     margin: auto 5px auto 0;
     text-wrap: none;
     align-items: start;
+    color: var(--primary-color);
+    font-family: var(--font-family-main);
 }
 
 .input {
@@ -19,6 +21,7 @@
     color: transparent;
     text-shadow: 0 0 0 var(--primary-color);
     font-size: var(--font-size-m);
+    font-family: var(--font-family-main);
 
     &:focus {
         outline: none;
