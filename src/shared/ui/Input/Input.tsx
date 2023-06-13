@@ -10,7 +10,7 @@ type HTMLInputProps = Omit<
   "onChange" | "value"
 >;
 
-interface InputProps extends HTMLInputProps {
+export interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
@@ -53,7 +53,9 @@ export const Input = ({
             ref.current?.focus();
         }
 
-        return () => { setInFocused(false); };
+        return () => {
+            setInFocused(false);
+        };
     }, [autofocus]);
     return (
         <div className={classNames(cls.InputWrapper, {}, [className ?? ""])}>
