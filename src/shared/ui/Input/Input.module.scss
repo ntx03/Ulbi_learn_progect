@@ -8,7 +8,7 @@
     margin: auto 5px auto 0;
     text-wrap: none;
     align-items: start;
-    color: var(--primary-color);
+    color: var(--invert-primary-color);
     font-family: var(--font-family-main);
 }
 
@@ -19,7 +19,7 @@
     width: 100%;
     height: 30px;
     color: transparent;
-    text-shadow: 0 0 0 var(--primary-color);
+    text-shadow: 0 0 0 var(--invert-primary-color);
     font-size: var(--font-size-m);
     font-family: var(--font-family-main);
 
@@ -37,7 +37,7 @@
     position: absolute;
     height: 3px;
     width: 9px;
-    background: var(--primary-color);
+    background: var(--invert-primary-color);
     bottom: 0;
     left: 9px;
     animation: blink 0.7s forwards infinite;
