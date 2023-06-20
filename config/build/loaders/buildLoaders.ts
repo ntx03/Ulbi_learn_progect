@@ -1,4 +1,4 @@
-import { type BuildOptions } from "./types/config";
+import { type BuildOptions } from "../types/config";
 import MiniCssExctractPlugin from "mini-css-extract-plugin";
 import type webpack from "webpack";
 import { buildSvgLoader } from "./buildSvgLoader";

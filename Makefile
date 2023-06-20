@@ -8,4 +8,7 @@ dev:
 	npm run build:dev
 
 test:
-	npm run unit
+	npm run test:unit
+
+story:
+	npm run storybook

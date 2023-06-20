@@ -11,7 +11,6 @@ export const AboutPage = ({ className }: AboutPageProps) => {
     return (
         <div className={classNames(cls.AboutPage, {}, [className ?? ""])}>
             <p className="title">{t("О сайте")}</p>
-            {/* <Counter /> */}
         </div>
     );
 };

@@ -15,9 +15,16 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const ThemeLight: Story = {
+    // decorators:[ReduxDecorator({
+    //     authData: {
+    //         id: 1,
+    //         username: "admin",
+    //     }
+    // })]
     args: {},
 };
 export const ThemeDark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
+
     args: {},
 };

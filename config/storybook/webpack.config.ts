@@ -1,8 +1,9 @@
 import type webpack from "webpack";
+import { DefinePlugin } from "webpack";
 import { type BuildPaths } from "../build/types/config";
 import path from "path";
-import { buildScssLoader } from "../build/buildScssLoader";
-import { buildSvgLoader } from "../build/buildSvgLoader";
+import { buildScssLoader } from "../build/loaders/buildScssLoader";
+import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
@@ -27,6 +28,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.module.rules.push(buildSvgLoader());
     // @ts-ignore
     config.module.rules.push(buildScssLoader(true));
+    // @ts-ignore
+    config.plugins.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+        })
+    );
 
     return config;
 };

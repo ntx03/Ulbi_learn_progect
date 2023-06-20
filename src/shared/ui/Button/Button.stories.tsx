@@ -181,3 +181,11 @@ export const BackgroundInvertedSizeXLSquareDark: Story = {
         size: ButtonSize.XL,
     },
 };
+
+export const Disabled: Story = {
+    args: {
+        children: "Отправить",
+        theme: ButtonTheme.OUTLINE,
+        disabled: true,
+    },
+};

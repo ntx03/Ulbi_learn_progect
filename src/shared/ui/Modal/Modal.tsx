@@ -12,24 +12,27 @@ export interface ModalProps {
   lazy?: boolean;
 }
 
-export const Modal = ({
-    className,
-    children,
-    isOpen,
-    onClose,
-    lazy,
-}: ModalProps) => {
+export const Modal = (props: ModalProps) => {
+    const { className, children, isOpen, onClose, lazy } = props;
+
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
     };
+
+    // передаем тему приложения
     const { theme } = useTheme();
-    const [isMounted, setisMounted] = useState(false);
+
+    // состояние монтирования модалки в дом дерево
+    const [isMounted, setIsMounted] = useState(false);
+
+    // закрываем модальное окно
     const closeHandler = useCallback((): void => {
         if (onClose) {
             onClose();
         }
     }, [onClose]);
 
+    // закрытие модалки по Esc
     const onKeydown = useCallback(
         (e: KeyboardEvent) => {
             if (e.key === "Escape") {
@@ -38,11 +41,15 @@ export const Modal = ({
         },
         [closeHandler]
     );
+
+    // при открытии монтируем в DOM дерево модальное окно
     useEffect(() => {
         if (isOpen) {
-            setisMounted(true);
+            setIsMounted(true);
         }
     }, [isOpen]);
+
+    // при открытии модалки вешаем слушатель, при закрытии снимаем слушатель
     useEffect(() => {
         if (isOpen) {
             window.addEventListener("keydown", onKeydown);
@@ -52,10 +59,12 @@ export const Modal = ({
         };
     }, [isOpen, onKeydown]);
 
+    // чтобы модальное окно не закрывалось при клике по содержимому
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
 
+    // если модальное окнот не вызвали, то оно не монтируется в DOM дерево
     if (lazy && !isMounted) {
         return null;
     }
