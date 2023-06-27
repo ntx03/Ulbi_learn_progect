@@ -25,6 +25,7 @@ export function buildPlugins({
             __IS_DEV__: JSON.stringify(isDev),
         }),
     ];
+
     if (isDev) {
     // обновляем код страницы без перезагрузки самой страницы
         plugins.push(new webpack.HotModuleReplacementPlugin());

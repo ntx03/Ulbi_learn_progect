@@ -21,7 +21,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const primaryLight: Story = {
+export const PrimaryLight: Story = {
     args: {
     // @ts-ignore
         children: "test link",
@@ -29,26 +29,18 @@ export const primaryLight: Story = {
     },
 };
 
-export const secondaryLight: Story = {
+export const SecondaryLight: Story = {
     args: {
     // @ts-ignore
         children: "test link",
         theme: AppLinkTheme.SECONDARY,
     },
 };
-export const themeDarkPrimary: Story = {
+export const ThemeDarkPrimary: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
     args: {
     // @ts-ignore
         children: "test link",
         theme: AppLinkTheme.PRIMERY,
-    },
-};
-export const themeDarkSecondary: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
-    args: {
-    // @ts-ignore
-        children: "test link",
-        theme: AppLinkTheme.SECONDARY,
     },
 };

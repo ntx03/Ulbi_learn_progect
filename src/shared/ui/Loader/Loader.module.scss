@@ -13,7 +13,7 @@
     border-radius: 50%;
     border: 6px solid var(--invert-bg-color);
     border-color: var(--invert-bg-color) transparent var(--invert-bg-color) transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
+    animation: loader 1.2s linear infinite;
 }
 
 @keyframes loader {

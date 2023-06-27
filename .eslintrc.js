@@ -66,6 +66,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     "typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-dynamic-delete": "warn",
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",

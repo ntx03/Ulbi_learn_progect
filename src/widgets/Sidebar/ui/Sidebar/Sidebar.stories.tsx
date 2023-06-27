@@ -16,10 +16,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const themeLight: Story = {
+export const ThemeLight: Story = {
     args: {},
 };
-export const themeDark: Story = {
+export const ThemeDark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
     args: {},
 };

@@ -44,8 +44,8 @@ export const Button: FC<ButtonProps> = (props) => {
                 cls[theme ?? ""],
                 cls[size ?? ""],
             ])}
-            disabled={disabled}
             {...otherProps}
+            disabled={disabled}
         >
             {children}
         </button>
