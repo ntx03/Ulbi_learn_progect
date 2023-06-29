@@ -6,7 +6,7 @@
   "Перезагрузить страницу": "Reload page please",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Главная": "Main",
-  "О нас": "About",
+  "О сайте": "About",
   "Короткая версия": "En",
   "Войти": "SignIn",
   "Значение": "Counter value",
@@ -16,5 +16,6 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Form authorization",
   "Вы ввели неверный логин или пароль": "You have entered an incorrect username or password",
-  "Выйти": "Exit"
+  "Выйти": "Exit",
+  "Профиль": "Profile"
 }

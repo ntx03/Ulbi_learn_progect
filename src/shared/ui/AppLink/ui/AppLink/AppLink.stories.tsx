@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
-import {AppLink, AppLinkTheme} from "./AppLink";
+import AppLink, {AppLinkTheme} from "./AppLink";
 import "app/styles/index.scss";
 import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
 import {Theme} from "app/providers/ThemeProvider";

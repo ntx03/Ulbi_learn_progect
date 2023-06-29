@@ -7,7 +7,8 @@ import {
     type EnhancedStore,
     type Reducer,
     type ReducersMapObject,
-} from "@reduxjs/toolkit"; // главная стейт схема redux
+} from "@reduxjs/toolkit";
+import {type ProfileSchema} from "entities/Profile"; // главная стейт схема redux
 
 // главная стейт схема redux
 export interface StateSchema {
@@ -15,6 +16,7 @@ export interface StateSchema {
   user: UserSchema;
   // асинхронные редюсеры
   loginForm?: loginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

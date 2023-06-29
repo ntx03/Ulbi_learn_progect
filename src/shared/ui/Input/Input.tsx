@@ -18,70 +18,72 @@ export interface InputProps extends HTMLInputProps {
 }
 
 // memo позволяет избежать лишних перерисовок
-export const Input = ({
-    className,
-    value,
-    onChange,
-    placeholder,
-    type = "text",
-    autofocus,
-}: InputProps) => {
-    const ref = useRef<HTMLInputElement>(null);
-    const [inFocused, setInFocused] = useState(false);
-    const [caretPosition, setCaretPosition] = useState(0);
-    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e.target.value);
-        //  ОПРЕДЕЛЯЕМ МЕСТОПОЛОЖЕНИЕ КОРРЕТКИ ПОСЛЕ ПОСЛЕДНЕГО СИМВОЛА
-        setCaretPosition(e.target.value.length);
-    };
-    // Если убираем мышку с инпута, то убираем фокус
-    const onBlur = () => {
-        setInFocused(false);
-    };
-    // при клике мышкой на инпуте на нем появляется фокус
-    const onFocus = () => {
-        setInFocused(true);
-    };
-    // при помощи onSelect при клике мышкой на конкретный символ, определяем местоположение корретки
-    const onSelect = (e: any) => {
-        setCaretPosition(e?.target?.selectionStart || 0);
-    };
-    // при монтировании компонента устанавливаем фокус
-    useEffect(() => {
-        if (autofocus) {
-            setInFocused(true);
-            ref.current?.focus();
-        }
-
-        return () => {
+export const Input = memo(
+    ({
+        className,
+        value,
+        onChange,
+        placeholder,
+        type = "text",
+        autofocus,
+    }: InputProps) => {
+        const ref = useRef<HTMLInputElement>(null);
+        const [inFocused, setInFocused] = useState(false);
+        const [caretPosition, setCaretPosition] = useState(0);
+        const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange?.(e.target.value);
+            //  ОПРЕДЕЛЯЕМ МЕСТОПОЛОЖЕНИЕ КОРРЕТКИ ПОСЛЕ ПОСЛЕДНЕГО СИМВОЛА
+            setCaretPosition(e.target.value.length);
+        };
+        // Если убираем мышку с инпута, то убираем фокус
+        const onBlur = () => {
             setInFocused(false);
         };
-    }, [autofocus]);
-    return (
-        <div className={classNames(cls.InputWrapper, {}, [className ?? ""])}>
-            {placeholder && (
-                <div className={cls.placeholder}>{`${placeholder} >`}</div>
-            )}
-            <div className={cls.caretWrapper}>
-                <input
-                    ref={ref}
-                    type={type}
-                    value={value}
-                    onChange={onChangeHandler}
-                    className={cls.input}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                    onSelect={onSelect}
-                />
-                {inFocused && (
-                    <span
-                        className={cls.caret}
-                        style={{ left: `${caretPosition * 9}px` }}
-                    />
+        // при клике мышкой на инпуте на нем появляется фокус
+        const onFocus = () => {
+            setInFocused(true);
+        };
+        // при помощи onSelect при клике мышкой на конкретный символ, определяем местоположение корретки
+        const onSelect = (e: any) => {
+            setCaretPosition(e?.target?.selectionStart || 0);
+        };
+        // при монтировании компонента устанавливаем фокус
+        useEffect(() => {
+            if (autofocus) {
+                setInFocused(true);
+                ref.current?.focus();
+            }
+
+            return () => {
+                setInFocused(false);
+            };
+        }, [autofocus]);
+        return (
+            <div className={classNames(cls.InputWrapper, {}, [className ?? ""])}>
+                {placeholder && (
+                    <div className={cls.placeholder}>{`${placeholder} >`}</div>
                 )}
+                <div className={cls.caretWrapper}>
+                    <input
+                        ref={ref}
+                        type={type}
+                        value={value}
+                        onChange={onChangeHandler}
+                        className={cls.input}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
+                        onSelect={onSelect}
+                    />
+                    {inFocused && (
+                        <span
+                            className={cls.caret}
+                            style={{ left: `${caretPosition * 9}px` }}
+                        />
+                    )}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+);
 
 export default memo(Input);

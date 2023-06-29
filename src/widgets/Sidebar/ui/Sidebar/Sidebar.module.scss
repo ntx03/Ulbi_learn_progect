@@ -37,27 +37,12 @@
     border-bottom-right-radius: 5px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    margin: 10px auto 0 0;
-}
-
 .items {
     margin: 20px auto 0 20px;
     display: flex;
     flex-direction: column;
     width: max-content;
     align-items: center;
-}
-
-.link {
-    margin-left: 10px;
-    opacity: 1;
-}
-
-.icon {
-    fill: var(--invert-primary-color);
 }
 
 .collapsed {

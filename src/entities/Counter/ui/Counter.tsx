@@ -2,16 +2,17 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Counter.module.scss";
 
 import { useTranslation } from "react-i18next";
-import Button from "shared/ui/Button/Button";
+import { Button } from "shared/ui/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { counterActions } from "../model/slice/counterSlice";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
+import { memo } from "react";
 
 interface CounterProps {
   className?: string;
 }
 
-export const Counter = ({ className }: CounterProps) => {
+export const Counter = memo(({ className }: CounterProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const counterValue = useSelector(getCounterValue);
@@ -33,6 +34,6 @@ export const Counter = ({ className }: CounterProps) => {
             </Button>
         </div>
     );
-};
+});
 
 export default Counter;

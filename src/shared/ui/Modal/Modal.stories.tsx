@@ -1,6 +1,5 @@
 import type {Meta, StoryObj} from "@storybook/react";
 import Modal from "shared/ui/Modal/Modal";
-import LoginForm from "features/AuthByUsername/ui/LoginForm/LoginForm";
 import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -25,7 +24,7 @@ export const Light: Story = {
         }),
     ],
     args: {
-        children: <LoginForm />,
+    //   children: <LoginForm onSuccess={() => false} />,
         isOpen: true,
         lazy: true,
     },
@@ -42,7 +41,7 @@ export const ModalDark: Story = {
         }),
     ],
     args: {
-        children: <LoginForm />,
+    //  children: <LoginForm onSuccess={() => false} />,
         isOpen: true,
         lazy: true,
     },

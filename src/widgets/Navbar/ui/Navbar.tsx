@@ -1,17 +1,17 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Navbar.module.scss";
-import { useCallback, useState } from "react";
-import Button, { ButtonTheme } from "shared/ui/Button/Button";
-import i18n from "i18next";
+import { memo, useCallback, useState } from "react";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { LoginModal } from "features/AuthByUsername";
 import { getUserAuthData, userActions } from "entities/User";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   className?: string;
 }
 
-function Navbar({ className }: NavbarProps) {
+const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     // const { t } = useTranslation("translation");
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function Navbar({ className }: NavbarProps) {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
-
+    const { t } = useTranslation("translation");
     if (authData) {
         return (
             <div className={classNames(cls.navbar, {}, [className ?? ""])}>
@@ -38,7 +38,7 @@ function Navbar({ className }: NavbarProps) {
                     theme={ButtonTheme.OUTLINE}
                     className={cls.button}
                 >
-                    {i18n.t("Выйти")}
+                    {t("Выйти")}
                 </Button>
             </div>
         );
@@ -51,7 +51,7 @@ function Navbar({ className }: NavbarProps) {
                 theme={ButtonTheme.OUTLINE}
                 className={cls.button}
             >
-                {i18n.t("Войти")}
+                {t("Войти")}
             </Button>
             {/* eslint-disable-next-line i18next/no-literal-string */}
             {isAuthModal && (
@@ -59,6 +59,6 @@ function Navbar({ className }: NavbarProps) {
             )}
         </div>
     );
-}
+});
 
 export default Navbar;
