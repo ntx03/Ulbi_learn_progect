@@ -7,6 +7,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 export function buildPlugins({
     paths,
     isDev,
+    apiUrl,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
     // создает html файл, можно задавать шаблон.
@@ -23,6 +24,7 @@ export function buildPlugins({
         // передаем в webpack переменную из вне ( конкретно ее использыем в i18n в конфиге)
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 

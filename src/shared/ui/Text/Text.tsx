@@ -8,7 +8,7 @@ export enum TextTheme {
 
 interface TextProps {
   className?: string;
-  title?: string;
+  title?: string | null;
   text?: string;
   theme?: TextTheme;
 }

@@ -44,8 +44,8 @@ export const Button = memo((props: ButtonProps) => {
                 cls[theme ?? ""],
                 cls[size ?? ""],
             ])}
-            {...otherProps}
             disabled={disabled}
+            {...otherProps}
         >
             {children}
         </button>

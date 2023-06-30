@@ -1,12 +1,13 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./ProfilePage.module.scss";
 import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import DynamicModuleLoader, {
     type ReducerList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 import { profileReducer } from "entities/Profile/model/slice/ProfileSlice";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { fetchProfileData, ProfileCard } from "entities/Profile";
+import { useTheme } from "app/providers/ThemeProvider";
 
 const reducers: ReducerList = {
     profile: profileReducer,
@@ -18,11 +19,14 @@ interface ProfilePageProps {
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { t } = useTranslation("profile");
+    const dispatch = useAppDispatch();
+    const { theme } = useTheme();
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className ?? ""])}>
-                {t("Profile page")}
-            </div>
+            <ProfileCard className={theme} />
         </DynamicModuleLoader>
     );
 });

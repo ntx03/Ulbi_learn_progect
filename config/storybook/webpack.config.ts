@@ -12,28 +12,29 @@ export default ({ config }: { config: webpack.Configuration }) => {
         html: "",
         src: path.resolve(__dirname, "..", "..", "src"),
     };
-    // @ts-ignore
-    config.resolve.modules.push(paths.src);
-    // @ts-ignore
-    config.resolve.extensions.push(".ts", ".tsx");
-    // @ts-ignore
-    config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
-    // @ts-ignore
-        if (/svg/.test(rule.test)) {
-            return { ...rule, exclude: /\.svg$/i };
-        }
-        return rule;
-    });
-    // @ts-ignore
-    config.module.rules.push(buildSvgLoader());
-    // @ts-ignore
-    config.module.rules.push(buildScssLoader(true));
-    // @ts-ignore
-    config.plugins.push(
-        new DefinePlugin({
-            __IS_DEV__: true,
-        })
-    );
 
-    return config;
+  config.resolve!.modules!.push(paths.src);
+
+  config.resolve!.extensions!.push(".ts", ".tsx");
+
+  const rules = config.module!.rules as webpack.RuleSetRule[];
+  config.module!.rules = rules.map((rule: webpack.RuleSetRule) => {
+      if ((rule.test as string).includes("svg")) {
+          return { ...rule, exclude: /\.svg$/i };
+      }
+      return rule;
+  });
+
+  config.module!.rules.push(buildSvgLoader());
+
+  config.module!.rules.push(buildScssLoader(true));
+
+  config.plugins!.push(
+      new DefinePlugin({
+          __IS_DEV__: true,
+          __API__: JSON.stringify(""),
+      })
+  );
+
+  return config;
 };

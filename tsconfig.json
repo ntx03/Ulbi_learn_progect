@@ -7,6 +7,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "strictNullChecks": true,
+    "strict": true,
     // для обсалютного импорта
     "baseUrl": ".",
     "paths": {

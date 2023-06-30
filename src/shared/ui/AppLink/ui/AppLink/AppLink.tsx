@@ -26,12 +26,12 @@ const AppLink = memo((props: AppLinkProps) => {
 
     return (
         <Link
-            {...otherProps}
             to={to}
             className={classNames(cls.AppLink, {}, [
                 className ?? "",
                 cls[theme ?? ""],
             ])}
+            {...otherProps}
         >
             {children}
         </Link>
