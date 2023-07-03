@@ -1,19 +1,18 @@
-import type {Meta, StoryObj} from "@storybook/react";
-
-import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
 import {Theme} from "app/providers/ThemeProvider";
 
-import {ProfilePage} from "../index";
+import ProfileCard from "./ProfileCard";
+import {type Meta, type StoryObj} from "@storybook/react";
+import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
 import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "pages/ProfilePage",
-    component: ProfilePage,
+    title: "entities/ProfileCard",
+    component: ProfileCard,
     // @ts-ignore
     tags: ["autodocs"],
     argTypes: {},
-} satisfies Meta<typeof ProfilePage>;
+} satisfies Meta<typeof ProfileCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

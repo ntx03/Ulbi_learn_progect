@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react";
 import LoginForm from "features/AuthByUsername/ui/LoginForm/LoginForm";
 import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
 import {Theme} from "app/providers/ThemeProvider";
-import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
+import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
@@ -25,7 +25,10 @@ export const Light: Story = {
             },
         }),
     ],
-    args: {},
+    args: {
+    // @ts-ignore
+        className: Theme.DARK,
+    },
 };
 export const ModalDark: Story = {
     decorators: [
@@ -38,5 +41,8 @@ export const ModalDark: Story = {
             },
         }),
     ],
-    args: {},
+    args: {
+    // @ts-ignore
+        className: Theme.LIGHT,
+    },
 };

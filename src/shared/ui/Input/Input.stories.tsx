@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "app/styles/index.scss";
-import { Input } from "shared/ui/Input/Input";
+import { Input, InputTheme } from "shared/ui/Input/Input";
 import { ThemeDecorator } from "shared/config/storybookDecorators/themeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 
@@ -19,6 +19,7 @@ export const Light: Story = {
     args: {
     // @ts-ignore
         placeholder: "test link",
+        theme: InputTheme.INVERT,
     },
 };
 
@@ -27,5 +28,6 @@ export const Dark: Story = {
     args: {
     // @ts-ignore
         placeholder: "test link",
+        theme: InputTheme.INVERT,
     },
 };

@@ -18,6 +18,7 @@ export const LightTheme: Story = {
     args: {
         title: "Error",
         text: "Произошла ошибка. Попробуйте еще раз!",
+        theme: TextTheme.PRIMARY,
     },
 };
 export const ErrorTheme: Story = {
@@ -30,11 +31,13 @@ export const ErrorTheme: Story = {
 export const LightThemeOnlyTitle: Story = {
     args: {
         title: "Error",
+        theme: TextTheme.PRIMARY,
     },
 };
 export const LightThemeOnlyText: Story = {
     args: {
         text: "Произошла ошибка. Попробуйте еще раз!",
+        theme: TextTheme.PRIMARY,
     },
 };
 export const DarkTheme: Story = {
@@ -42,5 +45,6 @@ export const DarkTheme: Story = {
     args: {
         title: "Error",
         text: "Произошла ошибка. Попробуйте еще раз!",
+        theme: TextTheme.PRIMARY,
     },
 };

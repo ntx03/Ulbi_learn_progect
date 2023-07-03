@@ -7,7 +7,6 @@ import DynamicModuleLoader, {
 import { profileReducer } from "entities/Profile/model/slice/ProfileSlice";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { fetchProfileData, ProfileCard } from "entities/Profile";
-import { useTheme } from "app/providers/ThemeProvider";
 
 const reducers: ReducerList = {
     profile: profileReducer,
@@ -20,13 +19,12 @@ interface ProfilePageProps {
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
-    const { theme } = useTheme();
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard className={theme} />
+            <ProfileCard />
         </DynamicModuleLoader>
     );
 });

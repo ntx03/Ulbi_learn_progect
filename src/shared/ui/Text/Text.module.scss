@@ -1,5 +1,5 @@
 .Text {
-    color: var(--invert-primary-color);
+    color: var(--primary-color);
 }
 
 .title {
@@ -18,11 +18,31 @@
 }
 
 .error {
+    .title {
+        color: var(--red-dark);
+    }
+
     .text {
         color: var(--red-light);
     }
+}
 
+.primary {
     .title {
-        color: var(--red-dark);
+        color: var(--primary-color);
+    }
+
+    .text {
+        color: var(--secondary-color);
+    }
+}
+
+.primary-invert {
+    .title {
+        color: var(--invert-primary-color);
+    }
+
+    .text {
+        color: var(--invert-secondary-color);
     }
 }

@@ -18,8 +18,14 @@
 }
 
 .outline {
-    border: 1px solid var(--invert-primary-color);
+    border: 2px solid var(--invert-primary-color);
     color: var(--invert-primary-color);
+    background: none;
+}
+
+.outline-invert {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
     background: none;
 }
 

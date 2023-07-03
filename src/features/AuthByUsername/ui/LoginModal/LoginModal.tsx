@@ -3,7 +3,7 @@ import cls from "./LoginModal.module.scss";
 import Modal from "shared/ui/Modal/Modal";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 import { Suspense } from "react";
-import Loader from "shared/ui/Loader/Loader";
+import Loader, { LoaderTheme } from "shared/ui/Loader/Loader";
 
 interface LoginModalProps {
   className?: string;
@@ -19,7 +19,7 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
             onClose={onClose}
             lazy
         >
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<Loader theme={LoaderTheme.NORMAL} />}>
                 <LoginFormAsync onSuccess={onClose} />
             </Suspense>
         </Modal>

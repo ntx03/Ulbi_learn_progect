@@ -3,6 +3,7 @@ import cls from "./Text.module.scss";
 
 export enum TextTheme {
   PRIMARY = "primary",
+  PRIMARY_INVERT = "primary-invert",
   ERROR = "error",
 }
 
@@ -17,7 +18,7 @@ export const Text = ({
     className,
     title,
     text,
-    theme = TextTheme.PRIMARY,
+    theme = TextTheme.PRIMARY_INVERT,
 }: TextProps) => {
     return (
         <div

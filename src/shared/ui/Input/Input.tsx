@@ -10,11 +10,17 @@ type HTMLInputProps = Omit<
   "onChange" | "value"
 >;
 
+export enum InputTheme {
+  INVERT = "invert",
+  NORMAL = "normal",
+}
+
 export interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  theme?: string;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -25,6 +31,7 @@ export const Input = memo(
         onChange,
         placeholder,
         type = "text",
+        theme = InputTheme.NORMAL,
         autofocus,
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
@@ -59,11 +66,23 @@ export const Input = memo(
             };
         }, [autofocus]);
         return (
-            <div className={classNames(cls.InputWrapper, {}, [className ?? ""])}>
+            <div
+                className={classNames(cls.InputWrapper, { [cls[theme]]: true }, [
+                    className ?? "",
+                ])}
+            >
                 {placeholder && (
-                    <div className={cls.placeholder}>{`${placeholder} >`}</div>
+                    <div
+                        className={classNames(cls.placeholder, { [cls[theme]]: true }, [
+                            className ?? "",
+                        ])}
+                    >{`${placeholder} >`}</div>
                 )}
-                <div className={cls.caretWrapper}>
+                <div
+                    className={classNames(cls.caretWrapper, { [cls[theme]]: true }, [
+                        className ?? "",
+                    ])}
+                >
                     <input
                         ref={ref}
                         type={type}
@@ -76,7 +95,9 @@ export const Input = memo(
                     />
                     {inFocused && (
                         <span
-                            className={cls.caret}
+                            className={classNames(cls.caret, { [cls[theme]]: true }, [
+                                className ?? "",
+                            ])}
                             style={{ left: `${caretPosition * 9}px` }}
                         />
                     )}
