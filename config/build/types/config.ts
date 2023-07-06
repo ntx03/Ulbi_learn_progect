@@ -19,7 +19,6 @@ export interface BuildOptions {
   isDev: boolean;
   port: number;
   apiUrl: string;
-  project: "storybook" | "frontend" | "jest";
 }
 
 export type DeepPartial<T> = T extends object

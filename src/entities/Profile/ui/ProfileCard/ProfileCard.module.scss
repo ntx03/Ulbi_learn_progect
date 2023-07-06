@@ -3,35 +3,20 @@
     border: 2px solid var(--invert-bg-color);
 }
 
+.header {
+    display: flex;
+    color: var(--invert-bg-color);
+}
+
+.editBth {
+    margin-left: auto;
+}
+
 .data {
-    margin-top: 0;
+    margin-top: 30px;
 }
 
 .input {
     margin-top: 10px;
     color: var(--invert-bg-color);
-
-    &:first-child {
-        margin-top: 0;
-    }
-}
-
-.loading {
-    display: flex;
-    justify-content: center;
-    height: 200px;
-}
-
-.error {
-    display: flex;
-    height: min-content;
-}
-
-.avatarWrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.editing {
-    border: 2px solid var(--invert-primary-color);
 }
