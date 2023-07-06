@@ -1,9 +1,7 @@
-import {Theme} from "app/providers/ThemeProvider";
-
 import ProfileCard from "./ProfileCard";
 import {type Meta, type StoryObj} from "@storybook/react";
-import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
-import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+import {Country} from "entities/Country";
+import {Currency} from "entities/Currency"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
@@ -15,14 +13,35 @@ const meta = {
 } satisfies Meta<typeof ProfileCard>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof ProfileCard>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const ThemeLight: Story = {
-    args: {},
-    decorators: [ReduxDecorator({})],
+    args: {
+        data: {
+            username: "ntx033",
+            first: "Andrey",
+            lastname: "Kachur",
+            age: 36,
+            country: Country.Russia,
+            city: "Thumen",
+            currency: Currency.RUB,
+            avatar:
+        "https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13",
+        },
+    },
+    // decorators: [ReduxDecorator({})],
 };
-export const ThemeDark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK), ReduxDecorator({})],
-    args: {},
+export const WithError: Story = {
+    decorators: [],
+    args: {
+        error: true,
+    },
+};
+
+export const Loading: Story = {
+    decorators: [],
+    args: {
+        isLoading: true,
+    },
 };
