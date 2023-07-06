@@ -3,5 +3,22 @@
   "Профиль пользователя": "Profile user",
   "Редактировать": "edit",
   "Ваше имя": "Your name",
-  "Ваше фамилия": "Your lastname"
+  "Ваше фамилия": "Your lastname",
+  "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Ваш возраст": "Your age",
+  "Город": "City",
+  "Страна": "Country",
+  "Введите имя пользователя": "Enter the user name",
+  "Аватар": "Enter avatar",
+  "ваш профиль": "Your avatar image",
+  "Укажите валюту": "Specify the currency",
+  "Укажите страну": "Specify the country",
+  "Ошибка сервера": "Server error",
+  "Ошибка в заполнении страны": "Error filling country input",
+  "Не корректный возраст": "Incorrect age input",
+  "Не корректные имя или фвмилия": "Incorrect name or lastname",
+  "Нет данных профиля": "No data profile"
 }

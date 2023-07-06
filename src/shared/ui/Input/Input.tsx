@@ -7,7 +7,7 @@ import React, {type InputHTMLAttributes, memo, useEffect, useRef, useState,} fro
 // и не указать пропсы которые мы переиспользуем сами, то будет ошибка.
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLHtmlElement>,
-  "onChange" | "value"
+  "onChange" | "value" | "readOnly"
 >;
 
 export enum InputTheme {
@@ -17,10 +17,11 @@ export enum InputTheme {
 
 export interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
   theme?: string;
+  readonly?: boolean;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -33,10 +34,13 @@ export const Input = memo(
         type = "text",
         theme = InputTheme.NORMAL,
         autofocus,
+        readonly,
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
         const [inFocused, setInFocused] = useState(false);
         const [caretPosition, setCaretPosition] = useState(0);
+
+        const isCaretVisible = inFocused && !readonly;
         const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
             onChange?.(e.target.value);
             //  ОПРЕДЕЛЯЕМ МЕСТОПОЛОЖЕНИЕ КОРРЕТКИ ПОСЛЕ ПОСЛЕДНЕГО СИМВОЛА
@@ -67,9 +71,11 @@ export const Input = memo(
         }, [autofocus]);
         return (
             <div
-                className={classNames(cls.InputWrapper, { [cls[theme]]: true }, [
-                    className ?? "",
-                ])}
+                className={classNames(
+                    cls.InputWrapper,
+                    { [cls[theme]]: true, [cls.readonly]: readonly ?? false },
+                    [className ?? ""]
+                )}
             >
                 {placeholder && (
                     <div
@@ -92,8 +98,9 @@ export const Input = memo(
                         onFocus={onFocus}
                         onBlur={onBlur}
                         onSelect={onSelect}
+                        readOnly={readonly}
                     />
-                    {inFocused && (
+                    {isCaretVisible && (
                         <span
                             className={classNames(cls.caret, { [cls[theme]]: true }, [
                                 className ?? "",
