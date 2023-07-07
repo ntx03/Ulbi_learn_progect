@@ -18,6 +18,7 @@ export function buildWebpackConfig(
             filename: "[name].[contenthash].js",
             // удаляем старые файлы сборки
             clean: true,
+            publicPath: '/'
         },
         plugins: buildPlugins(options),
         module: {
