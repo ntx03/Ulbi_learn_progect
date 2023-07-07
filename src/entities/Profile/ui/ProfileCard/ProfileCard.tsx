@@ -74,7 +74,7 @@ const ProfileCard = ({
                     <div className={cls.avatarWrapper}>
                         <Avatar
                             src={data?.avatar}
-                            size={150}
+                            size={100}
                             alt={t("ваш профиль") ?? ""}
                         />
                     </div>

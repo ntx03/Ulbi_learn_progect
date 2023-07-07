@@ -6,6 +6,7 @@
 .lable {
     margin: auto 5px auto 0;
     font-size: var(--font-size-m);
+    color: var(--primary-color);
 }
 
 .select {
@@ -20,4 +21,8 @@
 .option {
     color: var(--primary-color);
     background: var(--bg-color);
+}
+
+.readonly {
+    opacity: 0.7;
 }

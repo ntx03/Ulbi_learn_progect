@@ -15,5 +15,10 @@
   "Аватар": "Enter avatar",
   "ваш профиль": "Your avatar image",
   "Укажите валюту": "Specify the currency",
-  "Укажите страну": "Specify the country"
+  "Укажите страну": "Specify the country",
+  "Ошибка сервера": "Server error",
+  "Ошибка в заполнении страны": "Error filling country input",
+  "Не корректный возраст": "Incorrect age input",
+  "Не корректные имя или фвмилия": "Incorrect name or lastname",
+  "Нет данных профиля": "No data profile"
 }

@@ -38,7 +38,13 @@ const Select = memo(
         }, [options]);
 
         return (
-            <div className={classNames(cls.Wrapper, {}, [className ?? ""])}>
+            <div
+                className={classNames(
+                    cls.Wrapper,
+                    { [cls.readonly]: readonly ?? false },
+                    [className ?? ""]
+                )}
+            >
                 {label && <span className={cls.lable}>{label + ">"}</span>}
                 <select
                     className={cls.select}

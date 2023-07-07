@@ -1,7 +1,7 @@
 import type webpack from "webpack";
 import { type BuildOptions } from "./types/config";
 import { buildPlugins } from "./buildPlugins";
-import { buildLoaders } from "./loaders/buildLoaders";
+import { buildLoaders } from "./buildLoaders";
 import { buildResolves } from "./buildResolves";
 import { buildDevServer } from "./buildDevServer";
 
