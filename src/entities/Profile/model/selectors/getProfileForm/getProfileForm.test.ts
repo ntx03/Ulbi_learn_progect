@@ -27,6 +27,7 @@ describe("getProfileForm.test", () => {
     });
     test("should return undefined", () => {
         const state: DeepPartial<StateSchema> = {};
+        // eslint-disable-next-line strict-null-checks/all
         expect(getProfileForm(state as StateSchema)).toEqual(undefined);
     });
 });

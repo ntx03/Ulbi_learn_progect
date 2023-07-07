@@ -37,6 +37,7 @@ describe("loginByUsername.test", () => {
         // eslint-disable-next-line @typescript-eslint/unbound-method
         expect(thunk.api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("rejected");
+        // eslint-disable-next-line strict-null-checks/all
         expect(result.payload).toBe(undefined);
     });
 });

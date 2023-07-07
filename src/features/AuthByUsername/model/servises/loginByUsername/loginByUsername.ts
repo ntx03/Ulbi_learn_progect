@@ -28,6 +28,7 @@ export const loginByUsername = createAsyncThunk<
     } catch (e) {
         console.log(e);
         return thunkAPI.rejectWithValue(
+            // eslint-disable-next-line strict-null-checks/all
             i18n.t("Вы ввели неверный логин или пароль")
         );
     }

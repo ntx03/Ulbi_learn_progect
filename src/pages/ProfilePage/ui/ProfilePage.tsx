@@ -37,7 +37,6 @@ interface ProfilePageProps {
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
-    const data = useSelector(getProfileData);
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);

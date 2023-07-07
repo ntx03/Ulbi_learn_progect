@@ -28,6 +28,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
     // @ts-ignore
         Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
             store.reducerManager.add(name, reducer);
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             dispatch({ type: `@INIT ${name} reducer` });
         });
 
@@ -37,6 +38,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
                     // @ts-ignore
                     ([name, reducer]: ReducersListEntry) => {
                         store.reducerManager.remove(name);
+                        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
                         dispatch({ type: `@remove ${name} reducer` });
                     }
                 );

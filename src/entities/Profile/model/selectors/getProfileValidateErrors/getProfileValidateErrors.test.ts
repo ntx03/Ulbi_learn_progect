@@ -16,6 +16,7 @@ describe("getProfileReadonly.test", () => {
     });
     test("should return false", () => {
         const state: DeepPartial<StateSchema> = {};
+        // eslint-disable-next-line strict-null-checks/all
         expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
     });
 });

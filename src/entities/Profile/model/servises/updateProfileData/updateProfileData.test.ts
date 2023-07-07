@@ -56,6 +56,7 @@ describe("updateProfileData.test", () => {
         const thunk = new TestAsyncThunk(updateProfileData);
         const result = await thunk.callThunk();
         expect(result.meta.requestStatus).toBe("rejected");
+        // eslint-disable-next-line strict-null-checks/all
         expect(result.payload).toEqual(undefined);
     });
 });
