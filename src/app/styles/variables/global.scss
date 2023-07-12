@@ -3,12 +3,15 @@
     --font-size-m: 16px;
     --font-size-l: 24px;
     --font-size-xl: 32px;
+    --font-size-xxl: 40px;
     --font-line-m: 24px;
     --font-line-l: 32px;
     --font-line-xl: 40px;
+    --font-line-xxl: 48px;
     --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family-main);
     --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family-main);
     --font-xl: var(--font-line-xl) / var(--font-line-xl) var(--font-family-main);
+    --font-xxl: var(--font-line-xxl) / var(--font-line-xxl) var(--font-family-main);
 
     // размеры
     --navbar-heigth: 50px;

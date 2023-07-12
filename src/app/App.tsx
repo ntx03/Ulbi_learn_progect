@@ -9,9 +9,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {getUserInited, userActions} from "entities/User";
 
 function App() {
+
     const { theme } = useTheme();
     const dispatch = useDispatch();
     const inited = useSelector(getUserInited);
+
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
@@ -20,7 +22,7 @@ function App() {
         <div className={classNames("app", {}, [theme])}>
             {/* eslint-disable-next-line i18next/no-literal-string */}
             <Suspense fallback="Перевод...">
-                <Navbar className="" />
+                <Navbar  />
                 <div className="content-page">
                     <Sidebar />
                     {inited && <AppRouter />}

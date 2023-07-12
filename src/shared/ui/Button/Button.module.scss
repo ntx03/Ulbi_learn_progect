@@ -1,7 +1,7 @@
 .Button {
     cursor: pointer;
     transition: transform 0.3s;
-    color: var(--primary-color);
+    color: var(--bg-color);
     padding: 10px 15px;
 
     &:hover {

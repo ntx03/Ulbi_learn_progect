@@ -6,10 +6,12 @@ import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { profileReducer } from "entities/Profile";
 import { type ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { type DeepPartial } from "@reduxjs/toolkit";
+import {articleDetailsReducer} from "entities/Article/model/slice/articleDetailsSlice";
 
 const defaultAsyncReducers: ReducerList = {
     loginForm: loginReducer,
     profile: profileReducer,
+    articleDetails: articleDetailsReducer
 };
 export const ReduxDecorator =
   (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>

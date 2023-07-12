@@ -3,18 +3,45 @@
 }
 
 .title {
-    font: var(--font-l);
     color: var(--primery-color);
     padding: 0;
     margin: 0;
 }
 
 .text {
-    font: var(--font-m);
-    font-size: var(--font-size-m);
     color: var(--secondary-color);
     padding: 0;
     margin: 20px 0 0;
+}
+
+.size_m {
+    .title {
+        font-size: var(--font-size-l);
+    }
+
+    .text {
+        font-size: var(--font-size-m);
+    }
+}
+
+.size_l {
+    .title {
+        font-size: var(--font-size-xl);
+    }
+
+    .text {
+        font-size: var(--font-size-l);
+    }
+}
+
+.size_xl {
+    .title {
+        font-size: var(--font-size-xxl);
+    }
+
+    .text {
+        font-size: var(--font-size-xl);
+    }
 }
 
 .error {

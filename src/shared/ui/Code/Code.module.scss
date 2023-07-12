@@ -1,0 +1,22 @@
+.Code {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    position: relative;
+    background: var(--code-bg);
+    font-size: var(--font-size-m);
+    overflow: auto;
+}
+
+.copyBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: var(--font-size-l);
+}
+
+.icon {
+    fill: var(--code-bg);
+    stroke: var(--primary-color);
+}

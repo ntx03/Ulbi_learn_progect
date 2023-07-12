@@ -11,7 +11,8 @@ import {
 import {type ProfileSchema} from "entities/Profile";
 import {type AxiosInstance} from "axios";
 import {type NavigateOptions} from "react-router";
-import {type To} from "history"; // главная стейт схема redux
+import {type To} from "history";
+import {type ArticleDetailsSchema} from "entities/Article"; // главная стейт схема redux
 
 // главная стейт схема redux
 export interface StateSchema {
@@ -20,6 +21,7 @@ export interface StateSchema {
   // асинхронные редюсеры
   loginForm?: loginSchema;
   profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
