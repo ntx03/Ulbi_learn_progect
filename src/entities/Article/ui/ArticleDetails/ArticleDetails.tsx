@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleDetails.module.scss'
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {articleDetailsReducer} from "../../model/slice/articleDetailsSlice";
-import {memo, useCallback, useEffect} from "react";
+import {memo, useCallback} from "react";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {fetchArticleById} from "entities/Article/model/services/fetchArticleById/fetchArticleById";
 import {useSelector} from "react-redux";
@@ -22,6 +22,7 @@ import {type ArticleBlock, ArticleBlockType} from "entities/Article/model/types/
 import ArticleCodeBlockComponent from "entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
+import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 export interface ArticleDetailsProps {
     className?: string;
@@ -35,12 +36,9 @@ const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
     const {t} = useTranslation('article')
     const dispatch = useAppDispatch();
 
-    useEffect(()=>{
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
+    // вызываем хук который проверяет в режиме сторибук находится проект или нет __PROJECT__ !== 'storybook'
+    useInitialEffect(() => dispatch(fetchArticleById(id)))
 
-    }, [dispatch, id])
 
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const error = useSelector(getArticleDetailsError);

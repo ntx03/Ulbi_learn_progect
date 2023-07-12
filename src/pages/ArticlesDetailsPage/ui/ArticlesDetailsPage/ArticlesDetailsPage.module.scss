@@ -1,3 +1,8 @@
 .ArticlesDetailsPage {
     display: flex;
+    flex-direction: column;
+}
+
+.commentTitle {
+    margin: 40px 0 0;
 }

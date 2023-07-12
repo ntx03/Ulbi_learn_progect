@@ -11,7 +11,6 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileForm,
     getProfileIsLoading,

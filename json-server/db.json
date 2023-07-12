@@ -3,22 +3,12 @@
     {
       "id": "1",
       "title": "json-server",
-      "author": "typicode"
+      "userId": "1"
     },
     {
       "id": "2",
       "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": "3",
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": "4",
-      "title": "json-server",
-      "author": "typicode"
+      "userId": "2"
     }
   ],
   "articles": [
@@ -111,25 +101,42 @@
       "id": "1",
       "text": "some comment",
       "articleId": "1",
-      "postId": "1"
+      "userId": "1"
     },
     {
       "id": "2",
       "text": "Второй комментарий",
-      "articleId": "2",
-      "postId": "2"
+      "articleId": "1",
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "Третий комментарий",
-      "articleId": "3",
-      "postId": "3"
+      "articleId": "1",
+      "userId": "2"
     },
     {
       "id": "4",
       "text": "Четвертый комментарий",
-      "articleId": "4",
-      "postId": "4"
+      "articleId": "2",
+      "userId": "2"
+    }
+  ],
+
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": "ADMIN",
+      "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
     }
   ],
   "profile": {
@@ -141,19 +148,5 @@
     "city": "Москва",
     "username": "admin",
     "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
-  },
-  "users": [
-    {
-      "username": "admin",
-      "password": "123",
-      "id": "1",
-      "role": "ADMIN"
-    },
-    {
-      "username": "user",
-      "password": "123",
-      "id": "2",
-      "role": "USER"
-    }
-  ]
+  }
 }
