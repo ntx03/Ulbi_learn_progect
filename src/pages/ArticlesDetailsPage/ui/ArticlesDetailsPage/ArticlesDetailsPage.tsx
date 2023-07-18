@@ -29,7 +29,6 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
     const dispatch = useAppDispatch();
 
     const onSendComment = (text: string)=> {
-        console.log(11);
         dispatch(addCommentForArticle(text))
     }
 

@@ -16,6 +16,16 @@ const CommentList = ({className, comments = [], isLoading}: CommentListProps) =>
 
     const {t} = useTranslation();
 
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className ?? ''])}>
+                <CommentCard  isLoading={true}/>
+                <CommentCard  isLoading={true}/>
+                <CommentCard  isLoading={true}/>
+            </div>
+        )
+    }
+
     return (
         <div className={classNames(cls.CommentList, {}, [className ?? ''])}>
             {comments.length > 0  ? comments.map((comment, index) =>   <CommentCard isLoading={isLoading} className={cls.comment} comment={comment} key={index}/> ): <Text theme={TextTheme.PRIMARY} text={t('Комментарии отсутстсуют')}/>}

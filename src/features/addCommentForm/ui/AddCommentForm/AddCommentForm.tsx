@@ -36,11 +36,9 @@ const AddCommentForm = ({className, onSendComment}: AddCommentFormProps) => {
     }, [dispatch])
 
     const onSendHandler = useCallback(()=> {
-        console.log(addCommentForArticle);
         onCommentTextChange('');
-        // onSendComment(text ?? '');
-        dispatch(addCommentForArticle(text ?? ''))
-    },[dispatch, onCommentTextChange, text])
+        onSendComment(text ?? '');
+    },[onCommentTextChange, text, onSendComment])
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
