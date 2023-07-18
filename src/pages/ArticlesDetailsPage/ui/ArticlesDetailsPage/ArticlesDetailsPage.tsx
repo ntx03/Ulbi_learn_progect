@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticlesDetailsPage.module.scss'
 import {useTranslation} from "react-i18next";
-import {memo} from "react";
+import {memo, useCallback} from "react";
 import {ArticleDetails} from "entities/Article";
 import {useParams} from "react-router-dom";
 import {Text, TextTheme} from "shared/ui/Text/Text";
@@ -12,6 +12,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
+import {AddCommentForm} from "features/addCommentForm";
+import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
+import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 export interface ArticlesDetailsPageProps {
     className?: string
 }
@@ -23,7 +26,12 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
     const { id } = useParams<{id: string}>();
     const comments = useSelector(getArticleComments.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+
+    const onSendComment = (text: string)=> {
+        console.log(11);
+        dispatch(addCommentForArticle(text))
+    }
 
     useInitialEffect(()=> dispatch(fetchCommentsByArticleId(id)))
 
@@ -40,6 +48,7 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
             <div className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
                 <ArticleDetails id={id}/>
                 <Text className={cls.commentTitle} title={t('Комментарии')} theme={TextTheme.PRIMARY}/>
+                <AddCommentForm onSendComment={onSendComment}/>
                 <CommentList  isLoading={isLoading} comments={comments}/>
             </div>
         </DynamicModuleLoader>

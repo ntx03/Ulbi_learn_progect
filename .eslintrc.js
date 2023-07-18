@@ -68,6 +68,7 @@ module.exports = {
     "typescript-eslint/no-unnecessary-type-assertion": "off",
     "@typescript-eslint/no-dynamic-delete": "warn",
     "@typescript-eslint/prefer-includes": "off",
+    "@typescript-eslint/no-invalid-void-type": "off",
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",

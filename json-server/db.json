@@ -17,9 +17,11 @@
       "title": "Javascript News",
       "subtitle": "Что нового в JS в 2022 году?",
       "img": "https://yt3.ggpht.com/ytc/AKedOLSWjjhkOwEcPjbO3fXtkTapXl4W4eD8NGqt9m5q=s900-c-k-c0x00ffffff-no-rj",
-      "views": 1022 ,
+      "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "block": [
         {
           "id": "1",
@@ -120,9 +122,86 @@
       "text": "Четвертый комментарий",
       "articleId": "2",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Мой первый комментарий",
+      "id": "QeYxF7I"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Мой первый комментарий",
+      "id": "6VjrO1F"
+    },
+    {
+      "id": "b1P5VOb",
+      "articleId": "1",
+      "userId": "1",
+      "text": "Привет Медвед"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "коммент после обновления",
+      "id": "yRLwrBO"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ОГО КАКАЯ КРУТАЯ СТАТЬЯ",
+      "id": "3bHEgt3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dasd",
+      "id": "vjIs0M2"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dasdasd",
+      "id": "td7EYI7"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dasdsd",
+      "id": "kyVNBmB"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdasd",
+      "id": "UJfRuXf"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdas",
+      "id": "oRnsXRY"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "11111",
+      "id": "S-izCit"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "2222",
+      "id": "_6xCP-W"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Helo!!!!!!",
+      "id": "eN6yjgw"
     }
   ],
-
   "users": [
     {
       "id": "1",
@@ -136,17 +215,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
+      "avatar": "https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-1024.png"
     }
   ],
-  "profile": {
-    "first": "Dmitry",
-    "lastname": "Качур",
-    "age": 36,
-    "currency": "USD",
-    "country": "Russia",
-    "city": "Москва",
-    "username": "admin",
-    "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "andrey",
+      "lastname": "Качур",
+      "age": 36,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Тюмень",
+      "username": "admin",
+      "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
+    },
+    {
+      "id": "2",
+      "first": "semen",
+      "lastname": "Качур",
+      "age": 31,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Новосибирск",
+      "username": "user",
+      "avatar": "https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-1024.png"
+    }
+  ]
 }

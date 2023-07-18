@@ -13,7 +13,8 @@ import {type AxiosInstance} from "axios";
 import {type NavigateOptions} from "react-router";
 import {type To} from "history";
 import {type ArticleDetailsSchema} from "entities/Article";
-import {type ArticlesDetailsCommentsSchema} from "pages/ArticlesDetailsPage"; // главная стейт схема redux
+import {type ArticlesDetailsCommentsSchema} from "pages/ArticlesDetailsPage";
+import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm"; // главная стейт схема redux
 
 // главная стейт схема redux
 export interface StateSchema {
@@ -24,6 +25,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticlesDetailsCommentsSchema;
+  addCommentForm?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -12,7 +12,7 @@ interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: AppLinkTheme;
   to: string;
-  children: string | JSX.Element[];
+  children: string | JSX.Element[] ;
 }
 
 const AppLink = memo((props: AppLinkProps) => {

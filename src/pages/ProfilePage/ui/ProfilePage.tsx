@@ -24,6 +24,8 @@ import { type Currency } from "entities/Currency";
 import { type Country } from "entities/Country/model/types/country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {useParams} from "react-router-dom";
 
 const reducers: ReducerList = {
     profile: profileReducer,
@@ -41,6 +43,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{id: string}>()
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t("Ошибка сервера"),
@@ -52,11 +55,11 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t("Нет данных профиля"),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    })
 
     const onChangeFirstName = useCallback(
         (value?: string | undefined) => {

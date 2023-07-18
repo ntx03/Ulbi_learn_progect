@@ -5,6 +5,9 @@ import {type Comment} from "entities/Comment";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import Avatar from "shared/ui/Avatar/Avatar";
 import Skeleton from "shared/ui/Skeleton/Skeleton";
+import AppLink from "shared/ui/AppLink/ui/AppLink/AppLink";
+import {Link} from "react-router-dom";
+import {RoutePath} from "shared/config/routeConfig/routeConfig";
 
 export interface CommentCardProps {
     className?: string;
@@ -24,12 +27,13 @@ const CommentCard = ({className, comment, isLoading}: CommentCardProps) => {
             </div>
         )
     }
+
     return (
         <div className={classNames(cls.CommentCard, {}, [className ?? ''])}>
-            <div className={cls.header}>
-                {comment?.user.avatar ? <Avatar size={30} src={comment?.user.avatar}/> : null}
+            <AppLink to={`${RoutePath.profile}/${comment?.user.id}`} className={cls.header}>
+                {comment?.user.avatar ? <Avatar size={30} src={comment?.user.avatar}/> : <div></div>}
                 <Text className={cls.username} title={comment?.user.username} theme={TextTheme.PRIMARY}/>
-            </div>
+            </AppLink>
             <Text text={comment?.text} theme={TextTheme.PRIMARY}/>
         </div>
     )

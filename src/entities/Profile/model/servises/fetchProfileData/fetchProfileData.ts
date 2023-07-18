@@ -5,11 +5,11 @@ import { type Profile } from "../../types/profile";
 export const fetchProfileData = createAsyncThunk<
   Profile,
   // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  void,
+  string,
   ThunkConfig<string>
->("profile/fetchProfileData", async (_, thunkAPI) => {
+>("profile/fetchProfileData", async (profileId, thunkAPI) => {
     try {
-        const response = await thunkAPI.extra.api.get<Profile>("/profile");
+        const response = await thunkAPI.extra.api.get<Profile>(`/profile/${profileId}`);
         if (!response.data) {
             throw new Error();
         }

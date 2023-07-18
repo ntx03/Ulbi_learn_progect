@@ -7,11 +7,15 @@ import { profileReducer } from "entities/Profile";
 import { type ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { type DeepPartial } from "@reduxjs/toolkit";
 import {articleDetailsReducer} from "entities/Article/model/slice/articleDetailsSlice";
+import {addCommentFormReducer} from "features/addCommentForm/model/slice/addCommentFormSlice";
+import {articleDetailsCommentsReducer} from "pages/ArticlesDetailsPage/model/slice/ArticleDetailsCommentsSlice";
 
 const defaultAsyncReducers: ReducerList = {
     loginForm: loginReducer,
     profile: profileReducer,
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
+    addCommentForm: addCommentFormReducer,
+    articleDetailsComments: articleDetailsCommentsReducer
 };
 export const ReduxDecorator =
   (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>
