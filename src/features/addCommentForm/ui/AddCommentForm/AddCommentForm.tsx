@@ -12,8 +12,7 @@ import {
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {addCommentFormActions, addCommentFormReducer} from "features/addCommentForm/model/slice/addCommentFormSlice";
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {addCommentForArticle} from "pages/ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle";
-import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
+
 
 export interface AddCommentFormProps {
     className?: string;

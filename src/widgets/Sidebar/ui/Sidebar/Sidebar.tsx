@@ -4,7 +4,6 @@ import cls from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/Sidebar/index";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
-import { SidebarItemsList } from "widgets/Sidebar/model/items";
 import SidebarItem from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 import {useSelector} from "react-redux";
 import {getSidebarItems} from "widgets/Sidebar/model/selectors/getSidebarItems";

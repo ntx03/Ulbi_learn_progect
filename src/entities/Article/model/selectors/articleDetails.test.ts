@@ -10,6 +10,10 @@ const article: Article = {
     "img": "https://yt3.ggpht.com/ytc/AKedOLSWjjhkOwEcPjbO3fXtkTapXl4W4eD8NGqt9m5q=s900-c-k-c0x00ffffff-no-rj",
     "views": 1022 ,
     "createdAt": "26.02.2022",
+    "user": {
+        id: '1',
+        username: "Andrey"
+    },
     "type": [ArticleType.IT],
     "block": [
         {

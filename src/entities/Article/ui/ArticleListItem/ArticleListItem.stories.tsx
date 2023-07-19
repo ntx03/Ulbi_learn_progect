@@ -1,31 +1,32 @@
 import type {Meta, StoryObj} from "@storybook/react";
-import ArticleDetails, {type ArticleDetailsProps} from "./ArticleDetails";
-import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
-import {type Article, ArticleBlockType, ArticleType} from "entities/Article/model/types/articles";
+import ArticleListItem, {type ArticleListItemProps} from "./ArticleListItem";
+import {type Article, ArticleBlockType, ArticleType, ArticleView} from "entities/Article/model/types/articles";
 
-const meta: Meta<typeof ArticleDetails> = {
-    title: "entities/ArticleDetails",
-    component: ArticleDetails,
+const meta: Meta<typeof ArticleListItem> = {
+    title: "entities/ArticleListItem",
+    component: ArticleListItem,
     // @ts-ignore
     tags: ["autodocs"],
     argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<ArticleDetailsProps>;
-
-const article: Article = {
+type Story = StoryObj<ArticleListItemProps>;
+const article = {
     "id": "1",
     "title": "Javascript News",
     "subtitle": "Что нового в JS в 2022 году?",
     "img": "https://yt3.ggpht.com/ytc/AKedOLSWjjhkOwEcPjbO3fXtkTapXl4W4eD8NGqt9m5q=s900-c-k-c0x00ffffff-no-rj",
-    "views": 1022 ,
-    "createdAt": "26.02.2022",
+    "views": 1022,
     "user": {
         id: '1',
-        username: "Andrey"
+        username: "Andrey",
+        avatar: 'https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album'
     },
-    "type": [ArticleType.IT],
+    "createdAt": "26.02.2022",
+    "type": [
+        ArticleType.IT
+    ],
     "block": [
         {
             "id": "1",
@@ -100,37 +101,19 @@ const article: Article = {
             ]
         }
     ]
-}
+} satisfies Article;
+export const SmallArticle: Story = {
+    args: {
+        article,
+        view: ArticleView.SMALL
+    },
+    decorators: [],
+};
 
-export const Normal: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: false,
-            data: article
-        }
-    }
-    )]
-}
-export const Loading: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: true,
-            data: article
-        }
-    }
-    )]
-}
-
-export const Error: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: false,
-            data: article,
-            error: 'Error'
-        }
-    }
-    )]
-}
+export const BigArticle: Story = {
+    args: {
+        article,
+        view: ArticleView.BIG
+    },
+    decorators: [],
+};

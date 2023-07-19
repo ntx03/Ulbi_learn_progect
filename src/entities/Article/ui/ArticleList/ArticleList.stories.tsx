@@ -1,19 +1,18 @@
 import type {Meta, StoryObj} from "@storybook/react";
-import ArticleDetails, {type ArticleDetailsProps} from "./ArticleDetails";
-import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
-import {type Article, ArticleBlockType, ArticleType} from "entities/Article/model/types/articles";
+import ArticleList, {type ArticleListProps} from "./ArticleList";
+import {type Article} from "entities/Article";
+import {ArticleBlockType, ArticleType, ArticleView} from "entities/Article/model/types/articles";
 
-const meta: Meta<typeof ArticleDetails> = {
-    title: "entities/ArticleDetails",
-    component: ArticleDetails,
+const meta: Meta<typeof ArticleList> = {
+    title: "entities/ArticleList",
+    component: ArticleList,
     // @ts-ignore
     tags: ["autodocs"],
     argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<ArticleDetailsProps>;
-
+type Story = StoryObj<ArticleListProps>;
 const article: Article = {
     "id": "1",
     "title": "Javascript News",
@@ -101,36 +100,32 @@ const article: Article = {
         }
     ]
 }
+export const SmallArticles: Story = {
+    args: {
+        articles:[article, article, article, article, article, article]
+    },
+    decorators: [],
+};
 
-export const Normal: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: false,
-            data: article
-        }
-    }
-    )]
-}
-export const Loading: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: true,
-            data: article
-        }
-    }
-    )]
-}
+export const BigArticles: Story = {
+    args: {
+        articles:[article, article, article, article, article, article],
+        view: ArticleView.BIG
+    },
+    decorators: [],
+};
 
-export const Error: Story = {
-    args: {},
-    decorators: [ReduxDecorator({
-        articleDetails: {
-            isLoading: false,
-            data: article,
-            error: 'Error'
-        }
-    }
-    )]
-}
+export const BigArticlesSkeleton: Story = {
+    args: {
+        isLoading: true,
+        view: ArticleView.BIG
+    },
+    decorators: [],
+};
+export const SmallArticlesSkeleton: Story = {
+    args: {
+        isLoading: true,
+        view: ArticleView.SMALL
+    },
+    decorators: [],
+};

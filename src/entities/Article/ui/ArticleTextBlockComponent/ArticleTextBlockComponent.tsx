@@ -13,7 +13,7 @@ const ArticleTextBlockComponent = ({className, block}: ArticleTextBlockComponent
     return (
         <div className={classNames(cls.ArticleTextBlockComponent, {}, [className ?? ''])}>
             {block.title && (
-                <Text title={block.title} className={cls.title}/>
+                <Text title={block.title} className={cls.title} theme={TextTheme.PRIMARY}/>
             )}
             {block?.paragraphs && (
                 block.paragraphs.map((paragraph, index) => {
