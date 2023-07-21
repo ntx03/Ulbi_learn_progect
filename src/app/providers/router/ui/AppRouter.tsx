@@ -4,9 +4,9 @@ import {type AppRoutesProps, routeConfig} from "shared/config/routeConfig/routeC
 import { PageLoader } from "widgets/PageLoader/index";
 import {RequireAuth} from "app/providers/router/ui/RequireAuth";
 
-function AppRouter() {
+function AppRouter(): JSX.Element {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-        const element = (
+        const element: JSX.Element = (
             <Suspense fallback={<PageLoader />}>
                 <div className="page-wrapper">{route.element}</div>
             </Suspense>
@@ -21,11 +21,9 @@ function AppRouter() {
     }, [])
     return (
         <>
-
             <Routes>
                 {Object.values(routeConfig).map(renderWithWrapper)}
             </Routes>
-
         </>
     );
 }

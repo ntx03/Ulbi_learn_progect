@@ -36,7 +36,7 @@ const ArticleListItem = ({className, article, view}: ArticleListItemProps) => {
     )
 
     const onOpenArticle = useCallback(()=> {
-        navigate(`${RoutePath.article_details}${String(Number(article.id) + 1)}`)
+        navigate(`${RoutePath.article_details}${String(Number(article.id))}`)
     }, [article.id, navigate])
 
     if (view === ArticleView.BIG) {

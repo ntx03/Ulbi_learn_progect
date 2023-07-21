@@ -14,9 +14,12 @@ import {type NavigateOptions} from "react-router";
 import {type To} from "history";
 import {type ArticleDetailsSchema} from "entities/Article";
 import {type ArticlesDetailsCommentsSchema} from "pages/ArticlesDetailsPage";
-import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm"; // главная стейт схема redux
+import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
+import {type ArticlesPageSchema} from "pages/ArliclesPage";
 
-// главная стейт схема redux
+/**
+ * Главная стейт схема Redux
+ */
 export interface StateSchema {
   counter: counterSchema;
   user: UserSchema;
@@ -26,6 +29,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticlesDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
