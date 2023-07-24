@@ -99,6 +99,8 @@ export const Input = memo(
                         onBlur={onBlur}
                         onSelect={onSelect}
                         readOnly={readonly}
+
+
                     />
                     {isCaretVisible && (
                         <span

@@ -11,6 +11,7 @@
         align-items: start;
         color: var(--invert-primary-color);
         font-family: var(--font-family-main);
+        max-width: max-content;
     }
 
     .input {
@@ -18,6 +19,7 @@
         border: none;
         outline: none;
         width: 100%;
+        flex-grow: 2;
         color: transparent;
         text-shadow: 0 0 0 var(--invert-primary-color);
         font-size: var(--font-size-m);
@@ -35,7 +37,7 @@
             width: 9px;
             background: var(--invert-primary-color);
             bottom: 0;
-            left: 9px;
+            left: 0px;
             animation: blink 0.7s forwards infinite;
         }
     }
@@ -49,6 +51,7 @@
         align-items: start;
         color: var(--primary-color);
         font-family: var(--font-family-main);
+        max-width: max-content;
     }
 
     .caretWrapper {
@@ -62,7 +65,7 @@
             width: 9px;
             background: var(--primary-color);
             bottom: 0;
-            left: 9px;
+            left: 8px;
             animation: blink 0.7s forwards infinite;
         }
     }

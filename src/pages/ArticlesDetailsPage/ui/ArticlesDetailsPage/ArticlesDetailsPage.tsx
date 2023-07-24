@@ -18,6 +18,7 @@ import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {RoutePath} from "shared/config/routeConfig/routeConfig";
 import {getArticleDetailsError} from "entities/Article/model/selectors/articleDetails";
+import Page from "shared/ui/Page/Page";
 
 export interface ArticlesDetailsPageProps {
     className?: string
@@ -45,28 +46,28 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
+            <Page className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         )
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
+            <Page className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
                 {!isLoading && !error && <Button theme={ButtonTheme.OUTLINE_INVERT} onClick={onBackToList} className={cls.buttonBack}>
                     {t('Назад к списку')}
                 </Button> }
                 <ArticleDetails id={id}/>
 
-                {!isLoading && !error && (
+                {!isLoading && (
                     <>
                         <Text className={cls.commentTitle} title={t('Комментарии')} theme={TextTheme.PRIMARY}/>
                         <AddCommentForm onSendComment={onSendComment}/>
                         <CommentList  isLoading={isLoading} comments={comments}/>
                     </>
                 ) }
-            </div>
+            </Page>
         </DynamicModuleLoader>
     )
 };

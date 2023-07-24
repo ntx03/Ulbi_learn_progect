@@ -18,13 +18,7 @@ export interface ArticleListProps {
 const ArticleList = ({className, articles, view = ArticleView.SMALL, isLoading
 }: ArticleListProps) => {
 
-    if (isLoading) {
-        return (
-            <div className={cls.ArticleList}>
-                {new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((i, index)=> <ArticleListItemSkeleton view={view} key={index}/>)}
-            </div>
-        ) 
-    }
+
     const renderArticle = (article: Article) => {
         return (
             <ArticleListItem article={article} view={view} key={article.id}/>
@@ -36,6 +30,7 @@ const ArticleList = ({className, articles, view = ArticleView.SMALL, isLoading
             {
                 articles.length > 0 ? articles.map(renderArticle) : null
             }
+            {isLoading && new Array(view === ArticleView.SMALL ? 9 : 3).fill(0).map((i, index)=> <ArticleListItemSkeleton view={view} key={index}/>)}
         </div>
     )
 };

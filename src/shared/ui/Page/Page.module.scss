@@ -1,0 +1,7 @@
+.Page {
+    padding: 20px 20px 20px 45px;
+    margin: 0;
+    height: calc(100vh - var(--navbar-heigth));
+    overflow-y: auto;
+    width: 80%;
+}

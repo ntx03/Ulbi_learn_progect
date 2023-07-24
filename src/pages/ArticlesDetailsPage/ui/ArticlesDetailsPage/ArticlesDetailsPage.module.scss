@@ -1,12 +1,20 @@
 .ArticlesDetailsPage {
     display: flex;
     flex-direction: column;
+
 }
 
 .commentTitle {
+    display: flex;
+    margin: 40px 0 0;
     margin: 40px 0 0;
 }
 
 .buttonBack {
     max-width: 300px;
+}
+
+.commentBlock {
+    display: flex;
+    flex-direction: column;
 }

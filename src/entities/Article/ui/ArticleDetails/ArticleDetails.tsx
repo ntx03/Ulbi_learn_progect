@@ -23,6 +23,7 @@ import ArticleCodeBlockComponent from "entities/Article/ui/ArticleCodeBlockCompo
 import ArticleImageBlockComponent from "entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import Page from "shared/ui/Page/Page";
 
 export interface ArticleDetailsProps {
     className?: string;

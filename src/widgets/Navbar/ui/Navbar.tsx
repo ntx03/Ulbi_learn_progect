@@ -31,7 +31,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation("translation");
     if (authData) {
         return (
-            <div className={classNames(cls.navbar, {}, [className ?? ""])}>
+            <header className={classNames(cls.navbar, {}, [className ?? ""])}>
                 <div className={cls.links}></div>
                 <Button
                     onClick={onLogout}
@@ -40,11 +40,11 @@ const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t("Выйти")}
                 </Button>
-            </div>
+            </header>
         );
     }
     return (
-        <div className={classNames(cls.navbar, {}, [className ?? ""])}>
+        <header className={classNames(cls.navbar, {}, [className ?? ""])}>
             <div className={cls.links}></div>
             <Button
                 onClick={onOpen}
@@ -57,7 +57,7 @@ const Navbar = memo(({ className }: NavbarProps) => {
             {isAuthModal && (
                 <LoginModal isOpen={isAuthModal} onClose={onClose}></LoginModal>
             )}
-        </div>
+        </header>
     );
 });
 
