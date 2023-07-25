@@ -7,6 +7,9 @@ import {
 import {articlesPageActions} from "../../slices/ArticlesPageSlice/articlesPageSlice";
 import {fetchArticlesList} from "../fetchArticlesList/fetchArticlesList";
 
+/**
+ * Запрашиваем новую порцию статей с сервера при ленивой прокрутке
+ */
 export const fetchNextArticlesPage  = createAsyncThunk<
   void,
   void,

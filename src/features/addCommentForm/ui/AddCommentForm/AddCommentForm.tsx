@@ -12,7 +12,6 @@ import {
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {addCommentFormActions, addCommentFormReducer} from "features/addCommentForm/model/slice/addCommentFormSlice";
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {Text} from "shared/ui/Text/Text";
 
 
 export interface AddCommentFormProps {
@@ -26,7 +25,6 @@ const AddCommentForm = ({className, onSendComment}: AddCommentFormProps) => {
 
     const {t} = useTranslation('article');
     const text = useSelector(getAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
 
     const dispatch = useAppDispatch();
 

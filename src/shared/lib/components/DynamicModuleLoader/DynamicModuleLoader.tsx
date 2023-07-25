@@ -25,11 +25,16 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
-    // @ts-ignore
+        const mountedReducers = store.reducerManager.getMountedReducers();
+        // @ts-ignore
         Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
-            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-            dispatch({ type: `@INIT ${name} reducer` });
+            const mounted = mountedReducers[name]
+
+            // добавляем новый редюсаер если его нет
+            if (!mounted) {
+                store.reducerManager.add(name, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            }
         });
 
         return () => {

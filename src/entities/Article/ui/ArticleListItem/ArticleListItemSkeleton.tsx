@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss';
-import {memo, useCallback} from 'react';
+import {memo} from 'react';
 import {ArticleView} from "../../model/types/articles";
 import Card from "shared/ui/Card/Card";
 

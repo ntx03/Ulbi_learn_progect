@@ -1706,6 +1706,18 @@
       "userId": "1",
       "text": "Hello user! How do you do?",
       "id": "KQprftA"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "Ну что бродяги как дела? ",
+      "id": "3DsvBl_"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "text": "Урра я первый!!!",
+      "id": "-dZiN6F"
     }
   ],
   "users": [

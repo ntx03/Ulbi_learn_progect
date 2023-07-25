@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback, } from "react";
 import DynamicModuleLoader, {
     type ReducerList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
