@@ -5,7 +5,6 @@ import {type Article, ArticleView} from '../../model/types/articles';
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
 import ArticleListItemSkeleton from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
 
-
 export interface ArticleListProps {
     className?: string;
     articles: Article[];
@@ -13,11 +12,8 @@ export interface ArticleListProps {
     view?: ArticleView;
 }
 
-
-
 const ArticleList = ({className, articles, view = ArticleView.SMALL, isLoading
 }: ArticleListProps) => {
-
 
     const renderArticle = (article: Article) => {
         return (
