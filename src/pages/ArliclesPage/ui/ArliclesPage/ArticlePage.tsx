@@ -18,7 +18,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView
 } from "../../model/selectors/articlesPageSelectors/articlesPageSelectors";
-import Page from "shared/ui/Page/Page";
+import Page from "widgets/Page/Page";
 import {fetchNextArticlesPage} from "pages/ArliclesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useTranslation} from "react-i18next";
@@ -67,7 +67,7 @@ const ArticlePage = ({className}: ArticlePageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArliclesPage, {}, [className ?? ''])}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView}/>
                 <ArticleList view={view} articles={articles} isLoading={isLoading}/>

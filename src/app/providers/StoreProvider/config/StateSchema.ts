@@ -14,6 +14,7 @@ import {type ArticleDetailsSchema} from "entities/Article";
 import {type ArticlesDetailsCommentsSchema} from "pages/ArticlesDetailsPage";
 import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
 import {type ArticlesPageSchema} from "pages/ArliclesPage";
+import {type ScrollSaveSchema} from "widgets/ScrollSave";
 
 /**
  * Главная стейт схема Redux
@@ -21,6 +22,7 @@ import {type ArticlesPageSchema} from "pages/ArliclesPage";
 export interface StateSchema {
   counter: counterSchema;
   user: UserSchema;
+  scrollSave: ScrollSaveSchema;
   // асинхронные редюсеры
   loginForm?: loginSchema;
   profile?: ProfileSchema;

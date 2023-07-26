@@ -22,8 +22,8 @@ export interface ArticleListItemProps {
 
 const ArticleListItem = ({className, article, view}: ArticleListItemProps) => {
 
+    // для пробы isHover
     const [isHover, bindHover] = useHover();
-    console.log(isHover);
     const {t} = useTranslation('article');
     const navigate = useNavigate();
 

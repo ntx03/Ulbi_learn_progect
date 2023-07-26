@@ -58,7 +58,6 @@ const articlesPageSlice = createSlice({
                     // commentsAdapter сам добавляет id и enteties для нормализации данных
                     articlesAdapter.addMany(state, action.payload)
                     state.hasMore = action.payload.length > 0
-                    console.log(action.payload.length > 0);
                 }
             )
             .addCase(fetchArticlesList.rejected, (state, action) => {

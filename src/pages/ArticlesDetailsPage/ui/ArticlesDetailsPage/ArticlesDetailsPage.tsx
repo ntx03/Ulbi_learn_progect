@@ -18,7 +18,7 @@ import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {RoutePath} from "shared/config/routeConfig/routeConfig";
 import {getArticleDetailsError} from "entities/Article/model/selectors/articleDetails";
-import Page from "shared/ui/Page/Page";
+import Page from "widgets/Page/Page";
 
 export interface ArticlesDetailsPageProps {
     className?: string
