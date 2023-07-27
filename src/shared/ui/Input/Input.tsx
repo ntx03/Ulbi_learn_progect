@@ -30,7 +30,7 @@ export const Input = memo(
         className,
         value,
         onChange,
-        placeholder,
+        placeholder = '',
         type = "text",
         theme = InputTheme.NORMAL,
         autofocus,

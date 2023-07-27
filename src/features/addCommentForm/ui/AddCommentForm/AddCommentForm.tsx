@@ -6,7 +6,6 @@ import {useTranslation} from "react-i18next";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import { useSelector} from "react-redux";
 import {
-    getAddCommentFormError,
     getAddCommentFormText
 } from "../../model/selectors/addCommentFormDelectors";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
