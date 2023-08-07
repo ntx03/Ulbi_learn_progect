@@ -11,7 +11,9 @@ import {
 import {type ProfileSchema} from "entities/Profile";
 import {type AxiosInstance} from "axios";
 import {type ArticleDetailsSchema} from "entities/Article";
-import {type ArticlesDetailsCommentsSchema} from "pages/ArticlesDetailsPage";
+import {
+    type ArticleDetailsPageSchema,
+} from "pages/ArticlesDetailsPage";
 import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
 import {type ArticlesPageSchema} from "pages/ArliclesPage";
 import {type ScrollSaveSchema} from "widgets/ScrollSave";
@@ -27,7 +29,7 @@ export interface StateSchema {
   loginForm?: loginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticlesDetailsCommentsSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
   addCommentForm?: AddCommentFormSchema;
   articlesPage?: ArticlesPageSchema;
 }

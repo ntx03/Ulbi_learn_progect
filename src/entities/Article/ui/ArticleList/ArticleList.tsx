@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss';
-import {memo} from 'react';
+import {type HTMLAttributeAnchorTarget, memo} from 'react';
 import {type Article, ArticleView} from '../../model/types/articles';
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
 import ArticleListItemSkeleton from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
@@ -10,14 +10,15 @@ export interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
-const ArticleList = ({className, articles, view = ArticleView.SMALL, isLoading
+const ArticleList = ({className, articles, view = ArticleView.SMALL, isLoading, target='_blank'
 }: ArticleListProps) => {
 
     const renderArticle = (article: Article) => {
         return (
-            <ArticleListItem article={article} view={view} key={article.id}/>
+            <ArticleListItem article={article} view={view} key={article.id} target={target}/>
         )
     }
 

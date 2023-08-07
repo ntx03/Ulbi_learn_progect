@@ -8,14 +8,14 @@ import {type ArticlesDetailsCommentsSchema} from "../types/ArticlesDetailsCommen
 
 import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
 
-
+// для нормалзации данных
 const commentsAdapter = createEntityAdapter<Comment>({
     // Assume IDs are stored in a field other than `book.id`
     selectId: (comment) => comment.id,
 })
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComments || commentsAdapter.getInitialState()
+    (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
 )
 
 const articleDetailsCommentsSlice = createSlice({

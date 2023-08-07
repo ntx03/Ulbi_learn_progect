@@ -17,3 +17,18 @@
     display: flex;
     background: var(--bg-color);
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 20px;
+    border: 2.5px solid var(--card-bg);
+}
