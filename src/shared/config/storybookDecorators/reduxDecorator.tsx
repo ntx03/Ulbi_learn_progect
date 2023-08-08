@@ -3,7 +3,7 @@ import React from "react";
 import { type StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 
-import {profileReducer, ProfileSchema} from "entities/Profile";
+import {profileReducer} from "entities/Profile";
 import { type ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { type DeepPartial } from "@reduxjs/toolkit";
 import {articleDetailsReducer} from "entities/Article/model/slice/articleDetailsSlice";

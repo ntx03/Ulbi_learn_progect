@@ -7,7 +7,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {Text, TextSize, TextTheme} from "shared/ui/Text/Text";
 import {CommentList} from "entities/Comment";
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import {articleDetailsCommentsReducer, getArticleComments} from "../../model/slice/ArticleDetailsCommentsSlice";
+import {getArticleComments} from "../../model/slice/ArticleDetailsCommentsSlice";
 import {useSelector} from "react-redux";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -15,9 +15,6 @@ import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services
 import {AddCommentForm} from "features/addCommentForm";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
-import {RoutePath} from "shared/config/routeConfig/routeConfig";
-import {getArticleDetailsError} from "entities/Article/model/selectors/articleDetails";
 import Page from "widgets/Page/Page";
 import {
     articlePageRecommendationReducer,
@@ -50,18 +47,12 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
 
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const isLoadingRecommendation = useSelector(getArticleRecommendationsIsLoading);
-    const error = useSelector(getArticleDetailsError);
-    const errorRecommendation = useSelector(getArticleRecommendationsError);
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const onSendComment = (text: string)=> {
         dispatch(addCommentForArticle(text))
     }
-
-    const onBackToList = useCallback(()=> {
-        navigate(RoutePath.articles)
-    }, [navigate]);
 
     useInitialEffect(()=> {
         dispatch(fetchCommentsByArticleId(id));

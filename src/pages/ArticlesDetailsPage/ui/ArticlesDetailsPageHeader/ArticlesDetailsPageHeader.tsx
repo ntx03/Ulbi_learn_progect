@@ -8,10 +8,8 @@ import {useSelector} from "react-redux";
 import {getArticleCommentsIsLoading} from "pages/ArticlesDetailsPage/model/selectors/comments";
 import {useTranslation} from "react-i18next";
 
-import {getUserAuthData} from "entities/User";
 import {getArticleDetailsData, getArticleDetailsError} from "entities/Article";
 import {getCanEditArticle} from "pages/ArticlesDetailsPage/model/selectors/article";
-import {getArticle} from "pages/ArliclesPage/model/slices/ArticlesPageSlice/articlesPageSlice";
 
 export interface ArticlesDetailsPageHeaderProps {
     className?: string

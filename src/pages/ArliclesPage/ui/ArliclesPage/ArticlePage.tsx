@@ -6,7 +6,6 @@ import {type Article} from "entities/Article";
 
 import {DynamicModuleLoader, type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticle
 } from "../../model/slices/ArticlesPageSlice/articlesPageSlice";

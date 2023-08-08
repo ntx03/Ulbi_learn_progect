@@ -14,6 +14,8 @@ export default (env: buildEnv) => {
         build: path.resolve(__dirname, "build"),
         html: path.resolve(__dirname, "public", "index.html"),
         src: path.resolve(__dirname, "src"),
+        locales: path.resolve(__dirname, "public", "locales" ),
+        buildLocales: path.resolve(__dirname, "build", "locales")
     };
     // переключает режим development или production
     const mode: BuildMode = env.mode || "development";

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --env port=3998",
     "dev:start": "concurrently \" npm run server\" \" npm run dev\"",
-    "build:prod": "webpack --env mode=production",
+    "build:prod": "webpack --env mode=production apiUrl=https://production-progect-server.vercel.app/",
     "build:dev": "webpack --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -54,6 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "babel-loader": "^8.2.3",
     "concurrently": "^8.2.0",
+    "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.3",
     "esbuild": "^0.17.19",
     "esbuild-jest": "^0.5.0",
