@@ -4,7 +4,7 @@ import i18n from "i18next";
 import { type ThunkConfig } from "app/providers/StoreProvider";
 import {getArticleDetailsData} from "entities/Article/model/selectors/articleDetails";
 import {type Comment} from "entities/Comment";
-import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
+import {fetchCommentsByArticleId} from "../../services/fetchCommentsByArticleId";
 
 
 

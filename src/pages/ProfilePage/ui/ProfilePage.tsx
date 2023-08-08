@@ -19,7 +19,7 @@ import {
     ProfileCard,
 } from "entities/Profile";
 import { useSelector } from "react-redux";
-import ProfilePageHeader from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
+import ProfilePageHeader from "./ProfilePageHeader/ProfilePageHeader";
 import { type Currency } from "entities/Currency";
 import { type Country } from "entities/Country/model/types/country";
 import { Text, TextTheme } from "shared/ui/Text/Text";

@@ -18,11 +18,11 @@ import {
     getArticlesPageView
 } from "../../model/selectors/articlesPageSelectors/articlesPageSelectors";
 import Page from "widgets/Page/Page";
-import {fetchNextArticlesPage} from "pages/ArliclesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useTranslation} from "react-i18next";
-import {initArticlesPage} from "pages/ArliclesPage/model/services/initArticlesPage/initArticlesPage";
-import ArticlesPageFilters from "pages/ArliclesPage/ui/ArticlesPageFilters/ArticlesPageFilters";
+import {initArticlesPage} from "../../model/services/initArticlesPage/initArticlesPage";
+import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 import {useSearchParams} from 'react-router-dom'
 interface ArticlePageProps {
     className?: string

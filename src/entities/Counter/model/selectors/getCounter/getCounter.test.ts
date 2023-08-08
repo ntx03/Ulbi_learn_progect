@@ -1,4 +1,4 @@
-import { getCounter } from "entities/Counter/model/selectors/getCounter/getCounter";
+import { getCounter } from "../getCounter/getCounter";
 import { type StateSchema } from "app/providers/StoreProvider";
 import { type DeepPartial } from "@reduxjs/toolkit";
 

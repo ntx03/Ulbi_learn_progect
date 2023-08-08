@@ -3,7 +3,7 @@ import cls from './ArticleList.module.scss';
 import {type HTMLAttributeAnchorTarget, memo} from 'react';
 import {type Article, ArticleView} from '../../model/types/articles';
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
-import ArticleListItemSkeleton from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
+import ArticleListItemSkeleton from "../ArticleListItem/ArticleListItemSkeleton";
 
 export interface ArticleListProps {
     className?: string;

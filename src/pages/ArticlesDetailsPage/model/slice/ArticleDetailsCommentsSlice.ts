@@ -6,7 +6,7 @@ import {type Comment} from "entities/Comment";
 import {type StateSchema} from "app/providers/StoreProvider";
 import {type ArticlesDetailsCommentsSchema} from "../types/ArticlesDetailsCommentsSchema";
 
-import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
+import {fetchCommentsByArticleId} from "../services/fetchCommentsByArticleId";
 
 // для нормалзации данных
 const commentsAdapter = createEntityAdapter<Comment>({

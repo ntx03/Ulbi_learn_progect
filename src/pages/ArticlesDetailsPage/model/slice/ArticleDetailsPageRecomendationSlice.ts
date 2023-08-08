@@ -7,7 +7,7 @@ import {
     type ArticlesDetailsRecommendationSchema
 } from "../types/ArticleDetailsRecommendationSchema";
 import {type Article} from "entities/Article";
-import {fetchArticleRecommendations} from "pages/ArticlesDetailsPage/model/services/fetchArticleRecommendations";
+import {fetchArticleRecommendations} from "../services/fetchArticleRecommendations";
 
 // для нормализации данных этот адаптер
 const recommendationAdapter = createEntityAdapter<Article>({

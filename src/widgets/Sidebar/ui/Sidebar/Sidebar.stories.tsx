@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from "@storybook/react";
 
 import {ThemeDecorator} from "shared/config/storybookDecorators/themeDecorator";
 import {Theme} from "app/providers/ThemeProvider";
-import {Sidebar} from "widgets/Sidebar";
+import {Sidebar} from "./Sidebar";
 import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction

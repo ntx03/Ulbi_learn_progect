@@ -9,7 +9,7 @@ import {
     getAddCommentFormText
 } from "../../model/selectors/addCommentFormDelectors";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {addCommentFormActions, addCommentFormReducer} from "features/addCommentForm/model/slice/addCommentFormSlice";
+import {addCommentFormActions, addCommentFormReducer} from "../../model/slice/addCommentFormSlice";
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 

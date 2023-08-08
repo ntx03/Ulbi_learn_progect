@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "app/styles/index.scss";
-import { Input, InputTheme } from "shared/ui/Input/Input";
+import { Input, InputTheme } from "./Input";
 import { ThemeDecorator } from "shared/config/storybookDecorators/themeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 

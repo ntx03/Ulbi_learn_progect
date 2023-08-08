@@ -1,4 +1,4 @@
-import { getLoginIsLoading } from "features/AuthByUsername/model/selectors/gitLoginIsLoading/getLoginIsLoading";
+import { getLoginIsLoading } from "../../selectors/gitLoginIsLoading/getLoginIsLoading";
 import { type DeepPartial } from "@reduxjs/toolkit";
 import { type StateSchema } from "app/providers/StoreProvider";
 

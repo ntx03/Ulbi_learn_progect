@@ -11,7 +11,7 @@ import {getArticleComments} from "../../model/slice/ArticleDetailsCommentsSlice"
 import {useSelector} from "react-redux";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import {fetchCommentsByArticleId} from "pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId";
+import {fetchCommentsByArticleId} from "../../model/services/fetchCommentsByArticleId";
 import {AddCommentForm} from "features/addCommentForm";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -28,7 +28,7 @@ import ArticleList from "entities/Article/ui/ArticleList/ArticleList";
 import {fetchArticleRecommendations} from "../../model/services/fetchArticleRecommendations";
 import {articleDetailsPageReducer} from "../../model/slice/index";
 import ArticlesDetailsPageHeader
-    from "pages/ArticlesDetailsPage/ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
+    from "../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
 
 export interface ArticlesDetailsPageProps {
     className?: string

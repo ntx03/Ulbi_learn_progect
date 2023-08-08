@@ -1,4 +1,4 @@
-import {type ArticlesDetailsCommentsSchema, type ArticlesDetailsRecommendationSchema} from "pages/ArticlesDetailsPage";
+import {type ArticlesDetailsCommentsSchema, type ArticlesDetailsRecommendationSchema} from "../../index";
 
 export interface ArticleDetailsPageSchema {
     comments: ArticlesDetailsCommentsSchema;

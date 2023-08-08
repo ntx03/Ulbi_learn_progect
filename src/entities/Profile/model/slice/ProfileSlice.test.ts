@@ -1,7 +1,7 @@
 import { type DeepPartial } from "@reduxjs/toolkit";
 import { profileActions, profileReducer } from "../slice/ProfileSlice";
 import { type ProfileSchema } from "../types/profile";
-import { updateProfileData } from "entities/Profile";
+import { updateProfileData } from "../servises/updateProfileData/updateProfileData";
 
 describe("profileSlice.test", () => {
     test("test setReadonly", () => {
