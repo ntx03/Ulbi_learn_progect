@@ -30,6 +30,8 @@ import {
 import ArticleList from "entities/Article/ui/ArticleList/ArticleList";
 import {fetchArticleRecommendations} from "../../model/services/fetchArticleRecommendations";
 import {articleDetailsPageReducer} from "../../model/slice/index";
+import ArticlesDetailsPageHeader
+    from "pages/ArticlesDetailsPage/ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
 
 export interface ArticlesDetailsPageProps {
     className?: string
@@ -77,11 +79,8 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
             <Page className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
-                {!isLoading && !error && <Button theme={ButtonTheme.OUTLINE_INVERT} onClick={onBackToList} className={cls.buttonBack}>
-                    {t('Назад к списку')}
-                </Button> }
+                <ArticlesDetailsPageHeader/>
                 <ArticleDetails id={id}/>
-
                 {!isLoading && (
                     <>  <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} theme={TextTheme.PRIMARY}/>
                         {/* eslint-disable-next-line i18next/no-literal-string */}
