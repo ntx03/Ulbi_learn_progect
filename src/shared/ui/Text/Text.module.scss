@@ -14,9 +14,9 @@
     margin: 20px 0 0;
 }
 
-.size_m {
+.size_s {
     .title {
-        font-size: var(--font-size-l);
+        font-size: var(--font-size-s);
     }
 
     .text {
@@ -24,9 +24,9 @@
     }
 }
 
-.size_l {
+.size_m {
     .title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-m);
     }
 
     .text {
@@ -34,13 +34,23 @@
     }
 }
 
-.size_xl {
+.size_l {
     .title {
-        font-size: var(--font-size-xxl);
+        font-size: var(--font-size-l);
     }
 
     .text {
         font-size: var(--font-size-xl);
+    }
+}
+
+.size_xl {
+    .title {
+        font-size: var(--font-size-xl);
+    }
+
+    .text {
+        font-size: var(--font-size-xxl);
     }
 }
 

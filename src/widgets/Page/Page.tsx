@@ -49,10 +49,10 @@ const Page = ({className, children, onScrollEnd}: PageProps) => {
 
     // блок div здесь нужен только для того, чтобы поместить triggerRef в конце страницы для бесконечного скролла
     return (
-        <section ref={wrapperRef} className={classNames(cls.Page, {}, [className ?? ''])} onScroll={onScroll}>
+        <main ref={wrapperRef} className={classNames(cls.Page, {}, [className ?? ''])} onScroll={onScroll}>
             {children}
             {onScrollEnd ?  <div className={cls.trigger} ref={triggerRef}></div> : null }
-        </section>
+        </main>
     )
 };
 

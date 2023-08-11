@@ -7,6 +7,7 @@ import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import SidebarItem from "../SidebarItem/SidebarItem";
 import {useSelector} from "react-redux";
 import {getSidebarItems} from "../../model/selectors/getSidebarItems";
+import VStack from "shared/ui/Stack/VStack/VStack";
 
 interface SidebarProps {
   className?: string;
@@ -27,7 +28,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     );
     // @ts-ignore
     return (
-        <menu
+        <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className ?? "",
@@ -43,12 +44,12 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {collapsed ? ">" : "<"}
             </Button>
-            <div className={cls.items}>{itemsList}</div>
+            <VStack className={cls.items} gap={'8'}>{itemsList}</VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} />
             </div>
-        </menu>
+        </aside>
     );
 });
 

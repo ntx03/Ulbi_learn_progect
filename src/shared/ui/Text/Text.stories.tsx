@@ -21,6 +21,15 @@ export const LightTheme: Story = {
         theme: TextTheme.PRIMARY,
     },
 };
+
+export const LightThemeTextSizeS: Story = {
+    args: {
+        title: "Error",
+        text: "Произошла ошибка. Попробуйте еще раз!",
+        theme: TextTheme.PRIMARY,
+        size: TextSize.S,
+    },
+};
 export const LightThemeTextSizeM: Story = {
     args: {
         title: "Error",
