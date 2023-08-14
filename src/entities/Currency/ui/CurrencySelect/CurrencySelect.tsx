@@ -25,19 +25,19 @@ const CurrencySelect = memo(
     ({ className, value, onChange, readonly }: CurrencySelectProps) => {
         const { t } = useTranslation("profile");
         return (
-          <HStack className={classNames('', {}, [className])}>
-            {/*<p style={{'margin': '0'}}>{`Укажите валюту>`}</p>*/}
-            <ListBox
-                className={classNames("", {}, [])}
-                label={t("Укажите валюту") ?? ""}
-                defaultValue={t("Укажите валюту") ?? ""}
-                readonly={readonly}
-                items={options}
-                value={value}
-                onChange={onChange}
-                direction={'top'}
-            />
-          </HStack>
+            <HStack className={classNames('', {}, [className])}>
+                {/* <p style={{'margin': '0'}}>{`Укажите валюту>`}</p> */}
+                <ListBox
+                    className={classNames("", {}, [])}
+                    label={t("Укажите валюту") ?? ""}
+                    defaultValue={t("Укажите валюту") ?? ""}
+                    readonly={readonly}
+                    items={options}
+                    value={value}
+                    onChange={onChange}
+                    direction={'top'}
+                />
+            </HStack>
         );
     }
 );

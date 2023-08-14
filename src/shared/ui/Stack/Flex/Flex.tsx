@@ -1,6 +1,6 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Flex.module.scss';
-import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
+import {type DetailedHTMLProps, type HTMLAttributes, type ReactNode} from "react";
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
@@ -60,9 +60,9 @@ const Flex = (props: FlexProps) => {
     }
 
     return (
-      <div className={classNames(cls.Flex, mods, classes)}>
-          {children}
-      </div>
+        <div className={classNames(cls.Flex, mods, classes)}>
+            {children}
+        </div>
     )
 };
 

@@ -15,12 +15,12 @@ type Story = StoryObj<FlexProps>;
 export const FlexDirectionRow: Story = {
     args: {
         children: (
-          <>
-              <h1>Hello medved!!!!</h1>
-              <h2>Hello medved!!!!</h2>
-              <h3>Hello medved!!!!</h3>
-              <h4>Hello medved!!!!</h4>
-          </>
+            <>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+            </>
         ),
         direction: "row"
     },
@@ -30,12 +30,12 @@ export const FlexDirectionRow: Story = {
 export const FlexDirectionRowGap32: Story = {
     args: {
         children: (
-          <>
-              <p>Hello medved!!!!</p>
-              <p>Hello medved!!!!</p>
-              <p>Hello medved!!!!</p>
-              <p>Hello medved!!!!</p>
-          </>
+            <>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+            </>
         ),
         direction: "row",
         gap: "32"
@@ -46,12 +46,12 @@ export const FlexDirectionRowGap32: Story = {
 export const FlexDirectionColumn: Story = {
     args: {
         children: (
-          <div>
-              <h1>Hello medved!!!!</h1>
-              <h2>Hello medved!!!!</h2>
-              <h3>Hello medved!!!!</h3>
-              <h4>Hello medved!!!!</h4>
-          </div>
+            <div>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+                <p>{`Hello medved!!!!`}</p>
+            </div>
         ),
         direction: "column"
     },

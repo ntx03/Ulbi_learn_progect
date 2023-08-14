@@ -1,5 +1,5 @@
 .ListBox {
- position: relative;
+    position: relative;
     margin: 0;
 }
 
@@ -20,23 +20,26 @@
     gap: 8px;
     padding-left: 0;
     width: 100%;
-    margin: 5px 0 5px 0;
+    margin: 5px 0;
 }
+
 .top {
-    bottom: 100%
+    bottom: 100%;
 }
+
 .bottom {
     position: absolute;
 }
+
 .item {
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     min-width: 100%;
     text-align: center;
-
 }
+
 .active {
     background-color: var(--invert-secondary-color);
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     margin: 0;
     text-align: center;
 }
@@ -44,6 +47,7 @@
 .disabled {
     opacity: 0.7;
 }
+
 .readonly {
     opacity: 0.6;
 }
@@ -54,10 +58,10 @@
     color: var(--primary-color);
     padding: 0;
 }
+
 .button {
     width: 100px;
     height: 30px;
     margin: 0;
     padding: 0;
 }
-

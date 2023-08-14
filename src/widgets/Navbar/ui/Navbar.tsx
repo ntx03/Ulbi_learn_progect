@@ -9,12 +9,14 @@ import {useTranslation} from "react-i18next";
 import {Text} from "shared/ui/Text/Text";
 import AppLink, {AppLinkTheme} from "shared/ui/AppLink/ui/AppLink/AppLink";
 import {RoutePath} from "shared/config/routeConfig/routeConfig";
+import Dropdown from "shared/ui/Dropdown/Dropdown";
+import Avatar from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 
-const Navbar = memo(({ className }: NavbarProps) => {
+const Navbar = memo(({className}: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     // const { t } = useTranslation("translation");
     const dispatch = useDispatch();
@@ -31,21 +33,27 @@ const Navbar = memo(({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
-    const { t } = useTranslation("translation");
+    const {t} = useTranslation("translation");
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className ?? ""])}>
                 <div className={cls.links}>
                     <Text className={cls.appName} title={t('KachurTV App')}></Text>
-                    <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} >{t('Создать статью')}</AppLink>
-                </div> 
-                <Button
-                    onClick={onLogout}
-                    theme={ButtonTheme.OUTLINE}
-                    className={cls.button}
-                >
-                    {t("Выйти")}
-                </Button>
+                    <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY}>{t('Создать статью')}</AppLink>
+                </div>
+                <Dropdown items={
+                    [
+                        {
+                            content: t("Профиль пользователя"),
+                            href: `${RoutePath.profile}/${authData.id}`
+                        },
+                        {
+                            content: t("Выйти"),
+                            onClick: onLogout,
+                        },
+
+                    ]} trigger={<Avatar size={40} src={authData.avatar}/>} className={cls.dropdown}/>
+
             </header>
         );
     }

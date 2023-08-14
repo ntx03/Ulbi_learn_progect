@@ -1,0 +1,1 @@
+export type DropdownDirection = 'top' | 'bottom' | 'bottom left' | ' bottom right';

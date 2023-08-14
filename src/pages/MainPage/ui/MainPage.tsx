@@ -17,8 +17,8 @@ export const MainPage = memo(({ className }: MainPageProps) => {
         <Page className={classNames(cls.MainPage, {}, [className ?? ""])}>
             {/* <BugButton/> */}
             <VStack max>
-                 <p className="title">{t("Главная страница")}</p>
-                 <Counter />
+                <p className="title">{t("Главная страница")}</p>
+                <Counter />
             </VStack>
         </Page>
     );
