@@ -17,6 +17,7 @@ import {
 import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
 import {type ArticlesPageSchema} from "pages/ArliclesPage";
 import {type ScrollSaveSchema} from "widgets/ScrollSave";
+import {rtkQueryApi} from "shared/api/RTKQueryApi";
 
 /**
  * Главная стейт схема Redux
@@ -25,6 +26,7 @@ export interface StateSchema {
   counter: counterSchema;
   user: UserSchema;
   scrollSave: ScrollSaveSchema;
+  [rtkQueryApi.reducerPath]: ReturnType<typeof rtkQueryApi.reducer>
   // асинхронные редюсеры
   loginForm?: loginSchema;
   profile?: ProfileSchema;
