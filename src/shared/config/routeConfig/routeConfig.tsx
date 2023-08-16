@@ -1,13 +1,19 @@
-import { MainPage } from "pages/MainPage/index";
-import { AboutPage } from "pages/AboutPage/index";
-import { NoFoundPage } from "pages/NoFoundPage/index";
-import { type RouteProps } from "react-router-dom";
-import { ProfilePage } from "pages/ProfilePage";
+import {MainPage} from "pages/MainPage/index";
+import {AboutPage} from "pages/AboutPage/index";
+import {NoFoundPage} from "pages/NoFoundPage/index";
+import {type RouteProps} from "react-router-dom";
+import {ProfilePage} from "pages/ProfilePage";
 import {ArticlePage} from "pages/ArliclesPage";
 import {ArticlesDetailsPage} from "pages/ArticlesDetailsPage";
 import {ArticleEditPage} from "pages/ArticleEditPage";
+import {AdminPanelPage} from "pages/AdminPanelPage";
+import {UserRole} from "entities/User/model/types/user";
+import {ForbiddenPage} from "pages/ForbittenPage";
 
-export type AppRoutesProps = RouteProps & { authOnly?: boolean };
+export type AppRoutesProps = RouteProps & {
+    authOnly?: boolean;
+    role?: UserRole[]
+};
 
 export enum AppRoutes {
   MAIN = "main",
@@ -17,8 +23,10 @@ export enum AppRoutes {
   ARTICLE_DETAILS = 'article_details',
   ARTICLE_CREATE = 'article_create',
   ARTICLE_EDIT = 'article_edit',
+  ADMIN_PANEL = 'admin_panel',
   // last
   NOT_FOUND = "not_found",
+  FORBIDDEN  = 'forbidden'
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -29,6 +37,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
     [AppRoutes.ARTICLE_CREATE]: '/articles/new',
     [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
+    [AppRoutes.ADMIN_PANEL]: '/admin',
+    [AppRoutes.FORBIDDEN]: '/forbidden',
     [AppRoutes.NOT_FOUND]: "*",
 };
 
@@ -65,6 +75,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: `${RoutePath.article_edit}`,
         element: <ArticleEditPage/>,
         authOnly: true,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: `${RoutePath.admin_panel}`,
+        element: <AdminPanelPage/>,
+        authOnly: true,
+        role: [UserRole.ADMIN]
+    },
+    [AppRoutes.FORBIDDEN]: {
+        path: `${RoutePath.forbidden}`,
+        element: <ForbiddenPage/>,
     },
     // last
     [AppRoutes.NOT_FOUND]: {

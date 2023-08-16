@@ -1737,15 +1737,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "role": ["ADMIN"],
       "avatar": "https://sun9-61.userapi.com/impg/klVbMKagVgPPz4WPRo5RNynLXixClb5p8j6k2A/F-nW60SkPlE.jpg?size=659x791&quality=95&sign=ce83e4dafe7298d796a0d1bfdb76eaa3&type=album"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "role": ["USER"],
       "avatar": "https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-1024.png"
+    },
+    {
+      "id": "3",
+      "username": "tester",
+      "password": "123",
+      "role": ["TESTER"],
+      "avatar": "https://i.ytimg.com/vi/e_bNiBLYPbM/mqdefault.jpg"
     }
   ],
   "profile": [

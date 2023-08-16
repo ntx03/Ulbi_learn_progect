@@ -3,7 +3,7 @@ import cls from "./Navbar.module.scss";
 import {memo, useCallback, useState} from "react";
 import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {LoginModal} from "features/AuthByUsername";
-import {getUserAuthData, userActions} from "entities/User";
+import {getUserAuthData, isUserAdmin, userActions} from "entities/User";
 import {useDispatch, useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {Text} from "shared/ui/Text/Text";
@@ -18,9 +18,9 @@ interface NavbarProps {
 
 const Navbar = memo(({className}: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
-    // const { t } = useTranslation("translation");
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
 
     const onClose = useCallback(() => {
         setIsAuthModal(false);
@@ -43,6 +43,10 @@ const Navbar = memo(({className}: NavbarProps) => {
                 </div>
                 <Dropdown items={
                     [
+                        ...( isAdmin ? [{
+                            content: t("Админка"),
+                            href: `${RoutePath.admin_panel}`
+                        }] : []),
                         {
                             content: t("Профиль пользователя"),
                             href: `${RoutePath.profile}/${authData.id}`

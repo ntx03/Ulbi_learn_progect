@@ -14,7 +14,7 @@ function AppRouter(): JSX.Element {
         return (
             <Route
                 key={route.path}
-                element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+                element={route.authOnly ? <RequireAuth role={route.role}>{element}</RequireAuth> : element}
                 path={route.path}
             />
         )
