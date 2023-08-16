@@ -1,16 +1,16 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleInfiniteList.module.scss';
 import {memo} from 'react';
-import {Article} from "entities/Article";
+import {type Article} from "entities/Article";
 import {useSelector} from "react-redux";
-import {getArticle} from "pages/ArliclesPage/model/slices/ArticlesPageSlice/articlesPageSlice";
+import {getArticle} from '../../model/slices/ArticlesPageSlice/articlesPageSlice';
 import {
     getArticlesPageIsLoading,
     getArticlesPageView
-} from "pages/ArliclesPage/model/selectors/articlesPageSelectors/articlesPageSelectors";
+} from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import {useSearchParams} from "react-router-dom";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import {initArticlesPage} from "pages/ArliclesPage/model/services/initArticlesPage/initArticlesPage";
+import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import ArticleList from "entities/Article/ui/ArticleList/ArticleList";
 
@@ -34,9 +34,9 @@ const ArticleInfiniteList = ({className}: ArticleInfiniteListProps) => {
         dispatch(initArticlesPage(searchParams));
     })
     return (
-      <div className={classNames('', {}, [className ?? ''])}>
-          <ArticleList view={view} articles={articles} isLoading={isLoading} className={cls.list}/>
-      </div>
+        <div className={classNames('', {}, [className ?? ''])}>
+            <ArticleList view={view} articles={articles} isLoading={isLoading} className={cls.list}/>
+        </div>
     )
 };
 

@@ -12,6 +12,7 @@ function App() {
 
     const { theme } = useTheme();
     const dispatch = useDispatch();
+    // инициализайия пользователя
     const inited = useSelector(getUserInited);
 
     useEffect(() => {

@@ -8,7 +8,6 @@ import {
     type Reducer,
     type ReducersMapObject,
 } from "@reduxjs/toolkit";
-import {type ProfileSchema} from "entities/Profile";
 import {type AxiosInstance} from "axios";
 import {type ArticleDetailsSchema} from "entities/Article";
 import {
@@ -17,7 +16,8 @@ import {
 import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
 import {type ArticlesPageSchema} from "pages/ArliclesPage";
 import {type ScrollSaveSchema} from "widgets/ScrollSave";
-import {rtkQueryApi} from "shared/api/RTKQueryApi";
+import {type rtkQueryApi} from "shared/api/RTKQueryApi";
+import {ProfileSchema} from "features/editableProfileCard";
 
 /**
  * Главная стейт схема Redux

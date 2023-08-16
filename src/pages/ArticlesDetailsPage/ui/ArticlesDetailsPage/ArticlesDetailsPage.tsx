@@ -12,7 +12,7 @@ import {articleDetailsPageReducer} from "../../model/slice/index";
 import ArticlesDetailsPageHeader
     from "../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
 import {ArticleRecommendationsList} from "features/articleRecommendationsList";
-import ArticleDetailsComments from "pages/ArticlesDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments";
+import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 
 export interface ArticlesDetailsPageProps {
     className?: string

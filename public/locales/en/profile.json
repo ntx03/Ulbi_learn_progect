@@ -20,5 +20,6 @@
   "Ошибка в заполнении страны": "Error filling country input",
   "Не корректный возраст": "Incorrect age input",
   "Не корректные имя или фвмилия": "Incorrect name or lastname",
-  "Нет данных профиля": "No data profile"
+  "Нет данных профиля": "No data profile",
+  "Ошибка при загрузке профиля!": "Error loading profile!"
 }

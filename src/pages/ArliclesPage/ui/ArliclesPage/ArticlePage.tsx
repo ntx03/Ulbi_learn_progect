@@ -16,7 +16,7 @@ import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useTranslation} from "react-i18next";
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
-import ArticleInfiniteList from "pages/ArliclesPage/ui/ArticleInfiniteList/ArticleInfiniteList";
+import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';
 interface ArticlePageProps {
     className?: string
 }
@@ -29,7 +29,9 @@ const ArticlePage = ({className}: ArticlePageProps) => {
 
     const dispatch = useAppDispatch();
     const {t} = useTranslation('article');
+
     const error = useSelector(getArticlesPageError);
+
     const onLoadNextPart = useCallback(()=> {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);

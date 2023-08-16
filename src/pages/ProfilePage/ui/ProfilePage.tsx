@@ -1,33 +1,31 @@
-import { memo, } from "react";
-import DynamicModuleLoader, {
-    type ReducerList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-
-import {
-    profileReducer,
-} from "entities/Profile/model/slice/ProfileSlice";
-
-import ProfilePageHeader from "./ProfilePageHeader/ProfilePageHeader";
+import {memo,} from "react";
+import EditableProfilePageHeader from "features/editableProfileCard/ui/EditableProfilePageHeader/EditableProfilePageHeader";
 import Page from "widgets/Page/Page";
 import {EditableProfileCard} from "features/editableProfileCard";
-
-const reducers: ReducerList = {
-    profile: profileReducer,
-};
+import {useParams} from "react-router-dom";
+import {Text, TextTheme} from "shared/ui/Text/Text";
+import {useTranslation} from "react-i18next";
 
 interface ProfilePageProps {
   className?: string;
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
+    const {t} = useTranslation('profile');
+    const { id } = useParams<{id: string}>()
+
+    if (!id) {
+    return (
+        <Page>
+            <Text title={t('Ошибка при загрузке профиля!')} theme={TextTheme.ERROR}/>
+        </Page>
+     )
+    }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page>
-                <ProfilePageHeader />
-                <EditableProfileCard/>
+               <EditableProfileCard id={id}/>
             </Page>
-        </DynamicModuleLoader>
     );
 });
 

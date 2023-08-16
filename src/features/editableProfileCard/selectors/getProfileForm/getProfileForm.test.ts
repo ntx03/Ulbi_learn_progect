@@ -2,7 +2,7 @@ import { type StateSchema } from "app/providers/StoreProvider";
 import { getProfileForm } from "./getProfileForm";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { type DeepPartial } from "../../../../../../config/build/types/config";
+import { type DeepPartial } from "../../../../../config/build/types/config";
 
 describe("getProfileForm.test", () => {
     test("should return form", () => {
