@@ -22,6 +22,7 @@ export interface InputProps extends HTMLInputProps {
   autofocus?: boolean;
   theme?: string;
   readonly?: boolean;
+  'data-testid'?: string
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -35,6 +36,7 @@ export const Input = memo(
         theme = InputTheme.NORMAL,
         autofocus,
         readonly,
+        'data-testid': dataTestId
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
         const [inFocused, setInFocused] = useState(false);
@@ -99,7 +101,7 @@ export const Input = memo(
                         onBlur={onBlur}
                         onSelect={onSelect}
                         readOnly={readonly}
-
+                        data-testid = {dataTestId}
 
                     />
                     {isCaretVisible && (

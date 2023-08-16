@@ -23,6 +23,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
+  'data-testid'?: string
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -33,6 +34,7 @@ export const Button = memo((props: ButtonProps) => {
         square,
         size = ButtonSize.M,
         disabled,
+        'data-testid': dataTestId = '',
         ...otherProps
     } = props;
     const mods: Record<string, boolean> = {
@@ -47,6 +49,7 @@ export const Button = memo((props: ButtonProps) => {
                 cls[size ?? ""],
             ])}
             disabled={disabled}
+            data-testid={dataTestId}
             {...otherProps}
         >
             {children}

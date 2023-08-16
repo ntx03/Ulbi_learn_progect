@@ -4,7 +4,6 @@ import cls from './EditableProfileCard.module.scss';
 import {memo, useCallback} from 'react';
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
 import {ValidateProfileError} from "entities/Profile/model/types/profile";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {type Currency} from "entities/Currency";
@@ -20,9 +19,9 @@ import {
 } from "../../selectors/getProfileValidateErrors/getProfileValidateErrors";
 import {fetchProfileData} from "../../servises/fetchProfileData/fetchProfileData";
 import {profileActions, profileReducer} from "../../slice/ProfileSlice";
-import DynamicModuleLoader, {ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import EditableProfilePageHeader
-    from "features/editableProfileCard/ui/EditableProfilePageHeader/EditableProfilePageHeader";
+    from '../EditableProfilePageHeader/EditableProfilePageHeader';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -111,32 +110,33 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         [dispatch]
     );
     return (
-      <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.EditableProfileCard, {}, [className])}>
-          <EditableProfilePageHeader />
-           {validateErrors?.length &&
+        <DynamicModuleLoader reducers={reducers}>
+            <div className={classNames(cls.EditableProfileCard, {}, [className])}>
+                <EditableProfilePageHeader />
+                {validateErrors?.length &&
               validateErrors.map((err) => (
                   <Text
+                      data-testid='EditableProfileCard.Error'
                       theme={TextTheme.ERROR}
                       text={validateErrorTranslates[err]}
                       key={err}
                   />
               ))}
-           <ProfileCard
-                data={formData}
-                isLoading={isLoading}
-                error={error}
-                onChangeFirstName={onChangeFirstName}
-                onChangeLastName={onChangeLastName}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeAvatar={onChangeAvatar}
-                onChangeUsername={onChangeUsername}
-                onChangeCountry={onChangeCountry}
-                onChangeCurrency={onChangeCurrency}
-                readonly={readonly}
-            />
-        </div>
-      </DynamicModuleLoader>
+                <ProfileCard
+                    data={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeUsername={onChangeUsername}
+                    onChangeCountry={onChangeCountry}
+                    onChangeCurrency={onChangeCurrency}
+                    readonly={readonly}
+                />
+            </div>
+        </DynamicModuleLoader>
     );
 });

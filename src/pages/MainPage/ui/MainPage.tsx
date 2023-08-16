@@ -4,8 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Counter } from "entities/Counter";
 import { memo } from "react";
 import Page from "widgets/Page/Page";
-import ListBox from "shared/ui/ListBox/ListBox";
-import {HStack, VStack} from "shared/ui/Stack";
+import {VStack} from "shared/ui/Stack";
 
 interface MainPageProps {
   className?: string;

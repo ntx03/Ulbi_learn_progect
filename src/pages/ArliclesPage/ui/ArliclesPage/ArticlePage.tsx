@@ -3,8 +3,7 @@ import cls from './ArticlePage.module.scss'
 import {memo, useCallback,} from "react";
 import {DynamicModuleLoader, type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
-    articlesPageReducer,
-    getArticle
+    articlesPageReducer
 } from "../../model/slices/ArticlesPageSlice/articlesPageSlice";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";

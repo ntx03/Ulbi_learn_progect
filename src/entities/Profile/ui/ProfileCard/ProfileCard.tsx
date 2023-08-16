@@ -86,6 +86,7 @@ const ProfileCard = ({
                     theme={InputTheme.INVERT}
                     onChange={onChangeFirstName}
                     readonly={readonly}
+                    data-testid='ProfileCard.firstName'
                 />
                 <Input
                     value={data?.lastname}
@@ -94,6 +95,7 @@ const ProfileCard = ({
                     theme={InputTheme.INVERT}
                     onChange={onChangeLastName}
                     readonly={readonly}
+                    data-testid={`ProfileCard.lastName`}
                 />
                 <Input
                     value={data?.age}

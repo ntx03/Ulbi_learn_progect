@@ -22,6 +22,7 @@ const defaultAsyncReducers: ReducerList = {
 export const ReduxDecorator =
   (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>
       (StoryComponent: StoryFn) => {
+
           return (
               <StoreProvider
                   initialState={state}

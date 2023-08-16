@@ -14,6 +14,11 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { className } = props;
     const { t } = useTranslation('article');
     const {data, isLoading, error}  = useArticleRecommendationsList(3);
+
+    if (isLoading || error || !data) {
+        return null;
+    }
+
     return (
         <VStack gap={'8'} className={classNames('', {}, [className])}>
             {data && <Text size={TextSize.L}  title={t('Рекомендуем')} theme={TextTheme.PRIMARY}/>}

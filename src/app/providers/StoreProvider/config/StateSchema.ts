@@ -17,7 +17,7 @@ import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addC
 import {type ArticlesPageSchema} from "pages/ArliclesPage";
 import {type ScrollSaveSchema} from "widgets/ScrollSave";
 import {type rtkQueryApi} from "shared/api/RTKQueryApi";
-import {ProfileSchema} from "features/editableProfileCard";
+import {type ProfileSchema} from "features/editableProfileCard";
 
 /**
  * Главная стейт схема Redux

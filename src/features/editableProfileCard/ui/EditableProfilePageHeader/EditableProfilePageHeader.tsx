@@ -8,10 +8,10 @@ import { useSelector } from "react-redux";
 import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {getUserAuthData} from "entities/User";
-import {getProfileData} from "features/editableProfileCard/selectors/getProfileData/getProfileData";
-import {getProfileReadonly} from "features/editableProfileCard/selectors/getProfileReadonly/getProfileReadonly";
-import {profileActions} from "features/editableProfileCard/slice/ProfileSlice";
-import {updateProfileData} from "features/editableProfileCard/servises/updateProfileData/updateProfileData";
+import {getProfileData} from '../../selectors/getProfileData/getProfileData';
+import {getProfileReadonly} from '../../selectors/getProfileReadonly/getProfileReadonly';
+import {profileActions} from '../../slice/ProfileSlice';
+import {updateProfileData} from '../../servises/updateProfileData/updateProfileData';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -51,6 +51,7 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                 className={cls.editBth}
                                 theme={ButtonTheme.OUTLINE_INVERT}
                                 onClick={onEdit}
+                                data-testid={`EditableProfilePageHeader.EditButton`}
                             >
                                 {t("Редактировать")}
                             </Button>
@@ -60,6 +61,7 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                     className={cls.editBth}
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
+                                    data-testid={`EditableProfilePageHeader.CancelButton`}
                                 >
                                     {t("Отменить")}
                                 </Button>
@@ -67,6 +69,7 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                     className={cls.saveBth}
                                     theme={ButtonTheme.OUTLINE_INVERT}
                                     onClick={onSave}
+                                    data-testid={`EditableProfilePageHeader.SaveButton`}
                                 >
                                     {t("Сохранить")}
                                 </Button>

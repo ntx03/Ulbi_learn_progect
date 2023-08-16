@@ -1,14 +1,14 @@
-import { type DeepPartial } from "@reduxjs/toolkit";
 import { profileActions, profileReducer } from "./ProfileSlice";
 import { updateProfileData } from "../servises/updateProfileData/updateProfileData";
-import {ProfileSchema} from "features/editableProfileCard";
+import {type ProfileSchema} from '../model/types/editableProfileCard';
+import {type DeepPartial} from "../../../../config/build/types/config";
 
 describe("profileSlice.test", () => {
     test("test setReadonly", () => {
-        const state: DeepPartial<ProfileSchema> = { readonly: false };
+        const state: DeepPartial<ProfileSchema> = { readonly: false, isLoading: false };
         expect(
             profileReducer(state as ProfileSchema, profileActions.setReadonly(true))
-        ).toEqual({ readonly: true });
+        ).toEqual({ readonly: true, isLoading: false });
     });
     test("test cancelEdit", () => {
         const state: DeepPartial<ProfileSchema> = { readonly: false };
@@ -20,8 +20,8 @@ describe("profileSlice.test", () => {
         const state: DeepPartial<ProfileSchema> = { form: { username: "Andrey" } };
         expect(
             profileReducer(
-        state as ProfileSchema,
-        profileActions.updateProfile({ username: "Andrey" })
+                state as ProfileSchema,
+                profileActions.updateProfile({ username: "Andrey" })
             )
         ).toEqual({ form: { username: "Andrey" } });
     });
@@ -47,8 +47,8 @@ describe("profileSlice.test", () => {
         };
         expect(
             profileReducer(
-        state as ProfileSchema,
-        updateProfileData.fulfilled({ lastname: "Dmitrii" }, "")
+                state as ProfileSchema,
+                updateProfileData.fulfilled({ lastname: "Dmitrii" }, "")
             )
         ).toEqual({
             isLoading: false,

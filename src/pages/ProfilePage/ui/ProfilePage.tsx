@@ -1,5 +1,4 @@
 import {memo,} from "react";
-import EditableProfilePageHeader from "features/editableProfileCard/ui/EditableProfilePageHeader/EditableProfilePageHeader";
 import Page from "widgets/Page/Page";
 import {EditableProfileCard} from "features/editableProfileCard";
 import {useParams} from "react-router-dom";
@@ -15,17 +14,17 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { id } = useParams<{id: string}>()
 
     if (!id) {
-    return (
-        <Page>
-            <Text title={t('Ошибка при загрузке профиля!')} theme={TextTheme.ERROR}/>
-        </Page>
-     )
+        return (
+            <Page>
+                <Text title={t('Ошибка при загрузке профиля!')} theme={TextTheme.ERROR}/>
+            </Page>
+        )
     }
 
     return (
-            <Page>
-               <EditableProfileCard id={id}/>
-            </Page>
+        <Page>
+            <EditableProfileCard id={id}/>
+        </Page>
     );
 });
 

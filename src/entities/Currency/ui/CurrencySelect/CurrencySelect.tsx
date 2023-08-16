@@ -1,10 +1,9 @@
-import Select from "shared/ui/Select/Select";
 import { Currency } from "../../model/types/currency";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
 import ListBox from "shared/ui/ListBox/ListBox";
-import {HStack, VStack} from "shared/ui/Stack";
+import {HStack} from "shared/ui/Stack";
 
 interface CurrencySelectProps {
   className?: string;
