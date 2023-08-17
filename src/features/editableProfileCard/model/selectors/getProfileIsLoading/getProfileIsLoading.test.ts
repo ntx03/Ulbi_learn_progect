@@ -1,6 +1,6 @@
 import { type StateSchema } from "app/providers/StoreProvider";
 import { getProfileIsLoading } from "./getProfileIsLoading";
-import { type DeepPartial } from "../../../../../config/build/types/config";
+import { type DeepPartial } from "../../../../../../config/build/types/config";
 
 describe("getProfileIsLoading.test", () => {
     test("should return true", () => {

@@ -1,5 +1,3 @@
-export enum Currency {
-  RUB = "RUB",
-  EUR = "EUR",
-  USD = "USD",
+export interface Currency {
+  rus: string;
 }

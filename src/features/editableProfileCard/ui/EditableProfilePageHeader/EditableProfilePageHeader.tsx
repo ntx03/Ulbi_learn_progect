@@ -8,10 +8,10 @@ import { useSelector } from "react-redux";
 import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {getUserAuthData} from "entities/User";
-import {getProfileData} from '../../selectors/getProfileData/getProfileData';
-import {getProfileReadonly} from '../../selectors/getProfileReadonly/getProfileReadonly';
-import {profileActions} from '../../slice/ProfileSlice';
-import {updateProfileData} from '../../servises/updateProfileData/updateProfileData';
+import {getProfileData} from 'features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import {getProfileReadonly} from 'features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
+import {profileActions} from 'features/editableProfileCard/model/slice/ProfileSlice';
+import {updateProfileData} from 'features/editableProfileCard/model/servises/updateProfileData/updateProfileData';
 
 interface ProfilePageHeaderProps {
   className?: string;

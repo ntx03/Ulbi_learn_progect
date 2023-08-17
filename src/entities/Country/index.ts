@@ -1,1 +1,1 @@
-export { Country } from "./model/types/country";
+export {Country} from "entities/Country/model/consts/consts";

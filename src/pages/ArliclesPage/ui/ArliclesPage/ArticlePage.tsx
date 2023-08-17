@@ -38,7 +38,7 @@ const ArticlePage = ({className}: ArticlePageProps) => {
     if (error) {
         return (
             <Page className={classNames(cls.ArliclesPage, {}, [className ?? ''])}>
-                <Text title={t('Произошла непредвиденная ошибка')} theme={TextTheme.ERROR}/>\
+                <Text title={t('Произошла непредвиденная ошибка')} theme={TextTheme.ERROR}/>
             </Page>
         )
     }

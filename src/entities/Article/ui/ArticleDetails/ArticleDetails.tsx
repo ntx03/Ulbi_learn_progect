@@ -18,11 +18,12 @@ import Avatar from "shared/ui/Avatar/Avatar";
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Icon from "shared/ui/Icon/Icon";
-import {type ArticleBlock, ArticleBlockType} from "../../model/types/articles";
+import {type ArticleBlock} from "../../model/types/articles";
 import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {ArticleBlockType} from "entities/Article/model/consts/consts";
 
 export interface ArticleDetailsProps {
     className?: string;

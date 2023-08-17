@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
-import { Country } from "../../model/types/country";
 import {HStack} from "shared/ui/Stack";
 import ListBox from "shared/ui/ListBox/ListBox";
+import {Country} from "entities/Country";
 
 interface CountrySelectProps {
   className?: string;

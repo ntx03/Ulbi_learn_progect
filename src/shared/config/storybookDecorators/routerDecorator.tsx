@@ -3,10 +3,10 @@ import { BrowserRouter } from "react-router-dom";
 import React, { Suspense } from "react";
 import Loader from "shared/ui/Loader/Loader";
 
-export const RouterDecorator = (story: () => StoryFn) => {
+export const RouterDecorator = (StoryComponent: StoryFn) => {
     return (
         <BrowserRouter>
-            <Suspense fallback={<Loader />}>{story()}</Suspense>
+            <Suspense fallback={<Loader />}><StoryComponent/></Suspense>
         </BrowserRouter>
     );
 };

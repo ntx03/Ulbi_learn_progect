@@ -10,7 +10,8 @@ import {
     getArticlesPageType
 } from "../../selectors/articlesPageSelectors/articlesPageSelectors";
 import {addQueryParams} from "shared/lib/url/addQueryParams/addQueryParams";
-import {ArticleType} from "entities/Article/model/types/articles";
+
+import {ArticleType} from "entities/Article/model/consts/consts";
 
 
 interface FetchArticlesListProps {

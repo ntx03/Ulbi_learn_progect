@@ -4,24 +4,25 @@ import cls from './EditableProfileCard.module.scss';
 import {memo, useCallback} from 'react';
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
-import {ValidateProfileError} from "entities/Profile/model/types/profile";
 import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {type Currency} from "entities/Currency";
 import {type Country} from "entities/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {ProfileCard} from "entities/Profile";
-import {getProfileForm} from "../../selectors/getProfileForm/getProfileForm";
-import {getProfileIsLoading} from "../../selectors/getProfileIsLoading/getProfileIsLoading";
-import {getProfileError} from "../../selectors/getProfileError/getProfileError";
-import {getProfileReadonly} from "../../selectors/getProfileReadonly/getProfileReadonly";
+import {getProfileForm} from "features/editableProfileCard/model/selectors/getProfileForm/getProfileForm";
+import {getProfileIsLoading} from "features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading";
+import {getProfileError} from "features/editableProfileCard/model/selectors/getProfileError/getProfileError";
+import {getProfileReadonly} from "features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
 import {
     getProfileValidateErrors
-} from "../../selectors/getProfileValidateErrors/getProfileValidateErrors";
-import {fetchProfileData} from "../../servises/fetchProfileData/fetchProfileData";
-import {profileActions, profileReducer} from "../../slice/ProfileSlice";
+} from "features/editableProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import {fetchProfileData} from "features/editableProfileCard/model/servises/fetchProfileData/fetchProfileData";
+import {profileActions, profileReducer} from "features/editableProfileCard/model/slice/ProfileSlice";
 import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import EditableProfilePageHeader
     from '../EditableProfilePageHeader/EditableProfilePageHeader';
+
+import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
 
 interface EditableProfileCardProps {
     className?: string;

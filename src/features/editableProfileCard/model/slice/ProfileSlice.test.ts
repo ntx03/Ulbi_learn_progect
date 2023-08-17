@@ -1,7 +1,7 @@
 import { profileActions, profileReducer } from "./ProfileSlice";
 import { updateProfileData } from "../servises/updateProfileData/updateProfileData";
-import {type ProfileSchema} from '../model/types/editableProfileCard';
-import {type DeepPartial} from "../../../../config/build/types/config";
+import {type ProfileSchema} from '../types/editableProfileCard';
+import {type DeepPartial} from "../../../../../config/build/types/config";
 
 describe("profileSlice.test", () => {
     test("test setReadonly", () => {

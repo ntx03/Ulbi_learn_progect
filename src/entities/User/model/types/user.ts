@@ -1,8 +1,4 @@
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  USER = 'USER',
-  TESTER = 'TESTER'
-}
+import {type UserRole} from "entities/User/model/consts/consts";
 
 
 export interface User {

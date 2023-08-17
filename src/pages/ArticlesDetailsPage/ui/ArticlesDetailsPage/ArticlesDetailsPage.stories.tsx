@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from "@storybook/react";
 import ArticlesDetailsPage, {type ArticlesDetailsPageProps} from "./ArticlesDetailsPage";
 import {type Article} from "entities/Article";
-import {ArticleBlockType, ArticleType} from "entities/Article/model/types/articles";
 import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
+import {ArticleBlockType, ArticleType} from "entities/Article/model/consts/consts";
 
 const meta: Meta<typeof ArticlesDetailsPage> = {
     title: "pages/ArticlesDetailsPage",

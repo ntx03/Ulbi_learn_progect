@@ -2,10 +2,10 @@ import { type BuildOptions } from "./types/config";
 import MiniCssExctractPlugin from "mini-css-extract-plugin";
 import type webpack from "webpack";
 import { buildSvgLoader } from "./loaders/buildSvgLoader";
-import { buildBabelLoader } from "./loaders/buildBabelLoaders";
+import {buildBabelLoader} from "./loaders/buildBabelLoaders";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-    const { isDev } = options;
+    const { isDev} = options;
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff|woff2)$/i,
@@ -37,7 +37,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    // если не используем typescript - нужен babel-loader
+    // декомпозиция загрузчиков
+    const codeBabelLoader = buildBabelLoader({...options, isTSX: false});
+    const tsxCodeBabelLoader = buildBabelLoader({...options, isTSX: true});
+
+    // если не используем typescript - нужен babel-loader (пока отключили для быстроты загрузки)
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: "ts-loader",
@@ -45,10 +49,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     };
 
     return [
-        buildBabelLoader(isDev),
-        typescriptLoader,
-        scssLoader,
         buildSvgLoader(),
+        scssLoader,
         fileLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader
     ];
 }

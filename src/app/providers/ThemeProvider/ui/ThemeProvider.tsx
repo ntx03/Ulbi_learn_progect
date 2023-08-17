@@ -1,4 +1,4 @@
-import React, {type FC, useMemo} from "react";
+import React, {type FC, type ReactNode, useMemo} from "react";
 import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext,} from "../lib/ThemeContext"; // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const defaultTheme =
@@ -6,6 +6,7 @@ const defaultTheme =
 
 interface ThemeProviderProps {
   initialTheme?: Theme;
+  children: ReactNode;
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {

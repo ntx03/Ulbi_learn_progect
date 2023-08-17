@@ -1,7 +1,9 @@
 import { validateProfileData } from "./validateProfileData";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { ValidateProfileError } from "../../../../entities/Profile/model/types/profile";
+
+
+import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
 
 const data = {
     username: "ntx033",

@@ -1,6 +1,6 @@
 import { type StateSchema } from "app/providers/StoreProvider";
 import { getProfileReadonly } from "./getProfileReadonly";
-import { type DeepPartial } from "../../../../../config/build/types/config";
+import { type DeepPartial } from "../../../../../../config/build/types/config";
 
 describe("getProfileReadonly.test", () => {
     test("should return true", () => {

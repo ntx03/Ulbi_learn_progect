@@ -7,8 +7,8 @@ import {ArticlePage} from "pages/ArliclesPage";
 import {ArticlesDetailsPage} from "pages/ArticlesDetailsPage";
 import {ArticleEditPage} from "pages/ArticleEditPage";
 import {AdminPanelPage} from "pages/AdminPanelPage";
-import {UserRole} from "entities/User/model/types/user";
 import {ForbiddenPage} from "pages/ForbittenPage";
+import {UserRole} from "entities/User/model/consts/consts";
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
