@@ -5,11 +5,12 @@ import React, {memo} from 'react';
 interface IconProps {
     className?: string
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+    invertedColor?: boolean;
 }
 
-const Icon = ({className, Svg}: IconProps) => {
+const Icon = ({className, Svg, invertedColor = false}: IconProps) => {
     return (
-        <Svg className={classNames(cls.Icon, {}, [className ?? ''])}/>
+        <Svg className={classNames(cls.Icon, {[cls.inverted]: invertedColor}, [className ?? ''])}/>
     )
 };
 

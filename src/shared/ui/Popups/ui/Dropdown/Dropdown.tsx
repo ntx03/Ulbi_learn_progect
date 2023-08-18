@@ -1,8 +1,9 @@
 import {Menu} from '@headlessui/react';
 import cls from './Dropdown.module.scss';
+import pcls from '../../styles/popup.module.scss';
 import {classNames} from "shared/lib/classNames/classNames";
 import {Fragment, type ReactNode} from "react";
-import AppLink from '../AppLink/ui/AppLink/AppLink';
+import AppLink from '../../../AppLink/ui/AppLink/AppLink';
 
 export interface DropDownItem {
     disabled?: boolean;
@@ -20,8 +21,8 @@ export interface DropdownProps {
 export default function Dropdown(props: DropdownProps) {
     const {className, trigger, items} = props;
     return (
-        <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className ?? ''])}>
-            <Menu.Button className={cls.btn}>
+        <Menu as={'div'} className={classNames(pcls.Popup, {}, [className ?? ''])}>
+            <Menu.Button className={pcls.trigger}>
                 {trigger}
             </Menu.Button>
             <Menu.Items className={cls.menu}>

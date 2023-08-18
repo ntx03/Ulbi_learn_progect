@@ -1,0 +1,37 @@
+.Popup {
+    position: relative;
+    width: max-content;
+}
+
+.trigger {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.top {
+    bottom: 100%;
+}
+
+.bottomLeft {
+    top: 100%;
+    right: 0;
+}
+
+.bottomRight {
+    top: 100%;
+    left: 0;
+}
+
+.topRight {
+    bottom: 100%;
+    left: 0;
+}
+
+.topLeft {
+    right: 0;
+    bottom: 100%;
+}

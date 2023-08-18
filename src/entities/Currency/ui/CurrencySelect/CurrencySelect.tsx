@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
-import ListBox from "shared/ui/ListBox/ListBox";
+import ListBox from "shared/ui/Popups/ui/ListBox/ListBox";
 import {HStack} from "shared/ui/Stack";
 import {Currency} from "../../model/consts/consts";
 

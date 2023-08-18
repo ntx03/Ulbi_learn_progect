@@ -20,6 +20,10 @@
     margin: 0 20px 0 auto;
 }
 
+.popover {
+    display: flex;
+}
+
 .mainLink {
     width: 100px;
     height: 40px;
@@ -32,4 +36,15 @@
 .appName {
     width: var(--sidebar-wigth);
     text-align: center;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.notification {
+    min-height: 150px;
+    max-height: 300px;
+    max-width: 500px;
+    overflow-y: auto;
 }

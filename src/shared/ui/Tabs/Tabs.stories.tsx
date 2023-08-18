@@ -1,6 +1,5 @@
 import type {Meta, StoryObj} from "@storybook/react";
-import Tabs, {TabItem, type TabsProps} from "./Tabs";
-import {useMemo} from "react";
+import Tabs, {type TabsProps} from "./Tabs";
 
 import {ArticleType} from "entities/Article/model/consts/consts";
 

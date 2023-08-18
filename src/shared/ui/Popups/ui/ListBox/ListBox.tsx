@@ -1,8 +1,9 @@
 import {Fragment, type ReactNode, useState} from 'react';
 import {Listbox as HListbox} from '@headlessui/react';
 import cls from './ListBox.module.scss';
+import pCls from '../../styles/popup.module.scss';
 import {classNames} from "shared/lib/classNames/classNames";
-import {Button, ButtonTheme} from '../Button/Button';
+import {Button, ButtonTheme} from '../../../Button/Button';
 import {type DropdownDirection} from "shared/types/ui";
 
 export interface ListBoxItem {
@@ -21,10 +22,10 @@ interface ListBoxProps {
     label?: string;
 }
 
-export default function ListBox({items, className, value, defaultValue, onChange, readonly, direction = 'bottom', label}: ListBoxProps) {
+export default function ListBox({items, className, value, defaultValue, onChange, readonly, direction = 'bottomLeft', label}: ListBoxProps) {
 
     const [selectedPerson, setSelectedPerson] = useState(value)
-    const optionsClasses = [cls[direction]];
+    const optionsClasses = [pCls[direction]];
 
     return (
         <>

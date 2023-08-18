@@ -42,11 +42,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const tsxCodeBabelLoader = buildBabelLoader({...options, isTSX: true});
 
     // если не используем typescript - нужен babel-loader (пока отключили для быстроты загрузки)
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-    };
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: "ts-loader",
+    //     exclude: /node_modules/,
+    // };
 
     return [
         buildSvgLoader(),
