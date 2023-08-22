@@ -3,6 +3,8 @@ import cls from "./Modal.module.scss";
 import React, { type ReactNode, useCallback, useEffect, useState } from "react";
 import Portal from "../Portal/Portal";
 import { useTheme } from "app/providers/ThemeProvider";
+import {Overlay} from "shared/ui/Overlay/Overlay";
+
 
 export interface ModalProps {
   className?: string;
@@ -72,10 +74,9 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className ?? "", theme])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler}/>
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
