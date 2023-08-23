@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 import AddCommentForm, {type AddCommentFormProps} from "./AddCommentForm";
-import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
+import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
 
 const meta: Meta<typeof AddCommentForm> = {
     title: "features/AddCommentForm",

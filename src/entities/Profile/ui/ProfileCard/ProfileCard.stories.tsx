@@ -1,7 +1,7 @@
 import ProfileCard from "./ProfileCard";
 import {type Meta, type StoryObj} from "@storybook/react";
-import {Country} from "entities/Country";
-import {Currency} from "entities/Currency"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+import {Country} from "@/entities/Country";
+import {Currency} from "@/entities/Currency"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {

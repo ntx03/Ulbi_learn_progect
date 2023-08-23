@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from "@storybook/react";
 import ArticleEditPage, {type ArticleEditPageProps} from "./ArticleEditPage";
-import {ReduxDecorator} from "shared/config/storybookDecorators/reduxDecorator";
+import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
 
 const meta: Meta<typeof ArticleEditPage> = {
     title: "pages/ArticleEditPage",

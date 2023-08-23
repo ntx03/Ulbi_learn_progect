@@ -1,7 +1,7 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './CommentList.module.scss';
 import {memo} from 'react';
-import {Text, TextTheme} from "shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text/Text";
 import {useTranslation} from "react-i18next";
 import CommentCard from "../CommentCard/CommentCard";
 import {type Comment} from "../../model/types/comment";

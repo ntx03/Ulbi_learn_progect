@@ -1,10 +1,10 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss';
 import {type HTMLAttributeAnchorTarget, memo} from 'react';
 import {type Article} from '../../model/types/articles';
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
 import ArticleListItemSkeleton from "../ArticleListItem/ArticleListItemSkeleton";
-import {ArticleView} from "entities/Article/model/consts/consts";
+import {ArticleView} from "@/entities/Article/model/consts/consts";
 
 export interface ArticleListProps {
     className?: string;

@@ -1,7 +1,7 @@
-import { type StateSchema } from "app/providers/StoreProvider";
+import { type StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileForm } from "./getProfileForm";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 import { type DeepPartial } from "../../../../../../config/build/types/config";
 
 describe("getProfileForm.test", () => {

@@ -1,9 +1,9 @@
-import { type StateSchema } from "app/providers/StoreProvider";
+import { type StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
 import { type DeepPartial } from "../../../../../../config/build/types/config";
 
 
-import {ValidateProfileError} from "features/editableProfileCard/model/consts/consts";
+import {ValidateProfileError} from "@/features/editableProfileCard/model/consts/consts";
 
 describe("getProfileReadonly.test", () => {
     test("should return true", () => {

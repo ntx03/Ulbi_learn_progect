@@ -2,11 +2,11 @@ import {
     createEntityAdapter,
     createSlice, type PayloadAction,
 } from '@reduxjs/toolkit'
-import {type StateSchema} from "app/providers/StoreProvider";
+import {type StateSchema} from "@/app/providers/StoreProvider";
 import {
     type ArticlesDetailsRecommendationSchema
 } from "../types/ArticleDetailsRecommendationSchema";
-import {type Article} from "entities/Article";
+import {type Article} from "@/entities/Article";
 import {fetchArticleRecommendations} from "../services/fetchArticleRecommendations";
 
 // для нормализации данных этот адаптер

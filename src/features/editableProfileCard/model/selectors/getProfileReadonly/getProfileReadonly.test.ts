@@ -1,4 +1,4 @@
-import { type StateSchema } from "app/providers/StoreProvider";
+import { type StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileReadonly } from "./getProfileReadonly";
 import { type DeepPartial } from "../../../../../../config/build/types/config";
 

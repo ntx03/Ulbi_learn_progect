@@ -1,17 +1,17 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesDetailsPage.module.scss'
 import {useTranslation} from "react-i18next";
 import {memo} from "react";
-import {ArticleDetails} from "entities/Article";
+import {ArticleDetails} from "@/entities/Article";
 import {useParams} from "react-router-dom";
 
-import DynamicModuleLoader, {type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import DynamicModuleLoader, {type ReducerList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
-import Page from "widgets/Page/Page";
+import Page from "@/widgets/Page/Page";
 import {articleDetailsPageReducer} from "../../model/slice/index";
 import ArticlesDetailsPageHeader
     from "../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
-import {ArticleRecommendationsList} from "features/articleRecommendationsList";
+import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 
 export interface ArticlesDetailsPageProps {

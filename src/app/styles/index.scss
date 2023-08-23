@@ -5,10 +5,16 @@
 @import "./normalize";
 
 .app,
-.app_modal,
-.app_drawer {
+.app_modal {
     font: var(--font-m);
     background: var(--bg-color);
+    color: var(--primary-color);
+    width: 100%;
+}
+
+.app_drawer {
+    font: var(--font-m);
+    background-color: var(--overlay-color);
     color: var(--primary-color);
     width: 100%;
 }

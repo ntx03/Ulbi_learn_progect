@@ -1,8 +1,8 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from "./Counter.module.scss";
 
 import {useTranslation} from "react-i18next";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
+import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {counterActions} from "../model/slice/counterSlice";
 import {getCounterValue} from "../model/selectors/getCounterValue/getCounterValue";

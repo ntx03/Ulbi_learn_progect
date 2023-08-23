@@ -1,6 +1,6 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./PageError.module.scss";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { t } from "i18next";
 
 interface PageErrorProps {

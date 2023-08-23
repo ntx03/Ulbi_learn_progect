@@ -11,6 +11,8 @@ export function buildResolves(options: BuildOptions): webpack.ResolveOptions {
         // Имя файла, которое будет использоваться при разрешении каталогов.
         mainFiles: ['index'],
         // Символ который надо указывать перед обсалютным путем, если нет ничего, то не надо ничего указывать
-        alias: {},
+        alias: {
+            '@': options.paths.src
+        },
     };
 }

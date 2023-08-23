@@ -1,1 +1,1 @@
-export {Country} from "entities/Country/model/consts/consts";
+export {Country} from "@/entities/Country/model/consts/consts";

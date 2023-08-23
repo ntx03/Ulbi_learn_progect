@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from "@storybook/react";
 import Tabs, {type TabsProps} from "./Tabs";
 
-import {ArticleType} from "entities/Article/model/consts/consts";
+import {ArticleType} from "@/entities/Article/model/consts/consts";
 
 const meta: Meta<typeof Tabs> = {
     title: "shared/Tabs",

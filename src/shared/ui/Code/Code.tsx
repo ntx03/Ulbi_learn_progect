@@ -1,4 +1,4 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './Code.module.scss';
 import React, {memo,  useCallback} from 'react';
 import {Button, ButtonTheme} from "../Button/Button";

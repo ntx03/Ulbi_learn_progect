@@ -1,23 +1,23 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPageFilters.module.scss';
 import {memo, useCallback, useMemo} from 'react';
-import {ArticleViewSelector} from "entities/Article";
+import {ArticleViewSelector} from "@/entities/Article";
 import {articlesPageActions} from "../../model/slices/ArticlesPageSlice/articlesPageSlice";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
 import {
     getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType,
     getArticlesPageView
 } from "../../model/selectors/articlesPageSelectors/articlesPageSelectors";
 import {useTranslation} from "react-i18next";
-import Card from "shared/ui/Card/Card";
-import {Input} from "shared/ui/Input/Input";
-import ArticleSortSelector from "features/ArticleSortSelector/ArticleSortSelector";
-import {type SortOrder} from "shared/types";
+import Card from "@/shared/ui/Card/Card";
+import {Input} from "@/shared/ui/Input/Input";
+import ArticleSortSelector from "@/features/ArticleSortSelector/ArticleSortSelector";
+import {type SortOrder} from "@/shared/types";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
-import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
-import Tabs, {type TabItem} from "shared/ui/Tabs/Tabs";
-import {type ArticleSortField, ArticleType, type ArticleView} from "entities/Article/model/consts/consts";
+import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
+import Tabs, {type TabItem} from "@/shared/ui/Tabs/Tabs";
+import {type ArticleSortField, ArticleType, type ArticleView} from "@/entities/Article/model/consts/consts";
 
 export interface ArticlesPageFiltersProps {
     className?: string

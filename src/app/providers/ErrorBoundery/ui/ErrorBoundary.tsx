@@ -1,7 +1,7 @@
 import React, {type ErrorInfo, type ReactNode, Suspense,} from "react";
 import {types} from "sass";
-import PageError from "widgets/PageError/ui/PageError";
-import {PageLoader} from "widgets/PageLoader";
+import PageError from "@/widgets/PageError/ui/PageError";
+import {PageLoader} from "@/widgets/PageLoader";
 import Error = types.Error;
 
 interface ErrorBounderyProps {

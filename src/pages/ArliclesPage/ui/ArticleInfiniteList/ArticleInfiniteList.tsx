@@ -1,7 +1,7 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticleInfiniteList.module.scss';
 import {memo} from 'react';
-import {type Article} from "entities/Article";
+import {type Article} from "@/entities/Article";
 import {useSelector} from "react-redux";
 import {getArticle} from '../../model/slices/ArticlesPageSlice/articlesPageSlice';
 import {
@@ -9,10 +9,10 @@ import {
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import {useSearchParams} from "react-router-dom";
-import {useInitialEffect} from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import ArticleList from "entities/Article/ui/ArticleList/ArticleList";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import ArticleList from "@/entities/Article/ui/ArticleList/ArticleList";
 
 export interface ArticleInfiniteListProps {
     className?: string

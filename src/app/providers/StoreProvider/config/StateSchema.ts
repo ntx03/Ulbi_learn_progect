@@ -1,6 +1,6 @@
-import {type counterSchema} from "entities/Counter";
-import {type UserSchema} from "entities/User";
-import {type loginSchema} from "features/AuthByUsername";
+import {type counterSchema} from "@/entities/Counter";
+import {type UserSchema} from "@/entities/User";
+import {type loginSchema} from "@/features/AuthByUsername";
 import {
     type AnyAction,
     type CombinedState,
@@ -9,15 +9,15 @@ import {
     type ReducersMapObject,
 } from "@reduxjs/toolkit";
 import {type AxiosInstance} from "axios";
-import {type ArticleDetailsSchema} from "entities/Article";
+import {type ArticleDetailsSchema} from "@/entities/Article";
 import {
     type ArticleDetailsPageSchema,
-} from "pages/ArticlesDetailsPage";
-import {type AddCommentFormSchema} from "features/addCommentForm/model/type/addCommentForm";
-import {type ArticlesPageSchema} from "pages/ArliclesPage";
-import {type ScrollSaveSchema} from "widgets/ScrollSave";
-import {type rtkQueryApi} from "shared/api/RTKQueryApi";
-import {type ProfileSchema} from "features/editableProfileCard";
+} from "@/pages/ArticlesDetailsPage";
+import {type AddCommentFormSchema} from "@/features/addCommentForm/model/type/addCommentForm";
+import {type ArticlesPageSchema} from "@/pages/ArliclesPage";
+import {type ScrollSaveSchema} from "@/widgets/ScrollSave";
+import {type rtkQueryApi} from "@/shared/api/RTKQueryApi";
+import {type ProfileSchema} from "@/features/editableProfileCard";
 
 /**
  * Главная стейт схема Redux

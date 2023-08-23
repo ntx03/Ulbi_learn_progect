@@ -1,6 +1,6 @@
 import { getCounterValue } from "../getCounterValue/getCounterValue";
 import { type DeepPartial } from "@reduxjs/toolkit";
-import { type StateSchema } from "app/providers/StoreProvider";
+import { type StateSchema } from "@/app/providers/StoreProvider";
 
 describe("getCounterValue", () => {
     const state: DeepPartial<StateSchema> = {

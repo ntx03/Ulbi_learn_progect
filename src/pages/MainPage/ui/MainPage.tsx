@@ -1,10 +1,10 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./MainPage.module.scss";
 import { useTranslation } from "react-i18next";
-import { Counter } from "entities/Counter";
+import { Counter } from "@/entities/Counter";
 import { memo } from "react";
-import Page from "widgets/Page/Page";
-import {VStack} from "shared/ui/Stack";
+import Page from "@/widgets/Page/Page";
+import {VStack} from "@/shared/ui/Stack";
 
 interface MainPageProps {
   className?: string;

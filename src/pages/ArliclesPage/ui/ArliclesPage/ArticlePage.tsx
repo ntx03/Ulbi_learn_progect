@@ -1,18 +1,18 @@
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticlePage.module.scss'
 import {memo, useCallback,} from "react";
-import {DynamicModuleLoader, type ReducerList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, type ReducerList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
     articlesPageReducer
 } from "../../model/slices/ArticlesPageSlice/articlesPageSlice";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
 import {
     getArticlesPageError,
 } from "../../model/selectors/articlesPageSelectors/articlesPageSelectors";
-import Page from "widgets/Page/Page";
+import Page from "@/widgets/Page/Page";
 import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import {Text, TextTheme} from "shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text/Text";
 import {useTranslation} from "react-i18next";
 import ArticlesPageFilters from "../ArticlesPageFilters/ArticlesPageFilters";
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';

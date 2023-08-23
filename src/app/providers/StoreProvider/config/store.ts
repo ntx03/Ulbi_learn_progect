@@ -5,12 +5,12 @@ import {
     type ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { type StateSchema, type ThunkExtraArg } from "./StateSchema";
-import { counterReducer } from "entities/Counter";
-import { userReducer } from "entities/User";
-import { createReducerManager } from "app/providers/StoreProvider/config/reducerManager";
-import { $api } from "shared/api/api";
-import {scrollSaveReducer} from "widgets/ScrollSave";
-import {rtkQueryApi} from "shared/api/RTKQueryApi";
+import { counterReducer } from "@/entities/Counter";
+import { userReducer } from "@/entities/User";
+import { createReducerManager } from "@/app/providers/StoreProvider/config/reducerManager";
+import { $api } from "@/shared/api/api";
+import {scrollSaveReducer} from "@/widgets/ScrollSave";
+import {rtkQueryApi} from "@/shared/api/RTKQueryApi";
 
 export function createReduxStore(
     initialState?: StateSchema,
