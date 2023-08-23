@@ -75,7 +75,7 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to", "target", "direction", "as", "border"],
+        ignoreAttribute: ["data-testid", "to", "target", "direction", "as", "border", "align", "justify"],
       },
     ],
     "strict-null-checks/all": "warn",

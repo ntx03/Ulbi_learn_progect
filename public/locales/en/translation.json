@@ -22,7 +22,11 @@
   "KachurTV App": "KachurTV App",
   "Создать статью": "Create article",
   "Админ панель": "admin panel",
-  "Профиль пользователя": "Профиль пользователя",
-  "Админка": "Админка",
-  "Доступ запрещен": "Доступ запрещен"
+  "Профиль пользователя": "User Profile",
+  "Админка": "Admin panel",
+  "Доступ запрещен": "Access denied",
+  "ваш отзыв": "Your feedback",
+  "Закрыть": "Close",
+  "Ваш отзыв": "Your feedback",
+  "Оставьте отзыв о статье": "Leave a review about the article"
 }
