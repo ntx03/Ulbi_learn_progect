@@ -11,6 +11,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
         build: "",
         html: "",
         src: path.resolve(__dirname, "..", "..", "src"),
+        buildLocales: path.resolve(__dirname, "build", "locales"),
+        locales: path.resolve(__dirname, "public", "locales" ),
     };
 
   config.resolve!.modules!.push(paths.src);
@@ -28,6 +30,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.module!.rules.push(buildSvgLoader());
 
   config.module!.rules.push(buildScssLoader(true));
+
+  config.resolve!.alias = { '@': paths.src }
 
   config.plugins!.push(
       new DefinePlugin({
