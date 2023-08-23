@@ -27,11 +27,11 @@ export default function Dropdown(props: DropdownProps) {
             </Menu.Button>
             <Menu.Items className={cls.menu}>
 
-                {items.map(item => {
+                {items.map((item, index) => {
                     const content = ({active}: { active: boolean }) =>
                         (
                             <button onClick={item.onClick} className={classNames(cls.item, {[cls.active]: active})}
-                                disabled={item.disabled}>{item.content}</button>
+                                disabled={item.disabled} key={Math.random()*10}>{item.content}</button>
                         )
                     if (item.href) {
                         return( <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={item.href}>

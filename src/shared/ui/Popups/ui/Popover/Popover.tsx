@@ -15,7 +15,7 @@ export default function Popover({className, trigger, direction = 'bottomRight', 
     const menuClasses = pCls[direction];
     return (
         <HPopover className={classNames(cls.Popover, {}, [className ?? '', pCls.Popup])}>
-            <HPopover.Button className={pCls.trigger}>{trigger}</HPopover.Button>
+            <HPopover.Button as={'div'} className={pCls.trigger}>{trigger}</HPopover.Button>
             <HPopover.Panel className={classNames(cls.panel, {}, [className ?? '', pCls.Popup, menuClasses])}>
                 {children}
             </HPopover.Panel> 
