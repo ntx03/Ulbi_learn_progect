@@ -14,9 +14,9 @@ export interface StarRatingProps {
 const stars = [1,2,3,4,5];
 
 const StarRating = ({className, size = 30, selectedStars = 0, onSelect}: StarRatingProps) => {
-    const [currentStarsCount, setСurrentStarsCount] = useState(0);
+    const [currentStarsCount, setСurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
-    const [isHovered, setIsHovered] = useState(false);
+    // const [isHovered, setIsHovered] = useState(false);
 
     const onHover = (starsCount: number) => () => {
         if(!isSelected) {

@@ -13,6 +13,7 @@ import ArticlesDetailsPageHeader
     from "../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
+import {ArticleRating} from "@/features/articleRating";
 
 export interface ArticlesDetailsPageProps {
     className?: string
@@ -37,6 +38,7 @@ const ArticlesDetailsPage = ({className}: ArticlesDetailsPageProps) => {
             <Page className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
                 <ArticlesDetailsPageHeader/>
                 <ArticleDetails id={id}/>
+                <ArticleRating articleId={id}/>
                 <ArticleRecommendationsList/>
                 <ArticleDetailsComments id={id}/>
             </Page>
