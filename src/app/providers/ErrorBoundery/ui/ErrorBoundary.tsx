@@ -1,6 +1,6 @@
 import React, {type ErrorInfo, type ReactNode, Suspense,} from "react";
 import {types} from "sass";
-import PageError from "@/widgets/PageError/ui/PageError";
+import PageError from "@/widgets/PageError";
 import {PageLoader} from "@/widgets/PageLoader";
 import Error = types.Error;
 

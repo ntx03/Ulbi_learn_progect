@@ -4,7 +4,7 @@ import {type HTMLAttributeAnchorTarget, memo} from 'react';
 import {type Article} from '../../model/types/articles';
 import ArticleListItem from "../ArticleListItem/ArticleListItem";
 import ArticleListItemSkeleton from "../ArticleListItem/ArticleListItemSkeleton";
-import {ArticleView} from "@/entities/Article/model/consts/consts";
+import {ArticleView} from "@/entities/Article";
 
 export interface ArticleListProps {
     className?: string;

@@ -7,7 +7,7 @@ import {articlesPageActions} from "../../slices/ArticlesPageSlice/articlesPageSl
 import {fetchArticlesList} from "../fetchArticlesList/fetchArticlesList";
 import {type SortOrder} from "@/shared/types";
 
-import {type ArticleSortField, type ArticleType} from "@/entities/Article/model/consts/consts";
+import {type ArticleSortField, type ArticleType} from "@/entities/Article";
 
 /**
  * Инициализаруем стейт со статьями и забираем их с сервера

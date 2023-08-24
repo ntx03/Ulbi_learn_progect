@@ -13,7 +13,7 @@ import {type ArticleDetailsSchema} from "@/entities/Article";
 import {
     type ArticleDetailsPageSchema,
 } from "@/pages/ArticlesDetailsPage";
-import {type AddCommentFormSchema} from "@/features/addCommentForm/model/type/addCommentForm";
+import {type AddCommentFormSchema} from "@/features/addCommentForm";
 import {type ArticlesPageSchema} from "@/pages/ArliclesPage";
 import {type ScrollSaveSchema} from "@/widgets/ScrollSave";
 import {type rtkQueryApi} from "@/shared/api/RTKQueryApi";

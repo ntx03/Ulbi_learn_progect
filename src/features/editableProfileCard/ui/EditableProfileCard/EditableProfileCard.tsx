@@ -9,20 +9,20 @@ import {type Currency} from "@/entities/Currency";
 import {type Country} from "@/entities/Country";
 import {Text, TextTheme} from "@/shared/ui/Text/Text";
 import {ProfileCard} from "@/entities/Profile";
-import {getProfileForm} from "@/features/editableProfileCard/model/selectors/getProfileForm/getProfileForm";
-import {getProfileIsLoading} from "@/features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading";
-import {getProfileError} from "@/features/editableProfileCard/model/selectors/getProfileError/getProfileError";
-import {getProfileReadonly} from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly";
+import {getProfileForm} from "../../model/selectors/getProfileForm/getProfileForm";
+import {getProfileIsLoading} from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import {getProfileError} from "../../model/selectors/getProfileError/getProfileError";
+import {getProfileReadonly} from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 import {
     getProfileValidateErrors
-} from "@/features/editableProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors";
-import {fetchProfileData} from "@/features/editableProfileCard/model/servises/fetchProfileData/fetchProfileData";
-import {profileActions, profileReducer} from "@/features/editableProfileCard/model/slice/ProfileSlice";
+} from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import {fetchProfileData} from "../../model/servises/fetchProfileData/fetchProfileData";
+import {profileActions, profileReducer} from "../../model/slice/ProfileSlice";
 import DynamicModuleLoader, {type ReducerList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import EditableProfilePageHeader
     from '../EditableProfilePageHeader/EditableProfilePageHeader';
 
-import {ValidateProfileError} from "@/features/editableProfileCard/model/consts/consts";
+import {ValidateProfileError} from "../../model/consts/consts";
 
 interface EditableProfileCardProps {
     className?: string;

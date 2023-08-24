@@ -1,4 +1,4 @@
-import NotificationsList from "@/entities/Notifications/ui/NotificationsList/NotificationsList";
+import NotificationsList from "./ui/NotificationsList/NotificationsList";
 
 export {
     NotificationsList

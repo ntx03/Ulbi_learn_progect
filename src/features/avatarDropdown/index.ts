@@ -1,4 +1,4 @@
-import AvatarDropdown from "@/features/avatarDropdown/ui/AvatarDropdown/AvatarDropdown";
+import AvatarDropdown from "../avatarDropdown/ui/AvatarDropdown/AvatarDropdown";
 export {
     AvatarDropdown
 }

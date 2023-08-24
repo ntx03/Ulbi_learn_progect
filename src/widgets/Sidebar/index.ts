@@ -1,3 +1,3 @@
 import Sidebar from './ui/Sidebar/Sidebar';
-import LangSwitcher from '@/widgets/LangSwitcher/ui/LangSwitcher';
+import {LangSwitcher} from "@/widgets/LangSwitcher";
 export { Sidebar, LangSwitcher };

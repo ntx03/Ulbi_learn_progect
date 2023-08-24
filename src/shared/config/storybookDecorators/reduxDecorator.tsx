@@ -1,14 +1,14 @@
 import { type StoryFn } from "@storybook/react";
 import React from "react";
 import { type StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { loginReducer } from "@/features/AuthByUsername/model/slice/loginSlice";
+import { loginReducer } from "@/features/AuthByUsername";
 import { type ReducerList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { type DeepPartial } from "@reduxjs/toolkit";
-import {articleDetailsReducer} from "@/entities/Article/model/slice/articleDetailsSlice";
-import {addCommentFormReducer} from "@/features/addCommentForm/model/slice/addCommentFormSlice";
+import {articleDetailsReducer} from "@/entities/Article";
+import {addCommentFormReducer} from "@/features/addCommentForm";
 
 import {counterReducer} from "@/entities/Counter";
-import {articleDetailsPageReducer} from "@/pages/ArticlesDetailsPage/model/slice";
+import {articleDetailsPageReducer} from "@/pages/ArticlesDetailsPage";
 import {profileReducer} from "@/features/editableProfileCard";
 
 const defaultAsyncReducers: ReducerList = {

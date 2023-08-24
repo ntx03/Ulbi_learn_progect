@@ -7,7 +7,7 @@ import {useParams} from "react-router-dom";
 
 import DynamicModuleLoader, {type ReducerList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
-import Page from "@/widgets/Page/Page";
+import {Page} from "@/widgets/Page";
 import {articleDetailsPageReducer} from "../../model/slice/index";
 import ArticlesDetailsPageHeader
     from "../ArticlesDetailsPageHeader/ArticlesDetailsPageHeader";

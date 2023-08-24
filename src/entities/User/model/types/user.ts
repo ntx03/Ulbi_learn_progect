@@ -1,4 +1,4 @@
-import {type UserRole} from "@/entities/User/model/consts/consts";
+import {type UserRole} from "@/entities/User";
 
 
 export interface User {

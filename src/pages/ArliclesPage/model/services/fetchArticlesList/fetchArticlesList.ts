@@ -11,7 +11,7 @@ import {
 } from "../../selectors/articlesPageSelectors/articlesPageSelectors";
 import {addQueryParams} from "@/shared/lib/url/addQueryParams/addQueryParams";
 
-import {ArticleType} from "@/entities/Article/model/consts/consts";
+import {ArticleType} from "@/entities/Article";
 
 
 interface FetchArticlesListProps {

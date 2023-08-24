@@ -5,7 +5,7 @@ import {type ArticlesPageSchema} from "../../types/articlesPageSchema";
 import {fetchArticlesList} from "../../services/fetchArticlesList/fetchArticlesList";
 import {ARTICLE_VIEW_LOCALSTORAGE_KEY} from "@/shared/const/localstorage";
 import {type SortOrder} from "@/shared/types";
-import {ArticleSortField, ArticleType, ArticleView} from "@/entities/Article/model/consts/consts";
+import {ArticleSortField, ArticleType, ArticleView} from "@/entities/Article";
 
 // нормализация данных, к каждому объекту добавляем id, для лучшего поиска
 const articlesAdapter = createEntityAdapter<Article>({

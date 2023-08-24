@@ -3,7 +3,7 @@ import { getProfileValidateErrors } from "./getProfileValidateErrors";
 import { type DeepPartial } from "../../../../../../config/build/types/config";
 
 
-import {ValidateProfileError} from "@/features/editableProfileCard/model/consts/consts";
+import {ValidateProfileError} from "../../consts/consts";
 
 describe("getProfileReadonly.test", () => {
     test("should return true", () => {

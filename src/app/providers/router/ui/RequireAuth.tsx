@@ -4,7 +4,7 @@ import {getUserAuthData, getUserRoles} from "@/entities/User";
 import React, {useMemo} from "react";
 import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
 
-import {type UserRole} from "@/entities/User/model/consts/consts";
+import {type UserRole} from "@/entities/User";
 
 interface RequireAuthProps {
     children: JSX.Element;

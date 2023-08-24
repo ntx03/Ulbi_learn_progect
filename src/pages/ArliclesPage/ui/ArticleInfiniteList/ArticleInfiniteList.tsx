@@ -12,7 +12,7 @@ import {useSearchParams} from "react-router-dom";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import ArticleList from "@/entities/Article/ui/ArticleList/ArticleList";
+import {ArticleList} from "@/entities/Article";
 
 export interface ArticleInfiniteListProps {
     className?: string

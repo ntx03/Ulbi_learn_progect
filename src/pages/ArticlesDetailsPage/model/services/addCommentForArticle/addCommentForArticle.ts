@@ -2,7 +2,7 @@ import {createAsyncThunk, isRejectedWithValue} from "@reduxjs/toolkit";
 import {getUserAuthData} from "@/entities/User";
 import i18n from "i18next";
 import { type ThunkConfig } from "@/app/providers/StoreProvider";
-import {getArticleDetailsData} from "@/entities/Article/model/selectors/articleDetails";
+import {getArticleDetailsData} from "@/entities/Article";
 import {type Comment} from "@/entities/Comment";
 import {fetchCommentsByArticleId} from "../../services/fetchCommentsByArticleId";
 

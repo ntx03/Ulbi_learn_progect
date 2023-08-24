@@ -2,7 +2,7 @@ import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './AdminPanelPage.module.scss';
 import {memo} from 'react';
 import {useTranslation} from "react-i18next";
-import Page from "@/widgets/Page/Page";
+import {Page} from "@/widgets/Page";
 
 export interface AdminPanelPageProps {
     className?: string

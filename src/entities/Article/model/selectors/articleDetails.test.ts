@@ -3,7 +3,7 @@ import { type StateSchema } from "@/app/providers/StoreProvider";
 import { type DeepPartial } from "@reduxjs/toolkit";
 import {type Article} from "../types/articles";
 
-import {ArticleBlockType, ArticleType} from "@/entities/Article/model/consts/consts";
+import {ArticleBlockType, ArticleType} from "@/entities/Article";
 const article: Article = {
     "id": "1",
     "title": "Javascript News",

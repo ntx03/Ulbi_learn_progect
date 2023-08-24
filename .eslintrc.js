@@ -29,6 +29,7 @@ module.exports = {
     "i18next",
     "strict-null-checks",
     "react-hooks",
+    "ulbi-tv-plugin"
   ],
   rules: {
     "react/jsx-indent": [2, 4],
@@ -70,6 +71,8 @@ module.exports = {
     "@typescript-eslint/prefer-includes": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
+    "ulbi-tv-plugin/path-checker": ['error', {alias: "@"}],
+    "ulbi-tv-plugin/public-api-imports": ['error', {alias: "@"}],
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",
