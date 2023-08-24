@@ -3,7 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { memo } from "react";
 import {HStack} from "@/shared/ui/Stack";
 import ListBox from "@/shared/ui/Popups/ui/ListBox/ListBox";
-import {Country} from "@/entities/Country";
+import {Country} from "../../model/consts/consts";
 
 interface CountrySelectProps {
   className?: string;

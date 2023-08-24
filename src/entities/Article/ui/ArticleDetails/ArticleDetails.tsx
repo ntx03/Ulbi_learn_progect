@@ -23,7 +23,7 @@ import ArticleCodeBlockComponent from "../ArticleCodeBlockComponent/ArticleCodeB
 import ArticleImageBlockComponent from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import {ArticleBlockType} from "@/entities/Article";
+import {ArticleBlockType} from "../../model/consts/consts";
 
 export interface ArticleDetailsProps {
     className?: string;
@@ -33,7 +33,7 @@ const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
 }
 
-const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
+export const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
     const {t} = useTranslation('article')
     const dispatch = useAppDispatch();
 

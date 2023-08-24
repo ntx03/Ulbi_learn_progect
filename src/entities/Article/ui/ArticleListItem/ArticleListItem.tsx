@@ -14,7 +14,7 @@ import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextB
 
 import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
 import AppLink from "@/shared/ui/AppLink/ui/AppLink/AppLink";
-import {ArticleBlockType, ArticleView} from "@/entities/Article";
+import {ArticleBlockType, ArticleView} from "../../model/consts/consts";
 
 export interface ArticleListItemProps {
     className?: string;

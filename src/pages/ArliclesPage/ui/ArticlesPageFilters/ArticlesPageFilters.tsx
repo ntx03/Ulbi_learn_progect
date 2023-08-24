@@ -1,7 +1,7 @@
 import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPageFilters.module.scss';
 import {memo, useCallback, useMemo} from 'react';
-import {ArticleViewSelector} from "@/entities/Article";
+import {ArticleViewSelector} from "@/features/ArticleViewSelector";
 import {articlesPageActions} from "../../model/slices/ArticlesPageSlice/articlesPageSlice";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
