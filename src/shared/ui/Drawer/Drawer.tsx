@@ -1,4 +1,4 @@
-import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import React, {memo, type  ReactNode, useCallback, useEffect} from 'react';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';

@@ -29,7 +29,8 @@ module.exports = {
     "i18next",
     "strict-null-checks",
     "react-hooks",
-    "ulbi-tv-plugin"
+    "ulbi-tv-plugin",
+    "unused-imports"
   ],
   rules: {
     "react/jsx-indent": [2, 4],
@@ -86,6 +87,7 @@ module.exports = {
         testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
       },
     ],
+    "unused-imports/no-unused-imports": "error",
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",

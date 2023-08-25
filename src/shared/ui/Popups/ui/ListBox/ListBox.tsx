@@ -1,4 +1,4 @@
-import {Fragment, type ReactNode, useState} from 'react';
+import {Fragment, type ReactNode} from 'react';
 import {Listbox as HListbox} from '@headlessui/react';
 import cls from './ListBox.module.scss';
 import pCls from '../../styles/popup.module.scss';

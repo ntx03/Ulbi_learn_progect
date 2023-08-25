@@ -1,6 +1,7 @@
 import { StyleDecorator } from "../../src/shared/config/storybookDecorators/styleDecorators";
 import { ThemeDecorator } from "../../src/shared/config/storybookDecorators/themeDecorator";
 import { RouterDecorator } from "../../src/shared/config/storybookDecorators/routerDecorator";
+import {Theme} from "../../src/shared/const/theme";
 
 const preview = {
     parameters: {
