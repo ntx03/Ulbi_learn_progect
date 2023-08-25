@@ -72,7 +72,20 @@ module.exports = {
     "@typescript-eslint/no-invalid-void-type": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
     "ulbi-tv-plugin/path-checker": ['error', {alias: "@"}],
-    "ulbi-tv-plugin/public-api-imports": ['error', {alias: "@", testFilesPatterns: ['**/*.test.*', "**/*.story.*", "**/StoreDecorator.tsx"]}],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
+    'ulbi-tv-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
     // правило подсвечивает если нет перевода в i18next в тексте компонета
     "i18next/no-literal-string": [
       "error",

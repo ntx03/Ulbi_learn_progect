@@ -1,5 +1,7 @@
 import React, {type FC, type ReactNode, useMemo} from "react";
-import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext,} from "../lib/ThemeContext"; // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+import {ThemeContext,} from "../../../../shared/lib/context/ThemeContext";
+import {Theme} from "@/shared/const/theme";
+import {LOCAL_STORAGE_THEME_KEY} from "@/shared/const/localstorage"; // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;

@@ -7,7 +7,7 @@ import Icon from "@/shared/ui/Icon/Icon";
 import NotificationsIcon from '@/shared/assets/icons/bell.svg';
 import {useDevice} from "@/shared/lib/hooks/useDevice/useDevice";
 import {Drawer} from "@/shared/ui/Drawer/Drawer";
-import {AnimationProvider} from "@/shared/lib/components/AnimationProvider";
+
 export interface NotificationButtonProps {
     className?: string
 }

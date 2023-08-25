@@ -1,15 +1,14 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
+import {LangSwitcher} from "./LangSwitcher";
 import {ThemeDecorator} from "@/shared/config/storybookDecorators/themeDecorator";
-import {Theme} from "@/app/providers/ThemeProvider";
-import {ThemeSwitcher} from "./ThemeSwitcher";
-
+import {Theme} from "@/shared/const/theme";
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "widgets/ThemeSwitcher",
-    component: ThemeSwitcher,
+    title: "widgets/LangSwitcher",
+    component: LangSwitcher,
     argTypes: {},
-} satisfies Meta<typeof ThemeSwitcher>;
+} satisfies Meta<typeof LangSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,6 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const ThemeLight: Story = {
     args: {},
 };
+
 export const ThemeDark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
     args: {},

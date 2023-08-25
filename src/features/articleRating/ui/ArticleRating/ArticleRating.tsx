@@ -16,7 +16,7 @@ const ArticleRating = ({className, articleId}: ArticleRatingProps) => {
     const {t} = useTranslation('article');
     const userData = useSelector(getUserAuthData);
 
-    const {data, isLoading, isError} = useGetArticleRating({
+    const {data, isLoading} = useGetArticleRating({
         articleId: articleId ?? '', userId: userData?.id ?? ''
     });
     const rating = data?.[0];

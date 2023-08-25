@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from "@storybook/react";
 
 import {ThemeDecorator} from "@/shared/config/storybookDecorators/themeDecorator";
-import {Theme} from "@/app/providers/ThemeProvider";
 import {MainPage} from "./MainPage";
 import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
+import {Theme} from "@/shared/const/theme";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {

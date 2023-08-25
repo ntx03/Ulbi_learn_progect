@@ -8,10 +8,10 @@ import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {Text} from "@/shared/ui/Text/Text";
 import AppLink, {AppLinkTheme} from "@/shared/ui/AppLink/ui/AppLink/AppLink";
-import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
 import {HStack} from "@/shared/ui/Stack";
 import {NotificationButton} from "@/features/notificationsButton";
 import {AvatarDropdown} from "@/features/avatarDropdown";
+import {RoutePath} from "@/shared/const/router";
 
 interface NavbarProps {
     className?: string;

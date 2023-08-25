@@ -6,7 +6,8 @@ import {Text, TextTheme} from "@/shared/ui/Text/Text";
 import Avatar from "@/shared/ui/Avatar/Avatar";
 import Skeleton from "@/shared/ui/Skeleton/Skeleton";
 import AppLink from "@/shared/ui/AppLink/ui/AppLink/AppLink";
-import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
+
+import {RoutePath} from "@/shared/const/router";
 
 export interface CommentCardProps {
     className?: string;

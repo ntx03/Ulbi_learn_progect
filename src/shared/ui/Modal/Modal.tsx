@@ -2,8 +2,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Modal.module.scss";
 import React, { type ReactNode, useCallback, useEffect, useState } from "react";
 import Portal from "../Portal/Portal";
-import { useTheme } from "@/app/providers/ThemeProvider";
 import {Overlay} from "@/shared/ui/Overlay/Overlay";
+import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
 
 
 export interface ModalProps {
@@ -62,9 +62,9 @@ export const Modal = (props: ModalProps) => {
     }, [isOpen, onKeydown]);
 
     // чтобы модальное окно не закрывалось при клике по содержимому
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
+    // const onContentClick = (e: React.MouseEvent) => {
+    //     e.stopPropagation();
+    // };
 
     // если модальное окнот не вызвали, то оно не монтируется в DOM дерево
     if (lazy && !isMounted) {

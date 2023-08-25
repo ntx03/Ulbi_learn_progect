@@ -24,7 +24,7 @@ interface ListBoxProps {
 
 export default function ListBox({items, className, value, defaultValue, onChange, readonly, direction = 'bottomLeft', label}: ListBoxProps) {
 
-    const [selectedPerson, setSelectedPerson] = useState(value)
+    // const [selectedPerson, setSelectedPerson] = useState(value)
     const optionsClasses = [pCls[direction]];
 
     return (

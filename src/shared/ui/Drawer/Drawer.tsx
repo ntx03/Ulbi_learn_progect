@@ -1,12 +1,12 @@
 import { classNames, type Mods } from '@/shared/lib/classNames/classNames';
 import React, {memo, type  ReactNode, useCallback, useEffect} from 'react';
-import { useTheme } from '@/app/providers/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
 // import { useDrag } from '@use-gesture/react'
 // import { a, useSpring, config } from '@react-spring/web'
 import {AnimationProvider, useAnimationsLibs} from "@/shared/lib/components/AnimationProvider";
+import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
 
 interface DrawerProps {
     className?: string;
@@ -27,10 +27,10 @@ export const DrawerContent = memo((props: DrawerProps) => {
         isOpen,
     } = props;
 
-    const mods: Mods = {
-        [cls.opened]: isOpen,
-        [cls.isClose]: !isOpen
-    };
+    // const mods: Mods = {
+    //     [cls.opened]: isOpen,
+    //     [cls.isClose]: !isOpen
+    // };
 
     const openDrawer = useCallback(()=> {
         api.start({y:0, immediate:false});
