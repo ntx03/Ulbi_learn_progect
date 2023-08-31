@@ -6,7 +6,7 @@ import Avatar from "@/shared/ui/Avatar/Avatar";
 import {useDispatch, useSelector} from "react-redux";
 import {getUserAuthData, isUserAdmin, userActions} from "@/entities/User";
 import {useTranslation} from "react-i18next";
-import {RoutePath} from "@/shared/const/router";
+import {getAdminPanelPath, getProfilePath} from "@/shared/const/router";
 
 export interface AvatarDropdownProps {
     className?: string
@@ -29,11 +29,11 @@ const AvatarDropdown = ({className}: AvatarDropdownProps) => {
                     [
                         ...(isAdmin ? [{
                             content: t("Админка"),
-                            href: `${RoutePath.admin_panel}`
+                            href: getAdminPanelPath()
                         }] : []),
                         {
                             content: t("Профиль пользователя"),
-                            href: `${RoutePath.profile}/${authData.id}`
+                            href: getProfilePath(authData.id)
                         },
                         {
                             content: t("Выйти"),

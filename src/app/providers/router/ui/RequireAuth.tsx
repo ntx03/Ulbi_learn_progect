@@ -4,7 +4,7 @@ import {getUserAuthData, getUserRoles} from "@/entities/User";
 import React, {useMemo} from "react";
 
 import {type UserRole} from "@/entities/User";
-import {RoutePath} from "@/shared/const/router";
+import {getForbiddenPath, getMainPath} from "@/shared/const/router";
 
 interface RequireAuthProps {
     children: JSX.Element;
@@ -33,11 +33,11 @@ export function RequireAuth({children, role}: RequireAuthProps) {
     },[role, userRoles]);
 
     if (!auth ) {
-        return <Navigate to={RoutePath.main} state={{from:location}} replace/>;
+        return <Navigate to={getMainPath()} state={{from:location}} replace/>;
     }
 
     if(!hasRequiredRoles) {
-        return <Navigate to={RoutePath.forbidden} state={{from:location}} replace/>;
+        return <Navigate to={getForbiddenPath()} state={{from:location}} replace/>;
     }
     return children;
 }

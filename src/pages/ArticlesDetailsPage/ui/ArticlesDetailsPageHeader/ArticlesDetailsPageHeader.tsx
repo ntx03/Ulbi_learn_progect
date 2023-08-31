@@ -9,7 +9,7 @@ import {useTranslation} from "react-i18next";
 
 import {getArticleDetailsData, getArticleDetailsError} from "@/entities/Article";
 import {getCanEditArticle} from "../../model/selectors/article";
-import {RoutePath} from "@/shared/const/router";
+import {getArticleEditPath, getArticlesPath} from "@/shared/const/router";
 
 export interface ArticlesDetailsPageHeaderProps {
     className?: string
@@ -27,11 +27,11 @@ const ArticlesDetailsPageHeader = ({className}: ArticlesDetailsPageHeaderProps) 
     const article = useSelector(getArticleDetailsData);
 
     const onBackToList = useCallback(()=> {
-        navigate(RoutePath.articles)
+        navigate(getArticlesPath())
     }, [navigate]);
 
     const onEditArticle = useCallback(()=> {
-        navigate(`${RoutePath.articles}/${article?.id}/edit`);
+        navigate(getArticleEditPath(article?.id ?? '') );
     }, [article?.id, navigate]);
 
     return (

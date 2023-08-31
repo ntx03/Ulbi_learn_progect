@@ -14,7 +14,7 @@ import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextB
 
 import AppLink from "@/shared/ui/AppLink/ui/AppLink/AppLink";
 import {ArticleBlockType, ArticleView} from "../../model/consts/consts";
-import {RoutePath} from "@/shared/const/router";
+import {getArticlesDetailsPath} from "@/shared/const/router";
 
 export interface ArticleListItemProps {
     className?: string;
@@ -55,7 +55,7 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                     )}
                     <div className={cls.footer}>
-                        <AppLink to={`${RoutePath.article_details}${String(Number(article.id))}`}>
+                        <AppLink to={getArticlesDetailsPath(String(Number(article.id)))}>
                             <Button theme={ButtonTheme.OUTLINE_INVERT} >
                                 {t('Читать далее...')}
                             </Button>
@@ -70,7 +70,7 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
 
     return (
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-        <AppLink to={RoutePath.article_details + article.id} {...bindHover} className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])} target={target}>
+        <AppLink to={getArticlesDetailsPath(article.id)} {...bindHover} className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])} target={target}>
             <Card>
                 <div className={cls.imageWrapper}>
                     <img src={article.img} className={cls.img} alt={article.title}/>

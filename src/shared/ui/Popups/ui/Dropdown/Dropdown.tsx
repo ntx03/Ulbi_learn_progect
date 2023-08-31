@@ -2,8 +2,8 @@ import {Menu} from '@headlessui/react';
 import cls from './Dropdown.module.scss';
 import pcls from '../../styles/popup.module.scss';
 import {classNames} from "@/shared/lib/classNames/classNames";
-import {Fragment, type ReactNode} from "react";
-import AppLink from '../../../AppLink/ui/AppLink/AppLink';
+import { type ReactNode} from "react";
+import {Link} from "react-router-dom";
 
 export interface DropDownItem {
     disabled?: boolean;
@@ -25,21 +25,29 @@ export default function Dropdown(props: DropdownProps) {
             <Menu.Button className={pcls.trigger}>
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={cls.menu}>
-
+            <Menu.Items as={"div"} className={cls.menu}>
                 {items.map((item, index) => {
                     const content = ({active}: { active: boolean }) =>
                         (
-                            <button onClick={item.onClick} className={classNames(cls.item, {[cls.active]: active})}
-                                disabled={item.disabled} key={Math.random()*10}>{item.content}</button>
+                            <button className={classNames(cls.item, {[cls.active]: active})}
+                                key={Math.random()*10}>{item.content}</button>
                         )
-                    if (item.href) {
-                        return( <Menu.Item as={AppLink} to={item.href} disabled={item.disabled} key={item.href}>
-                            {content}
-                        </Menu.Item>)
+
+                    const contentButton = ({active}: { active: boolean }) =>
+                        (
+                            <button onClick={item.onClick} className={classNames(cls.item, {[cls.active]: active})}
+                            >{item.content}</button>
+                        )
+
+                    if (item.onClick){
+                        return (
+                            <Menu.Item  key={Math.random()*10}>
+                                {contentButton}
+                            </Menu.Item>
+                        )
                     }
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled} key={Math.random()*10}>
+                        <Menu.Item as={Link} to={item.href ?? "/"}  key={Math.random()*10} onClick={()=> { console.log(1111); }}>
                             {content}
                         </Menu.Item>
                     )

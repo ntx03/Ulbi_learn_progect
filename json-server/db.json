@@ -23,14 +23,14 @@
       "title": "Уведомление 2",
       "description": "Произошло какое-то событие",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "/admin"
     },
     {
       "id": "3",
       "title": "Уведомление 3",
       "description": "Произошло какое-то событие",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "/admin"
     },
     {
       "id": "4",
@@ -1798,7 +1798,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "mike",
+      "first": "Andrey",
       "lastname": "Качур",
       "age": 36,
       "currency": "RUB",
@@ -1861,6 +1861,13 @@
       "rate": 3,
       "feetback": "Среднячок",
       "id": "HZU1q3w"
+    },
+    {
+      "userId": "2",
+      "articleId": "3",
+      "rate": 4,
+      "feetback": "great article!!!",
+      "id": "8XPC7nn"
     }
   ],
   "profile-ratings": [
