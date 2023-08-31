@@ -16,9 +16,7 @@ const Skeleton = ({className, border, height, width}: SkeletonProps) => {
         borderRadius: border,
     }
     return (
-        <div className={classNames(cls.Skeleton, {}, [className ?? ''])} style={styles}>
-
-        </div>
+        <div className={classNames(cls.Skeleton, {}, [className ?? ''])} style={styles}></div>
     )
 };
 

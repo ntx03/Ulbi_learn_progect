@@ -15,6 +15,9 @@ import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextB
 import AppLink from "@/shared/ui/AppLink/ui/AppLink/AppLink";
 import {ArticleBlockType, ArticleView} from "../../model/consts/consts";
 import {getArticlesDetailsPath} from "@/shared/const/router";
+import {AppImage} from "@/shared/ui/AppImage";
+import Skeleton from "@/shared/ui/Skeleton/Skeleton";
+
 
 export interface ArticleListItemProps {
     className?: string;
@@ -42,7 +45,7 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
 
         return (
             <div className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])}>
-                <Card  >
+                <Card>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar}/>
                         <Text text={article.user.username} className={cls.username} theme={TextTheme.PRIMARY}/>
@@ -50,7 +53,7 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
                     </div>
                     <Text text={article.title} className={cls.title} theme={TextTheme.PRIMARY}/>
                     {types}
-                    <img src={article.img} className={cls.img} alt={article.title}/>
+                    <AppImage src={article.img} className={cls.img} alt={article.title} fallback={<Skeleton width={'100%'} height={250}/>} errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''}/>}/>
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                     )}
@@ -73,7 +76,7 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
         <AppLink to={getArticlesDetailsPath(article.id)} {...bindHover} className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])} target={target}>
             <Card>
                 <div className={cls.imageWrapper}>
-                    <img src={article.img} className={cls.img} alt={article.title}/>
+                    <AppImage src={article.img} className={cls.img} alt={article.title} fallback={<Skeleton width={200} height={200}/>} errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''}/>} />
                     <Text text={article.createdAt} className={cls.date} theme={TextTheme.PRIMARY_INVERT}></Text>
                 </div>
 
