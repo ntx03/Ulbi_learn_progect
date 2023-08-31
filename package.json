@@ -28,6 +28,10 @@
     "prepare": "husky install",
     "create": "node ./scripts/createSlice/index.js"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint",
+    "**/*.scss": "stylelint --fix"
+  },
   "author": "kachur A.L",
   "license": "ISC",
   "devDependencies": {
