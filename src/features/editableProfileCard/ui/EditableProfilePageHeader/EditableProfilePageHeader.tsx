@@ -1,24 +1,24 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./EditableProfilePageHeader.module.scss";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './EditableProfilePageHeader.module.scss';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import { useCallback } from "react";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {getUserAuthData} from "@/entities/User";
-import {getProfileData} from '../../model/selectors/getProfileData/getProfileData';
-import {getProfileReadonly} from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import {profileActions} from '../../model/slice/ProfileSlice';
-import {updateProfileData} from '../../model/servises/updateProfileData/updateProfileData';
+import { useCallback } from 'react';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from '@/entities/User';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/ProfileSlice';
+import { updateProfileData } from '../../model/servises/updateProfileData/updateProfileData';
 
 interface ProfilePageHeaderProps {
-  className?: string;
+    className?: string;
 }
 
 const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
-    const { t } = useTranslation("profile");
+    const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
     const profileData = useSelector(getProfileData);
     const canEdit = authData?.id === profileData?.id;
@@ -38,12 +38,9 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className ?? ""])}>
+        <div className={classNames(cls.ProfilePageHeader, {}, [className ?? ''])}>
             <div className={cls.header}>
-                <Text
-                    theme={TextTheme.PRIMARY}
-                    title={t("Профиль пользователя")}
-                ></Text>
+                <Text theme={TextTheme.PRIMARY} title={t('Профиль пользователя')}></Text>
                 {canEdit && (
                     <div className={cls.btnWrapper}>
                         {readonly ? (
@@ -51,9 +48,8 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                 className={cls.editBth}
                                 theme={ButtonTheme.OUTLINE_INVERT}
                                 onClick={onEdit}
-                                data-testid={`EditableProfilePageHeader.EditButton`}
-                            >
-                                {t("Редактировать")}
+                                data-testid={`EditableProfilePageHeader.EditButton`}>
+                                {t('Редактировать')}
                             </Button>
                         ) : (
                             <>
@@ -61,23 +57,20 @@ const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                                     className={cls.editBth}
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
-                                    data-testid={`EditableProfilePageHeader.CancelButton`}
-                                >
-                                    {t("Отменить")}
+                                    data-testid={`EditableProfilePageHeader.CancelButton`}>
+                                    {t('Отменить')}
                                 </Button>
                                 <Button
                                     className={cls.saveBth}
                                     theme={ButtonTheme.OUTLINE_INVERT}
                                     onClick={onSave}
-                                    data-testid={`EditableProfilePageHeader.SaveButton`}
-                                >
-                                    {t("Сохранить")}
+                                    data-testid={`EditableProfilePageHeader.SaveButton`}>
+                                    {t('Сохранить')}
                                 </Button>
                             </>
                         )}
                     </div>
                 )}
-
             </div>
         </div>
     );

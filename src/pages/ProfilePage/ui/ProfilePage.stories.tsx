@@ -1,19 +1,19 @@
-import type {Meta, StoryObj} from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 
-import {ThemeDecorator} from "@/shared/config/storybookDecorators/themeDecorator";
+import { ThemeDecorator } from '@/shared/config/storybookDecorators/themeDecorator';
 
-import {ProfilePage} from "../index";
-import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
-import {Country} from "@/entities/Country";
-import {Currency} from "@/entities/Currency";
-import {Theme} from "@/shared/const/theme"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+import { ProfilePage } from '../index';
+import { ReduxDecorator } from '@/shared/config/storybookDecorators/reduxDecorator';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Theme } from '@/shared/const/theme'; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "pages/ProfilePage",
+    title: 'pages/ProfilePage',
     component: ProfilePage,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 } satisfies Meta<typeof ProfilePage>;
 
@@ -27,15 +27,14 @@ export const ThemeLight: Story = {
         ReduxDecorator({
             profile: {
                 form: {
-                    username: "ntx033",
-                    first: "Andrey",
-                    lastname: "Kachur",
+                    username: 'ntx033',
+                    first: 'Andrey',
+                    lastname: 'Kachur',
                     age: 36,
                     country: Country.Russia,
-                    city: "Thumen",
+                    city: 'Thumen',
                     currency: Currency.RUB,
-                    avatar:
-            "https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13",
+                    avatar: 'https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13',
                 },
                 isLoading: false,
                 readonly: true,
@@ -50,15 +49,14 @@ export const ThemeDark: Story = {
         ReduxDecorator({
             profile: {
                 form: {
-                    username: "ntx033",
-                    first: "Andrey",
-                    lastname: "Kachur",
+                    username: 'ntx033',
+                    first: 'Andrey',
+                    lastname: 'Kachur',
                     age: 36,
                     country: Country.Russia,
-                    city: "Thumen",
+                    city: 'Thumen',
                     currency: Currency.RUB,
-                    avatar:
-            "https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13",
+                    avatar: 'https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13',
                 },
                 isLoading: false,
                 readonly: false,

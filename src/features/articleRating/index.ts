@@ -1,4 +1,2 @@
-import ArticleRating from "./ui/ArticleRating/ArticleRating";
-export {
-    ArticleRating
-}
+import ArticleRating from './ui/ArticleRating/ArticleRating';
+export { ArticleRating };

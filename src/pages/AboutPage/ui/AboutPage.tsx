@@ -1,20 +1,24 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./AboutPage.module.scss";
-import { useTranslation } from "react-i18next";
-import { memo } from "react";
-import {Page} from "@/widgets/Page";
-import {RatingCard} from "@/entities/Rating";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './AboutPage.module.scss';
+import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
+import { Page } from '@/widgets/Page';
+import { RatingCard } from '@/entities/Rating';
 
 interface AboutPageProps {
-  className?: string;
+    className?: string;
 }
 
 export const AboutPage = memo(({ className }: AboutPageProps) => {
     const { t } = useTranslation();
     return (
-        <Page className={classNames(cls.AboutPage, {}, [className ?? ""])} data-testid={'AboutPage'}>
-            <p className="title">{t("О сайте")}</p>
-            <RatingCard title={t('Ваш отзыв') ?? ''} feedbackTitle={t('Оставьте отзыв о статье') ?? ''} hasFeedback={true}/>
+        <Page className={classNames(cls.AboutPage, {}, [className ?? ''])} data-testid={'AboutPage'}>
+            <p className='title'>{t('О сайте')}</p>
+            <RatingCard
+                title={t('Ваш отзыв') ?? ''}
+                feedbackTitle={t('Оставьте отзыв о статье') ?? ''}
+                hasFeedback={true}
+            />
         </Page>
     );
 });

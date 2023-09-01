@@ -1,14 +1,14 @@
-import ProfileCard from "./ProfileCard";
-import {type Meta, type StoryObj} from "@storybook/react";
-import {Country} from "@/entities/Country";
-import {Currency} from "@/entities/Currency"; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+import ProfileCard from './ProfileCard';
+import { type Meta, type StoryObj } from '@storybook/react';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency'; // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "entities/ProfileCard",
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 } satisfies Meta<typeof ProfileCard>;
 
@@ -19,15 +19,14 @@ type Story = StoryObj<typeof ProfileCard>;
 export const ThemeLight: Story = {
     args: {
         data: {
-            username: "ntx033",
-            first: "Andrey",
-            lastname: "Kachur",
+            username: 'ntx033',
+            first: 'Andrey',
+            lastname: 'Kachur',
             age: 36,
             country: Country.Russia,
-            city: "Thumen",
+            city: 'Thumen',
             currency: Currency.RUB,
-            avatar:
-        "https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13",
+            avatar: 'https://avatars.mds.yandex.net/i?id=b54721c405ec096ac675c679543227959a1eb426-9181172-images-thumbs&n=13',
         },
     },
     // decorators: [ReduxDecorator({})],

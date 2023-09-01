@@ -1,15 +1,14 @@
-import {useEffect} from "react";
-
+import { useEffect } from 'react';
 
 /**
  * функция проверяет переменную __PROJECT__ на неравенство 'storybook', если неравенство true, то выполняется переданный в нее callback
  * @param callback
  */
-export function useInitialEffect(callback: ()=> void){
-    useEffect(()=>{
+export function useInitialEffect(callback: () => void) {
+    useEffect(() => {
         if (__PROJECT__ !== 'storybook' && __PROJECT__ !== 'jest') {
-            callback()
+            callback();
         }
         // eslint-disable-next-line
-    }, [])
+    }, []);
 }

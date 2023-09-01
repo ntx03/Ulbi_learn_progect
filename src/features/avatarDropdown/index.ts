@@ -1,4 +1,2 @@
-import AvatarDropdown from "../avatarDropdown/ui/AvatarDropdown/AvatarDropdown";
-export {
-    AvatarDropdown
-}
+import AvatarDropdown from '../avatarDropdown/ui/AvatarDropdown/AvatarDropdown';
+export { AvatarDropdown };

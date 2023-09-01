@@ -1,12 +1,12 @@
-import { type counterSchema } from "../types/counterSchema";
-import {buildSlice} from "@/shared/lib/store";
+import { type counterSchema } from '../types/counterSchema';
+import { buildSlice } from '@/shared/lib/store';
 
 const initialState: counterSchema = {
     value: 0,
 };
 
 export const counterSlice = buildSlice({
-    name: "counter",
+    name: 'counter',
     initialState,
     reducers: {
         increment: (state) => {
@@ -20,4 +20,3 @@ export const counterSlice = buildSlice({
 
 // Action creators are generated for each case reducer function
 export const { actions: counterActions, useActions: useCounterActions, reducer: counterReducer } = counterSlice;
-

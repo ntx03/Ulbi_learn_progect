@@ -1,0 +1,7 @@
+# Ignore artifacts:
+/build
+.idea
+storybook-static
+dist
+.loki/report.html
+.loki/report.json

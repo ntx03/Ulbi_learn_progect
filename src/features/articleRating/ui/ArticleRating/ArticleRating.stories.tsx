@@ -1,11 +1,11 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import ArticleRating, {type ArticleRatingProps} from "./ArticleRating";
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleRating, { type ArticleRatingProps } from './ArticleRating';
 
 const meta: Meta<typeof ArticleRating> = {
-    title: "shared/ArticleRating",
+    title: 'shared/ArticleRating',
     component: ArticleRating,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

@@ -1,9 +1,9 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button/Button";
-import { useEffect, useState } from "react";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button/Button';
+import { useEffect, useState } from 'react';
 
 interface BugButtonProps {
-  className?: string;
+    className?: string;
 }
 
 export const BugButton = ({ className }: BugButtonProps) => {
@@ -19,8 +19,8 @@ export const BugButton = ({ className }: BugButtonProps) => {
     }, [error]);
 
     return (
-    // eslint-disable-next-line i18next/no-literal-string
-        <Button onClick={toggle} className={classNames("", {}, [className ?? ""])}>
+        // eslint-disable-next-line i18next/no-literal-string
+        <Button onClick={toggle} className={classNames('', {}, [className ?? ''])}>
             trow error
         </Button>
     );

@@ -1,21 +1,13 @@
-import {
-    type CombinedState,
-    configureStore,
-    type Reducer,
-    type ReducersMapObject,
-} from "@reduxjs/toolkit";
-import { type StateSchema, type ThunkExtraArg } from "./StateSchema";
-import { counterReducer } from "@/entities/Counter";
-import { userReducer } from "@/entities/User";
-import { createReducerManager } from "@/app/providers/StoreProvider/config/reducerManager";
-import { $api } from "@/shared/api/api";
-import {scrollSaveReducer} from "@/widgets/ScrollSave";
-import {rtkQueryApi} from "@/shared/api/RTKQueryApi";
+import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
+import { type StateSchema, type ThunkExtraArg } from './StateSchema';
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager';
+import { $api } from '@/shared/api/api';
+import { scrollSaveReducer } from '@/widgets/ScrollSave';
+import { rtkQueryApi } from '@/shared/api/RTKQueryApi';
 
-export function createReduxStore(
-    initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-) {
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
@@ -47,4 +39,4 @@ export function createReduxStore(
     return store;
 }
 
-export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

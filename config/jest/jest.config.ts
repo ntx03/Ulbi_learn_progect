@@ -2,24 +2,24 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
-import path from "path";
+import path from 'path';
 
 export default {
     clearMocks: true,
-    testEnvironment: "jsdom",
-    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
-    moduleDirectories: ["node_modules", "src"],
-    modulePaths: ["<rootDir>src"],
+    testEnvironment: 'jsdom',
+    coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+    moduleDirectories: ['node_modules', 'src'],
+    modulePaths: ['<rootDir>src'],
     testMatch: [
-    // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
-        "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-    rootDir: "../../",
-    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+    rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
-        "\\.s?css$": "identity-obj-proxy",
-        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         // Поддержка Aliases
         '^@/shared(.*)$': '<rootDir>/src/shared$1',
         '^@/entities(.*)$': '<rootDir>/src/entities$1',
@@ -30,17 +30,20 @@ export default {
     },
     globals: {
         __IS_DEV__: true,
-        __API__: "",
-        __PROJECT__: "jest",
+        __API__: '',
+        __PROJECT__: 'jest',
     },
     reporters: [
-        "default",
-        ["jest-html-reporters", {
-            publicPath: "<rootDir>/reports/unit",
-            filename: "report.html",
-            openReport: false
-        }]
-    ]
+        'default',
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                openReport: false,
+            },
+        ],
+    ],
     // transform: {
     //     "\\.[jt]sx?$": "esbuild-jest",
     // },

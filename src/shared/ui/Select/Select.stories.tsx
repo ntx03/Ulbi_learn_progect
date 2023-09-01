@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import "@/app/styles/index.scss";
-import Select, { type SelectProps } from "../Select/Select";
-import { ThemeDecorator } from "@/shared/config/storybookDecorators/themeDecorator";
+import type { Meta, StoryObj } from '@storybook/react';
+import '@/app/styles/index.scss';
+import Select, { type SelectProps } from '../Select/Select';
+import { ThemeDecorator } from '@/shared/config/storybookDecorators/themeDecorator';
 
-import {Theme} from "@/shared/const/theme";
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
-    title: "shared/Select",
+    title: 'shared/Select',
     component: Select,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 } satisfies Meta<typeof Select>;
 
@@ -19,10 +19,10 @@ type Story = StoryObj<typeof SelectProps>;
 
 export const Light: Story = {
     args: {
-        label: "Укажите значение",
+        label: 'Укажите значение',
         options: [
-            { value: "123", content: "123" },
-            { value: "321", content: "321" },
+            { value: '123', content: '123' },
+            { value: '321', content: '321' },
         ],
     },
 };
@@ -30,10 +30,10 @@ export const Light: Story = {
 export const Dark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
     args: {
-        label: "Укажите значение",
+        label: 'Укажите значение',
         options: [
-            { value: "123", content: "123" },
-            { value: "321", content: "321" },
+            { value: '123', content: '123' },
+            { value: '321', content: '321' },
         ],
     },
 };

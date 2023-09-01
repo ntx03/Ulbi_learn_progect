@@ -1,9 +1,9 @@
-import { type StateSchema } from "@/app/providers/StoreProvider";
-import { getProfileReadonly } from "./getProfileReadonly";
-import { type DeepPartial } from "../../../../../../config/build/types/config";
+import { type StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileReadonly } from './getProfileReadonly';
+import { type DeepPartial } from '../../../../../../config/build/types/config';
 
-describe("getProfileReadonly.test", () => {
-    test("should return true", () => {
+describe('getProfileReadonly.test', () => {
+    test('should return true', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 readonly: true,
@@ -11,7 +11,7 @@ describe("getProfileReadonly.test", () => {
         };
         expect(getProfileReadonly(state as StateSchema)).toEqual(true);
     });
-    test("should return false", () => {
+    test('should return false', () => {
         const state: DeepPartial<StateSchema> = {};
         expect(getProfileReadonly(state as StateSchema)).toEqual(false);
     });

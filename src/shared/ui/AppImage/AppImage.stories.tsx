@@ -1,11 +1,11 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import AppImage, {type AppImageProps} from "./AppImage";
+import type { Meta, StoryObj } from '@storybook/react';
+import AppImage, { type AppImageProps } from './AppImage';
 
 const meta: Meta<typeof AppImage> = {
-    title: "shared/AppImage",
+    title: 'shared/AppImage',
     component: AppImage,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

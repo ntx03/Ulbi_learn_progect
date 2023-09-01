@@ -1,14 +1,14 @@
-import CurrencySelect from "./CurrencySelect";
-import {type Meta, type StoryObj} from "@storybook/react";
-import {ThemeDecorator} from "@/shared/config/storybookDecorators/themeDecorator";
-import {Theme} from "@/shared/const/theme";
+import CurrencySelect from './CurrencySelect';
+import { type Meta, type StoryObj } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/storybookDecorators/themeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: "entities/CurrencySelect",
+    title: 'entities/CurrencySelect',
     component: CurrencySelect,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 } satisfies Meta<typeof CurrencySelect>;
 

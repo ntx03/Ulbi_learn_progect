@@ -1,2 +1,2 @@
-import AppImage from "./AppImage";
-export {AppImage}
+import AppImage from './AppImage';
+export { AppImage };

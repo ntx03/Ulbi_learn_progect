@@ -1,25 +1,24 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleInfiniteList.module.scss';
-import {memo} from 'react';
-import {type Article} from "@/entities/Article";
-import {useSelector} from "react-redux";
-import {getArticle} from '../../model/slices/ArticlesPageSlice/articlesPageSlice';
+import { memo } from 'react';
+import { type Article } from '@/entities/Article';
+import { useSelector } from 'react-redux';
+import { getArticle } from '../../model/slices/ArticlesPageSlice/articlesPageSlice';
 import {
     getArticlesPageIsLoading,
-    getArticlesPageView
+    getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
-import {useSearchParams} from "react-router-dom";
-import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
-import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {ArticleList} from "@/entities/Article";
+import { useSearchParams } from 'react-router-dom';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleList } from '@/entities/Article';
 
 export interface ArticleInfiniteListProps {
-    className?: string
+    className?: string;
 }
 
-const ArticleInfiniteList = ({className}: ArticleInfiniteListProps) => {
-
+const ArticleInfiniteList = ({ className }: ArticleInfiniteListProps) => {
     const dispatch = useAppDispatch();
     // получаем из стейта Redux все статьи
     const articles: Article[] = useSelector(getArticle.selectAll);
@@ -30,14 +29,14 @@ const ArticleInfiniteList = ({className}: ArticleInfiniteListProps) => {
 
     const [searchParams] = useSearchParams();
 
-    useInitialEffect(()=>{
+    useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
-    })
+    });
     return (
         <div className={classNames('', {}, [className ?? ''])}>
-            <ArticleList view={view} articles={articles} isLoading={isLoading} className={cls.list}/>
+            <ArticleList view={view} articles={articles} isLoading={isLoading} className={cls.list} />
         </div>
-    )
+    );
 };
 
 export default memo(ArticleInfiniteList);

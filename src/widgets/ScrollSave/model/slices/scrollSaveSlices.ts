@@ -1,15 +1,14 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { type ScrollSaveSchema } from "../types/scrollSaveSchema";
-
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { type ScrollSaveSchema } from '../types/scrollSaveSchema';
 
 const initialState: ScrollSaveSchema = {
-    scroll:{}
+    scroll: {},
 };
 /**
  * Сохраняем позицию скрола в стэйте ( path и позиция)
  */
 export const scrollSaveSlice = createSlice({
-    name: "scrollSave",
+    name: 'scrollSave',
     initialState,
     reducers: {
         setScrollPosition: (state, action: PayloadAction<{ path: string; position: number }>) => {

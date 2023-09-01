@@ -1,12 +1,12 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import ArticlePage  from "./ArticlePage";
-import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticlePage from './ArticlePage';
+import { ReduxDecorator } from '@/shared/config/storybookDecorators/reduxDecorator';
 
 const meta: Meta<typeof ArticlePage> = {
-    title: "pages/ArticlePage",
+    title: 'pages/ArticlePage',
     component: ArticlePage,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

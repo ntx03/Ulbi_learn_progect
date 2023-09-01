@@ -1,23 +1,23 @@
-import { screen } from "@testing-library/react";
-import { EditableProfileCard } from "./EditableProfileCard";
-import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
-import {Country} from "@/entities/Country";
-import {Currency} from "@/entities/Currency";
-import {type Profile} from "@/entities/Profile";
-import {profileReducer} from "../../model/slice/ProfileSlice";
-import userEvent from "@testing-library/user-event"
-import {$api} from "@/shared/api/api";
+import { screen } from '@testing-library/react';
+import { EditableProfileCard } from './EditableProfileCard';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { type Profile } from '@/entities/Profile';
+import { profileReducer } from '../../model/slice/ProfileSlice';
+import userEvent from '@testing-library/user-event';
+import { $api } from '@/shared/api/api';
 
 const profile: Profile = {
-    id: "1",
-    first: "Andrey",
-    lastname: "Kachur",
+    id: '1',
+    first: 'Andrey',
+    lastname: 'Kachur',
     age: 36,
     country: Country.Russia,
-    city: "Thumen",
+    city: 'Thumen',
     currency: Currency.RUB,
-    username: 'admin'
-}
+    username: 'admin',
+};
 const options = {
     initialState: {
         profile: {
@@ -29,25 +29,25 @@ const options = {
         user: {
             authData: {
                 id: '1',
-                username: 'admin'
-            }
-        }
+                username: 'admin',
+            },
+        },
     },
     asyncReducers: {
         // @ts-ignore
         profile: profileReducer,
-    }
-}
-describe("features/EditableProfileCard", () => {
-    test("click edit button", async () => {
+    },
+};
+describe('features/EditableProfileCard', () => {
+    test('click edit button', async () => {
         // @ts-ignore
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id={'1'} />, options);
         await userEvent.click(screen.getByTestId('EditableProfilePageHeader.EditButton'));
         expect(screen.getByTestId('EditableProfilePageHeader.CancelButton')).toBeInTheDocument();
     });
-    test("При отмене значения должны обнуляться", async () => {
+    test('При отмене значения должны обнуляться', async () => {
         // @ts-ignore
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id={'1'} />, options);
         // кликаем по кнопке редактировать
         await userEvent.click(screen.getByTestId('EditableProfilePageHeader.EditButton'));
         // убеждаемся, что появляется кнопка отмены
@@ -67,19 +67,19 @@ describe("features/EditableProfileCard", () => {
         expect(screen.getByTestId('ProfileCard.firstName')).toHaveValue('Andrey');
         expect(screen.getByTestId('ProfileCard.lastName')).toHaveValue('Kachur');
     });
-    test("Должна появиться ошибка", async () => {
+    test('Должна появиться ошибка', async () => {
         // @ts-ignore
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id={'1'} />, options);
         await userEvent.click(screen.getByTestId('EditableProfilePageHeader.EditButton'));
         await userEvent.clear(screen.getByTestId('ProfileCard.firstName'));
         await userEvent.click(screen.getByTestId('EditableProfilePageHeader.SaveButton'));
         expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument();
     });
-    test("Если нет ошибок валидации, то на сервер должен уйти PUT запрос", async () => {
+    test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
         // мокаем $api и передаем в него нужный метод отправки (put)
-        const mockPutReq = jest.spyOn($api, 'put')
+        const mockPutReq = jest.spyOn($api, 'put');
         // @ts-ignore
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id={'1'} />, options);
         // кликаем по кнопке редактировать
         await userEvent.click(screen.getByTestId('EditableProfilePageHeader.EditButton'));
         // вводим новое имя

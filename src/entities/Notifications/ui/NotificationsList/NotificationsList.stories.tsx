@@ -1,11 +1,11 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import NotificationsList, {type NotificationsListProps} from "./NotificationsList";
+import type { Meta, StoryObj } from '@storybook/react';
+import NotificationsList, { type NotificationsListProps } from './NotificationsList';
 
 const meta: Meta<typeof NotificationsList> = {
-    title: "shared/NotificationsList",
+    title: 'shared/NotificationsList',
     component: NotificationsList,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

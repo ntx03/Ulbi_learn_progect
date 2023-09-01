@@ -1,23 +1,22 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import {type HTMLAttributeAnchorTarget, memo} from 'react';
-import {type Article, type ArticleTextBlock} from "../../model/types/articles";
-import {Text, TextTheme} from '@/shared/ui/Text/Text'
-import Icon from "@/shared/ui/Icon/Icon";
+import { type HTMLAttributeAnchorTarget, memo } from 'react';
+import { type Article, type ArticleTextBlock } from '../../model/types/articles';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import Icon from '@/shared/ui/Icon/Icon';
 import eye from '../../../../shared/assets/icons/eye.svg';
-import Card from "@/shared/ui/Card/Card";
-import {useHover} from "@/shared/lib/hooks/useHover/useHover";
-import Avatar from "@/shared/ui/Avatar/Avatar";
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
-import {useTranslation} from "react-i18next";
-import ArticleTextBlockComponent from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import Card from '@/shared/ui/Card/Card';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
+import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
-import AppLink from "@/shared/ui/AppLink/ui/AppLink/AppLink";
-import {ArticleBlockType, ArticleView} from "../../model/consts/consts";
-import {getArticlesDetailsPath} from "@/shared/const/router";
-import {AppImage} from "@/shared/ui/AppImage";
-import Skeleton from "@/shared/ui/Skeleton/Skeleton";
-
+import AppLink from '@/shared/ui/AppLink/ui/AppLink/AppLink';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import { getArticlesDetailsPath } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import Skeleton from '@/shared/ui/Skeleton/Skeleton';
 
 export interface ArticleListItemProps {
     className?: string;
@@ -26,57 +25,68 @@ export interface ArticleListItemProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-const ArticleListItem = ({className, article, view, target}: ArticleListItemProps) => {
-
+const ArticleListItem = ({ className, article, view, target }: ArticleListItemProps) => {
     // для пробы isHover
     const [isHover, bindHover] = useHover();
-    const {t} = useTranslation('article');
+    const { t } = useTranslation('article');
 
-    const types: JSX.Element = <Text text={article.type.join(',')} theme={TextTheme.PRIMARY} className={cls.types}/>;
+    const types: JSX.Element = <Text text={article.type.join(',')} theme={TextTheme.PRIMARY} className={cls.types} />;
     const views: JSX.Element = (
         <>
-            <Text text={String(article.views)} theme={TextTheme.PRIMARY} className={cls.views}/>
-            <Icon Svg={eye} className={cls.svg}/>
+            <Text text={String(article.views)} theme={TextTheme.PRIMARY} className={cls.views} />
+            <Icon Svg={eye} className={cls.svg} />
         </>
-    )
+    );
 
     if (view === ArticleView.BIG) {
-        const textBlock = article.block.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+        const textBlock = article.block.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
 
         return (
             <div className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])}>
                 <Card>
                     <div className={cls.header}>
-                        <Avatar size={30} src={article.user.avatar}/>
-                        <Text text={article.user.username} className={cls.username} theme={TextTheme.PRIMARY}/>
-                        <Text text={article.createdAt} className={cls.date} theme={TextTheme.PRIMARY}/>
+                        <Avatar size={30} src={article.user.avatar} />
+                        <Text text={article.user.username} className={cls.username} theme={TextTheme.PRIMARY} />
+                        <Text text={article.createdAt} className={cls.date} theme={TextTheme.PRIMARY} />
                     </div>
-                    <Text text={article.title} className={cls.title} theme={TextTheme.PRIMARY}/>
+                    <Text text={article.title} className={cls.title} theme={TextTheme.PRIMARY} />
                     {types}
-                    <AppImage src={article.img} className={cls.img} alt={article.title} fallback={<Skeleton width={'100%'} height={250}/>} errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''}/>}/>
-                    {textBlock && (
-                        <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
-                    )}
+                    <AppImage
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title}
+                        fallback={<Skeleton width={'100%'} height={250} />}
+                        errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''} />}
+                    />
+                    {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
                     <div className={cls.footer}>
                         <AppLink to={getArticlesDetailsPath(String(Number(article.id)))}>
-                            <Button theme={ButtonTheme.OUTLINE_INVERT} >
-                                {t('Читать далее...')}
-                            </Button>
+                            <Button theme={ButtonTheme.OUTLINE_INVERT}>{t('Читать далее...')}</Button>
                         </AppLink>
 
                         {views}
                     </div>
                 </Card>
             </div>
-        )
+        );
     }
 
     return (
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-        <AppLink to={getArticlesDetailsPath(article.id)} {...bindHover} className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])} target={target}>
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+        <AppLink
+            to={getArticlesDetailsPath(article.id)}
+            {...bindHover}
+            className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])}
+            target={target}>
             <Card>
                 <div className={cls.imageWrapper}>
-                    <AppImage src={article.img} className={cls.img} alt={article.title} fallback={<Skeleton width={200} height={200}/>} errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''}/>} />
+                    <AppImage
+                        src={article.img}
+                        className={cls.img}
+                        alt={article.title}
+                        fallback={<Skeleton width={200} height={200} />}
+                        errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''} />}
+                    />
                     <Text text={article.createdAt} className={cls.date} theme={TextTheme.PRIMARY_INVERT}></Text>
                 </div>
 
@@ -84,10 +94,10 @@ const ArticleListItem = ({className, article, view, target}: ArticleListItemProp
                     {types}
                     {views}
                 </div>
-                <Text text={article.title} theme={TextTheme.PRIMARY} className={cls.title}/>
+                <Text text={article.title} theme={TextTheme.PRIMARY} className={cls.title} />
             </Card>
         </AppLink>
-    )
+    );
 };
 
 export default memo(ArticleListItem);

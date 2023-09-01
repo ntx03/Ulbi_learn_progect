@@ -1,5 +1,3 @@
-import NotificationsList from "./ui/NotificationsList/NotificationsList";
+import NotificationsList from './ui/NotificationsList/NotificationsList';
 
-export {
-    NotificationsList
-}
+export { NotificationsList };

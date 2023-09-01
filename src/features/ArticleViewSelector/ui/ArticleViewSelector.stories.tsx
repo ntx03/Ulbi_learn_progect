@@ -1,11 +1,11 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import ArticleViewSelector, {type ArticleViewSelectorProps} from "./ArticleViewSelector";
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleViewSelector, { type ArticleViewSelectorProps } from './ArticleViewSelector';
 
 const meta: Meta<typeof ArticleViewSelector> = {
-    title: "shared/ArticleViewSelector",
+    title: 'shared/ArticleViewSelector',
     component: ArticleViewSelector,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

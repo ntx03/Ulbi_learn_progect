@@ -1,4 +1,3 @@
-
 export interface Country {
-  rus: string;
+    rus: string;
 }

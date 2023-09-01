@@ -1,28 +1,25 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from "./Input.module.scss";
-import React, {type InputHTMLAttributes, memo, useEffect, useRef, useState,} from "react";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Input.module.scss';
+import React, { type InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
 
 // Omit исключает ненужные типы из InputHTMLAttributes<HTMLHtmlElement>,
 // которые мы сами задаем в InputProps. Если не использовать Omit
 // и не указать пропсы которые мы переиспользуем сами, то будет ошибка.
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLHtmlElement>,
-  "onChange" | "value" | "readOnly"
->;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLHtmlElement>, 'onChange' | 'value' | 'readOnly'>;
 
 export enum InputTheme {
-  INVERT = "invert",
-  NORMAL = "normal",
+    INVERT = 'invert',
+    NORMAL = 'normal',
 }
 
 export interface InputProps extends HTMLInputProps {
-  className?: string;
-  value?: string | number;
-  onChange?: (value: string) => void;
-  autofocus?: boolean;
-  theme?: string;
-  readonly?: boolean;
-  'data-testid'?: string
+    className?: string;
+    value?: string | number;
+    onChange?: (value: string) => void;
+    autofocus?: boolean;
+    theme?: string;
+    readonly?: boolean;
+    'data-testid'?: string;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -32,11 +29,11 @@ export const Input = memo(
         value,
         onChange,
         placeholder = '',
-        type = "text",
+        type = 'text',
         theme = InputTheme.NORMAL,
         autofocus,
         readonly,
-        'data-testid': dataTestId
+        'data-testid': dataTestId,
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
         const [inFocused, setInFocused] = useState(false);
@@ -73,24 +70,16 @@ export const Input = memo(
         }, [autofocus]);
         return (
             <div
-                className={classNames(
-                    cls.InputWrapper,
-                    { [cls[theme]]: true, [cls.readonly]: readonly ?? false },
-                    [className ?? ""]
-                )}
-            >
+                className={classNames(cls.InputWrapper, { [cls[theme]]: true, [cls.readonly]: readonly ?? false }, [
+                    className ?? '',
+                ])}>
                 {placeholder && (
                     <div
                         className={classNames(cls.placeholder, { [cls[theme]]: true }, [
-                            className ?? "",
-                        ])}
-                    >{`${placeholder} >`}</div>
+                            className ?? '',
+                        ])}>{`${placeholder} >`}</div>
                 )}
-                <div
-                    className={classNames(cls.caretWrapper, { [cls[theme]]: true }, [
-                        className ?? "",
-                    ])}
-                >
+                <div className={classNames(cls.caretWrapper, { [cls[theme]]: true }, [className ?? ''])}>
                     <input
                         ref={ref}
                         type={type}
@@ -101,21 +90,18 @@ export const Input = memo(
                         onBlur={onBlur}
                         onSelect={onSelect}
                         readOnly={readonly}
-                        data-testid = {dataTestId}
-
+                        data-testid={dataTestId}
                     />
                     {isCaretVisible && (
                         <span
-                            className={classNames(cls.caret, { [cls[theme]]: true }, [
-                                className ?? "",
-                            ])}
+                            className={classNames(cls.caret, { [cls[theme]]: true }, [className ?? ''])}
                             style={{ left: `${caretPosition * 9}px` }}
                         />
                     )}
                 </div>
             </div>
         );
-    }
+    },
 );
 
 export default memo(Input);

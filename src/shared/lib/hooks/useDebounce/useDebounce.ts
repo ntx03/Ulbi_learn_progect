@@ -1,4 +1,4 @@
-import {useCallback, useRef} from "react";
+import { useCallback, useRef } from 'react';
 
 /**
  * Этот хук создает задержку выполнения колбэка. Используем при задержке запроса на сервер при поиске или сотрировке.
@@ -6,18 +6,19 @@ import {useCallback, useRef} from "react";
  * @param delay - задержка выполнения коллбэка
  */
 export function useDebounce(callback: (...args: any[]) => void, delay: number) {
+    const timer = useRef();
 
-    const timer = useRef() ;
-
-    return useCallback((...args: any[])=> {
-        if (timer.current){
-            clearTimeout(timer.current)
-        }
-        // @ts-ignore
-        timer.current = setTimeout(() => {
-            // eslint-disable-next-line n/no-callback-literal
-            callback(...args);
-        }, delay)
-
-    }, [callback, delay]);
+    return useCallback(
+        (...args: any[]) => {
+            if (timer.current) {
+                clearTimeout(timer.current);
+            }
+            // @ts-ignore
+            timer.current = setTimeout(() => {
+                // eslint-disable-next-line n/no-callback-literal
+                callback(...args);
+            }, delay);
+        },
+        [callback, delay],
+    );
 }

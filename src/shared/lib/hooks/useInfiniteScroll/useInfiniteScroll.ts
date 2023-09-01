@@ -1,4 +1,4 @@
-import {type MutableRefObject, useEffect, useRef} from "react";
+import { type MutableRefObject, useEffect, useRef } from 'react';
 
 export interface UseInfiniteScroll {
     callback?: () => void;
@@ -12,10 +12,9 @@ export interface UseInfiniteScroll {
  * @param triggerRef - элемент при скролле на который будет срабатывать callback
  * @param wrapperRef - элепент в котором находится triggerRef
  */
-export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfiniteScroll) {
-    const observer = useRef<IntersectionObserver | null>(null)
-    useEffect(()=> {
-
+export function useInfiniteScroll({ callback, triggerRef, wrapperRef }: UseInfiniteScroll) {
+    const observer = useRef<IntersectionObserver | null>(null);
+    useEffect(() => {
         // эти константы создаем для того, чтобы про демонтаже элемента, за счет замыкания элемент оставался в useEffect и не было null
         const wrapperElement = wrapperRef.current;
         const triggerElement = triggerRef.current;
@@ -24,8 +23,8 @@ export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfinit
             const options = {
                 root: wrapperElement,
                 rootMargin: '0px',
-                threshold: 1.0
-            }
+                threshold: 1.0,
+            };
 
             observer.current = new IntersectionObserver(([entry]) => {
                 // для срабатывания события только один раз при скролле triggerRef
@@ -37,12 +36,10 @@ export function useInfiniteScroll({callback, triggerRef, wrapperRef}: UseInfinit
             observer.current.observe(triggerElement);
         }
 
-
         return () => {
             if (observer.current && triggerElement) {
-                observer.current.unobserve(triggerElement)
+                observer.current.unobserve(triggerElement);
             }
-        }
-
-    }, [callback, triggerRef, wrapperRef])
+        };
+    }, [callback, triggerRef, wrapperRef]);
 }

@@ -1,12 +1,12 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import AdminPanelPage, {type AdminPanelPageProps} from "./AdminPanelPage";
-import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
+import type { Meta, StoryObj } from '@storybook/react';
+import AdminPanelPage, { type AdminPanelPageProps } from './AdminPanelPage';
+import { ReduxDecorator } from '@/shared/config/storybookDecorators/reduxDecorator';
 
 const meta: Meta<typeof AdminPanelPage> = {
-    title: "pages/AdminPanelPage",
+    title: 'pages/AdminPanelPage',
     component: AdminPanelPage,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

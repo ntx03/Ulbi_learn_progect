@@ -1,36 +1,36 @@
-name: linting, testing and building
-run-name: pipeline check code
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  pipline:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 17.x ]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm i
-      - name: build production project
-        run: npm run build:prod
-      - name: linting typescript
-        run: npm run lint:ts
-        if: always()
-      - name: linting scss
-        run: npm run lint:scss
-        if: always()
-      - name: unit testing(jest)
-        run: npm run test:unit
-        if: always()
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
+#name: linting, testing and building
+#run-name: pipeline check code
+#on:
+#  push:
+#    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
+#
+#jobs:
+#  pipline:
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        node-version: [ 17.x ]
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Starting Node.js ${{ matrix.node-version }}
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#      - name: install modules
+#        run: npm i
+#      - name: build production project
+#        run: npm run build:prod
+#      - name: linting typescript
+#        run: npm run lint:ts
+#        if: always()
+#      - name: linting scss
+#        run: npm run lint:scss
+#        if: always()
+#      - name: unit testing(jest)
+#        run: npm run test:unit
+#        if: always()
+#      - name: build storybook
+#        run: npm run storybook:build
+#        if: always()

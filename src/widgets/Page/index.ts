@@ -1,4 +1,2 @@
-import Page from "../Page/ui/Page";
-export {
-    Page
-}
+import Page from '../Page/ui/Page';
+export { Page };

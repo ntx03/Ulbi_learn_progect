@@ -3,7 +3,7 @@ import type webpack from 'webpack';
 
 export function buildResolves(options: BuildOptions): webpack.ResolveOptions {
     return {
-    // у этих файлов можно не указывать окончание в пути файлов
+        // у этих файлов можно не указывать окончание в пути файлов
         extensions: ['.tsx', '.ts', '.js'],
         // Предпочитайте абсолютные пути
         preferAbsolute: true,
@@ -12,7 +12,7 @@ export function buildResolves(options: BuildOptions): webpack.ResolveOptions {
         mainFiles: ['index'],
         // Символ который надо указывать перед обсалютным путем, если нет ничего, то не надо ничего указывать
         alias: {
-            '@': options.paths.src
+            '@': options.paths.src,
         },
     };
 }

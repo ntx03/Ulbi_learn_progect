@@ -1,14 +1,14 @@
-import {MainPage} from "@/pages/MainPage";
-import {AboutPage} from "@/pages/AboutPage";
-import {ProfilePage} from "@/pages/ProfilePage";
-import {ArticlePage} from "@/pages/ArliclesPage";
-import {ArticlesDetailsPage} from "@/pages/ArticlesDetailsPage";
-import {ArticleEditPage} from "@/pages/ArticleEditPage";
-import {AdminPanelPage} from "@/pages/AdminPanelPage";
-import {UserRole} from "@/entities/User";
-import {ForbiddenPage} from "@/pages/ForbittenPage";
-import {NoFoundPage} from "@/pages/NoFoundPage";
-import {type AppRoutesProps} from "@/shared/types/router";
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlePage } from '@/pages/ArliclesPage';
+import { ArticlesDetailsPage } from '@/pages/ArticlesDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
+import { ForbiddenPage } from '@/pages/ForbittenPage';
+import { NoFoundPage } from '@/pages/NoFoundPage';
+import { type AppRoutesProps } from '@/shared/types/router';
 import {
     AppRoutes,
     getAboutPath,
@@ -19,8 +19,8 @@ import {
     getArticlesPath,
     getForbiddenPath,
     getMainPath,
-    getProfilePath
-} from "@/shared/const/router";
+    getProfilePath,
+} from '@/shared/const/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
@@ -54,13 +54,13 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.ARTICLE_EDIT]: {
         path: getArticleEditPath(':id'),
         element: <ArticleEditPage />,
-        authOnly: true
+        authOnly: true,
     },
     [AppRoutes.ADMIN_PANEL]: {
         path: getAdminPanelPath(),
         element: <AdminPanelPage />,
         authOnly: true,
-        role: [UserRole.ADMIN]
+        role: [UserRole.ADMIN],
     },
     [AppRoutes.FORBIDDEN]: {
         path: getForbiddenPath(),
@@ -68,7 +68,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     // last
     [AppRoutes.NOT_FOUND]: {
-        path: "*",
+        path: '*',
         element: <NoFoundPage />,
     },
 };

@@ -1,17 +1,16 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Modal.module.scss";
-import React, { type ReactNode, useCallback, useEffect, useState } from "react";
-import Portal from "../Portal/Portal";
-import {Overlay} from "@/shared/ui/Overlay/Overlay";
-import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
-
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Modal.module.scss';
+import React, { type ReactNode, useCallback, useEffect, useState } from 'react';
+import Portal from '../Portal/Portal';
+import { Overlay } from '@/shared/ui/Overlay/Overlay';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 export interface ModalProps {
-  className?: string;
-  children?: ReactNode;
-  isOpen: boolean;
-  onClose?: () => void;
-  lazy?: boolean;
+    className?: string;
+    children?: ReactNode;
+    isOpen: boolean;
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
@@ -37,11 +36,11 @@ export const Modal = (props: ModalProps) => {
     // закрытие модалки по Esc
     const onKeydown = useCallback(
         (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
+            if (e.key === 'Escape') {
                 closeHandler();
             }
         },
-        [closeHandler]
+        [closeHandler],
     );
 
     // при открытии монтируем в DOM дерево модальное окно
@@ -54,10 +53,10 @@ export const Modal = (props: ModalProps) => {
     // при открытии модалки вешаем слушатель, при закрытии снимаем слушатель
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener("keydown", onKeydown);
+            window.addEventListener('keydown', onKeydown);
         }
         return () => {
-            window.removeEventListener("keydown", onKeydown);
+            window.removeEventListener('keydown', onKeydown);
         };
     }, [isOpen, onKeydown]);
 
@@ -73,11 +72,9 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className ?? "", theme])}>
-                <Overlay onClick={closeHandler}/>
-                <div className={cls.content}>
-                    {children}
-                </div>
+            <div className={classNames(cls.Modal, mods, [className ?? '', theme])}>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

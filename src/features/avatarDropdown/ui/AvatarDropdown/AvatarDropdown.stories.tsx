@@ -1,11 +1,11 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import AvatarDropdown, {type AvatarDropdownProps} from "./AvatarDropdown";
+import type { Meta, StoryObj } from '@storybook/react';
+import AvatarDropdown, { type AvatarDropdownProps } from './AvatarDropdown';
 
 const meta: Meta<typeof AvatarDropdown> = {
-    title: "features/AvatarDropdown",
+    title: 'features/AvatarDropdown',
     component: AvatarDropdown,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

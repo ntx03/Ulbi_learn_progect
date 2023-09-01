@@ -1,3 +1,3 @@
 export interface Currency {
-  rus: string;
+    rus: string;
 }

@@ -1,13 +1,12 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import Dropdown, {type DropdownProps} from "./Dropdown";
-import {Button, ButtonTheme} from '../../../Button/Button';
-
+import type { Meta, StoryObj } from '@storybook/react';
+import Dropdown, { type DropdownProps } from './Dropdown';
+import { Button, ButtonTheme } from '../../../Button/Button';
 
 const meta: Meta<typeof Dropdown> = {
-    title: "shared/Dropdown",
+    title: 'shared/Dropdown',
     component: Dropdown,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 
@@ -19,15 +18,15 @@ export const Normal: Story = {
         trigger: <Button theme={ButtonTheme.OUTLINE_INVERT}>1</Button>,
         items: [
             {
-                content: 'first'
+                content: 'first',
             },
             {
-                content: 'second'
+                content: 'second',
             },
             {
-                content: 'third'
+                content: 'third',
             },
-        ]
+        ],
     },
     decorators: [],
 };

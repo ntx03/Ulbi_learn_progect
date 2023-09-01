@@ -1,13 +1,13 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import Tabs, {type TabsProps} from "./Tabs";
+import type { Meta, StoryObj } from '@storybook/react';
+import Tabs, { type TabsProps } from './Tabs';
 
-import {ArticleType} from "@/entities/Article";
+import { ArticleType } from '@/entities/Article';
 
 const meta: Meta<typeof Tabs> = {
-    title: "shared/Tabs",
+    title: 'shared/Tabs',
     component: Tabs,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 
@@ -17,25 +17,24 @@ type Story = StoryObj<TabsProps>;
 const typeTabs = [
     {
         value: ArticleType.ALL,
-        content: 'Все статьи'
+        content: 'Все статьи',
     },
     {
         value: ArticleType.IT,
-        content: 'Айти'
+        content: 'Айти',
     },
     {
         value: ArticleType.SCIENCE,
-        content: 'Наука'
+        content: 'Наука',
     },
     {
         value: ArticleType.ECONOMY,
-        content: 'Экономика'
+        content: 'Экономика',
     },
-
-]
+];
 export const Normal: Story = {
     args: {
-        tabs: typeTabs
+        tabs: typeTabs,
     },
     decorators: [],
 };

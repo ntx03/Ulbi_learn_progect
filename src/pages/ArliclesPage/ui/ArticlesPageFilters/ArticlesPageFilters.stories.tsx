@@ -1,12 +1,12 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import ArticlesPageFilters, {type ArticlesPageFiltersProps} from "./ArticlesPageFilters";
-import {ReduxDecorator} from "@/shared/config/storybookDecorators/reduxDecorator";
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticlesPageFilters, { type ArticlesPageFiltersProps } from './ArticlesPageFilters';
+import { ReduxDecorator } from '@/shared/config/storybookDecorators/reduxDecorator';
 
 const meta: Meta<typeof ArticlesPageFilters> = {
-    title: "shared/ArticlesPageFilters",
+    title: 'shared/ArticlesPageFilters',
     component: ArticlesPageFilters,
     // @ts-ignore
-    tags: ["autodocs"],
+    tags: ['autodocs'],
     argTypes: {},
 };
 

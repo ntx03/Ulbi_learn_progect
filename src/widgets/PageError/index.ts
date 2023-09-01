@@ -1,3 +1,3 @@
-import PageError from "../PageError/ui/PageError";
+import PageError from '../PageError/ui/PageError';
 
 export default PageError;
