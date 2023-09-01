@@ -9,8 +9,9 @@ import {useInitialEffect} from "@/shared/lib/hooks/useInitialEffect/useInitialEf
 import {useSelector} from "react-redux";
 import {type StateSchema} from "@/app/providers/StoreProvider";
 import {useThrottle} from "@/shared/lib/hooks/useThrottle/useThrottle";
+import type  {TestsProps} from "@/shared/types/tests";
 
-export interface PageProps {
+export interface PageProps extends TestsProps{
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -22,7 +23,10 @@ export interface PageProps {
  * @param children
  * @constructor
  */
-const Page = ({className, children, onScrollEnd}: PageProps) => {
+const Page = (props: PageProps) => {
+
+    const {className, children, onScrollEnd} = props;
+
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -49,7 +53,7 @@ const Page = ({className, children, onScrollEnd}: PageProps) => {
 
     // блок div здесь нужен только для того, чтобы поместить triggerRef в конце страницы для бесконечного скролла
     return (
-        <main ref={wrapperRef} className={classNames(cls.Page, {}, [className ?? ''])} onScroll={onScroll}>
+        <main ref={wrapperRef} className={classNames(cls.Page, {}, [className ?? ''])} onScroll={onScroll} data-testid={props['data-testid'] ?? 'Page'}>
             {children}
             {onScrollEnd ?  <div className={cls.trigger} ref={triggerRef}></div> : null }
         </main>

@@ -12,7 +12,7 @@ interface AboutPageProps {
 export const AboutPage = memo(({ className }: AboutPageProps) => {
     const { t } = useTranslation();
     return (
-        <Page className={classNames(cls.AboutPage, {}, [className ?? ""])}>
+        <Page className={classNames(cls.AboutPage, {}, [className ?? ""])} data-testid={'AboutPage'}>
             <p className="title">{t("О сайте")}</p>
             <RatingCard title={t('Ваш отзыв') ?? ''} feedbackTitle={t('Оставьте отзыв о статье') ?? ''} hasFeedback={true}/>
         </Page>

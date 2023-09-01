@@ -13,7 +13,7 @@ interface MainPageProps {
 export const MainPage = memo(({ className }: MainPageProps) => {
     const { t } = useTranslation("main");
     return (
-        <Page className={classNames(cls.MainPage, {}, [className ?? ""])}>
+        <Page data-testid={'MainPage'} className={classNames(cls.MainPage, {}, [className ?? ""])}>
             {/* <BugButton/> */}
             <VStack max>
                 <p className="title">{t("Главная страница")}</p>

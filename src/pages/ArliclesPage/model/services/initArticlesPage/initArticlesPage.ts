@@ -5,7 +5,7 @@ import {
 } from "../../selectors/articlesPageSelectors/articlesPageSelectors";
 import {articlesPageActions} from "../../slices/ArticlesPageSlice/articlesPageSlice";
 import {fetchArticlesList} from "../fetchArticlesList/fetchArticlesList";
-import {type SortOrder} from "@/shared/types";
+import {type SortOrder} from "@/shared/types/sort";
 
 import {type ArticleSortField, type ArticleType} from "@/entities/Article";
 

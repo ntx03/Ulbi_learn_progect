@@ -12,7 +12,7 @@ export interface ForbiddenPageProps {
 const ForbiddenPage = ({className}: ForbiddenPageProps) => {
     const {t} = useTranslation();
     return (
-        <Page className={classNames(cls.ForbiddenPage, {}, [className ?? ''])}>
+        <Page data-testid={'ForbiddenPage'} className={classNames(cls.ForbiddenPage, {}, [className ?? ''])}>
             <Text title={t("Доступ запрещен")} theme={TextTheme.ERROR}/>
         </Page>
     )

@@ -13,7 +13,7 @@ import {useTranslation} from "react-i18next";
 import Card from "@/shared/ui/Card/Card";
 import {Input} from "@/shared/ui/Input/Input";
 import {ArticleSortSelector} from "@/features/ArticleSortSelector";
-import {type SortOrder} from "@/shared/types";
+import {type SortOrder} from "@/shared/types/sort";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
 import Tabs, {type TabItem} from "@/shared/ui/Tabs/Tabs";
