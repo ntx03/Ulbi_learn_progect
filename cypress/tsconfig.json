@@ -4,7 +4,7 @@
         "lib": ["es5", "dom"],
         "types": ["cypress", "node"],
         "allowJs": true,
-        "isolatedModules": true
+        "isolatedModules": false
     },
     "extends": "../tsconfig.json",
     "include": ["**/*.ts"]

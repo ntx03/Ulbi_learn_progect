@@ -12,3 +12,5 @@ test:
 
 story:
 	npm run storybook
+e2e:
+	npm run test:e2e

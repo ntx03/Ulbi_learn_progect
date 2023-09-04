@@ -18,7 +18,7 @@ export const buildBabelLoader = ({ isDev, isTSX }: BuildBabelLoadersProps) => {
                     ['@babel/plugin-transform-typescript', { isTSX }],
                     '@babel/plugin-transform-runtime',
                     // этот планин нужен чтобы удалить из сборки id data-testid. Выпиливает только в TSX файлах. Самописный плагин. Находится в папке babel.
-                    isTSX && [babelRemovePropsPlugin, { props: ['data-testid'] }],
+                    isTSX && !isDev && [babelRemovePropsPlugin, { props: ['data-testid'] }],
                 ].filter(Boolean),
             },
         },
