@@ -1,3 +1,3 @@
 export function getTestId(id: string): string {
-    return `[data-testid=${id}]`;
+    return `[data-testid="${id}"]`;
 }

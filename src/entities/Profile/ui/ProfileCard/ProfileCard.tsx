@@ -62,7 +62,9 @@ const ProfileCard = ({
         );
     }
     return (
-        <div className={classNames(cls.ProfileCard, { [cls.editing]: !readonly }, [className ?? ''])}>
+        <div
+            className={classNames(cls.ProfileCard, { [cls.editing]: !readonly }, [className ?? ''])}
+            data-testid='ProfileCard'>
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
