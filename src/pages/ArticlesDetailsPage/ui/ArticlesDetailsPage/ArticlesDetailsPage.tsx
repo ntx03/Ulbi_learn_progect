@@ -13,6 +13,8 @@ import ArticlesDetailsPageHeader from '../ArticlesDetailsPageHeader/ArticlesDeta
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 
 export interface ArticlesDetailsPageProps {
     className?: string;
@@ -23,6 +25,12 @@ const reducers: ReducerList = {
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
+
+    const articleRating = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Text title={t('Оценка статей скоро появится')} size={TextSize.M} />,
+    });
 
     if (!id) {
         return (
@@ -35,7 +43,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
             <Page className={classNames(cls.ArticlesDetailsPage, {}, [className ?? ''])}>
                 <ArticlesDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {articleRating}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
