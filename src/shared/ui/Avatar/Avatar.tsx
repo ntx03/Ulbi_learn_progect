@@ -3,8 +3,8 @@ import cls from './Avatar.module.scss';
 import { type CSSProperties, useMemo } from 'react';
 import { AppImage } from '../AppImage';
 import AvatarIcon from '../../assets/icons/avatar.svg';
-import Icon from '@/shared/ui/Icon/Icon';
-import Skeleton from '@/shared/ui/Skeleton/Skeleton';
+import Icon from '../Icon/Icon';
+import Skeleton from '../Skeleton/Skeleton';
 
 interface AvatarProps {
     className?: string;

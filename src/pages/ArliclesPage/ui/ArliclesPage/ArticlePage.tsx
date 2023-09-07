@@ -12,6 +12,7 @@ import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 interface ArticlePageProps {
     className?: string;
 }
@@ -46,6 +47,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
                 className={classNames(cls.ArliclesPage, {}, [className ?? ''])}>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
