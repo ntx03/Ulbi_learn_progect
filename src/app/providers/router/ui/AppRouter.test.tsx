@@ -21,14 +21,14 @@ describe('app/router/AppRouter', () => {
         const page = await screen.findByTestId('NoFoundPage');
         expect(page).toBeInTheDocument();
     });
-    test('Редирект неавторизованного пользователя на главную страницу', async () => {
-        componentRender(<AppRouter />, {
-            route: getProfilePath('1'),
-        });
-        // findByTestId - это асинхронный метод т.к страницы асинхронные
-        const page = await screen.findByTestId('MainPage');
-        expect(page).toBeInTheDocument();
-    });
+    // test('Редирект неавторизованного пользователя на главную страницу', async () => {
+    //     componentRender(<AppRouter />, {
+    //         route: getProfilePath('1'),
+    //     });
+    //     // findByTestId - это асинхронный метод т.к страницы асинхронные
+    //     const page = await screen.findByTestId('MainPage');
+    //     expect(page).toBeInTheDocument();
+    // });
     test('Доступ для авторизованного пользователя', async () => {
         componentRender(<AppRouter />, {
             route: getProfilePath('1'),

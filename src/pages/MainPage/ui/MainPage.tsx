@@ -5,25 +5,23 @@ import { memo } from 'react';
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { Counter } from '@/entities/Counter';
-import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 
 interface MainPageProps {
     className?: string;
 }
-const counter = toggleFeatures({
-    name: 'isCounterEnabled',
-    on: () => <Counter />,
-    off: () => null,
-});
+// const counter = toggleFeatures({
+//     name: 'isCounterEnabled',
+//     on: () => <Counter />,
+//     off: () => null,
+// });
 export const MainPage = memo(({ className }: MainPageProps) => {
     const { t } = useTranslation('main');
-    // const isCounterEnabled = getFeaturesFlag('isCounterEnabled') ?? true;
     return (
         <Page data-testid={'MainPage'} className={classNames(cls.MainPage, {}, [className ?? ''])}>
             {/* <BugButton/> */}
             <VStack max>
                 <p className='title'>{t('Главная страница')}</p>
-                {counter}
+                <Counter />
             </VStack>
         </Page>
     );
