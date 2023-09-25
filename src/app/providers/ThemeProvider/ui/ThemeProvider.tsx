@@ -11,7 +11,9 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+    // получаем текущую тему с сервера
     const { theme: defaultTheme } = useJsonSettings();
+
     const [isThemeInited, setThemeInited] = useState(false);
     const [theme, setTheme] = React.useState<Theme>(defaultTheme || Theme.DARK);
 

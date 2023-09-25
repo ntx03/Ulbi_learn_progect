@@ -3,6 +3,10 @@ import { type SliceCaseReducers, type CreateSliceOptions } from '@reduxjs/toolki
 import { useDispatch } from 'react-redux';
 import { useMemo } from 'react';
 
+/**
+ *
+ * @param options
+ */
 export function buildSlice<State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(
     options: CreateSliceOptions<State, CaseReducers, Name>,
 ) {

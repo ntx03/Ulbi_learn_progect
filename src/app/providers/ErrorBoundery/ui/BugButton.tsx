@@ -6,6 +6,9 @@ interface BugButtonProps {
     className?: string;
 }
 
+/**
+ * кнопка для специального вызова ошибки
+ */
 export const BugButton = ({ className }: BugButtonProps) => {
     const [error, setError] = useState(false);
     const toggle = () => {

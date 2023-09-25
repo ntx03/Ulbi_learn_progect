@@ -13,7 +13,7 @@ interface CounterProps {
 export const Counter = memo(({ className }: CounterProps) => {
     const { t } = useTranslation();
 
-    // этот хук нужен для того, чтобы избавится от диспатч. Надо заменить все в проекте по этому типу.
+    // этот хук нужен для того, чтобы избавится от useSelector и возвращает уже готовый стейт. Надо заменить все в проекте по этому типу.
     const counterValue = useCounterValue();
 
     const { increment, decrement } = useCounterActions();

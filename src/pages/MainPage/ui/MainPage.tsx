@@ -9,7 +9,7 @@ import { Counter } from '@/entities/Counter';
 interface MainPageProps {
     className?: string;
 }
-// const counter = toggleFeatures({
+// const counter = ToggleFeatures({
 //     name: 'isCounterEnabled',
 //     on: () => <Counter />,
 //     off: () => null,

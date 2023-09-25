@@ -2,6 +2,11 @@ import { type AnyAction, combineReducers, type Reducer, type ReducersMapObject }
 
 import { type MountedReducers, type ReducerManager, type StateSchema, type StateSchemaKey } from './StateSchema';
 
+/**
+ * Эта функция для удаления или добавления в store redux редьюсеров (reducers). К примеру если мы не открыли страницу,
+ * то не зачем в сетйт добавлять информацию которая отностится к этой странице и наоборот.
+ * @param initialReducers - все редьюсеры
+ */
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
     // Create an object which maps keys to reducers
     const reducers = { ...initialReducers };

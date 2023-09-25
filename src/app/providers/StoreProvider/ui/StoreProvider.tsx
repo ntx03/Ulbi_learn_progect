@@ -10,6 +10,13 @@ interface StoreProviderProps {
     asyncReducers?: ReducersMapObject<any>;
 }
 
+/**
+ * Провайдер глобального store Redux
+ * @param children
+ * @param initialState
+ * @param asyncReducers
+ * @constructor
+ */
 export const StoreProvider = ({ children, initialState, asyncReducers }: StoreProviderProps) => {
     const store = createReduxStore(initialState as StateSchema, asyncReducers as ReducersMapObject<StateSchema>);
 

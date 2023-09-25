@@ -7,6 +7,9 @@ interface UseThemeResult {
     theme: Theme | 'app_dark_theme';
 }
 
+/**
+ * Функция позвращает тему (theme) и функцию переключатель toggleTheme
+ */
 export function useTheme(): UseThemeResult {
     const { theme, setTheme } = useContext(ThemeContext);
 

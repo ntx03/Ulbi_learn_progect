@@ -12,6 +12,9 @@ interface ErrorBoundaryState {
     hasError: boolean;
 }
 
+/**
+ * Компонент который срабатывает при ошибке в приложении и не дает просто вывести белый экран
+ */
 class ErrorBoundary extends React.Component<ErrorBounderyProps, ErrorBoundaryState> {
     constructor(props: ErrorBounderyProps) {
         super(props);

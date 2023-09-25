@@ -96,7 +96,17 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'target', 'direction', 'as', 'border', 'align', 'justify'],
+                ignoreAttribute: [
+                    'data-testid',
+                    'to',
+                    'target',
+                    'direction',
+                    'as',
+                    'border',
+                    'align',
+                    'justify',
+                    'feature',
+                ],
             },
         ],
         'strict-null-checks/all': 'warn',
