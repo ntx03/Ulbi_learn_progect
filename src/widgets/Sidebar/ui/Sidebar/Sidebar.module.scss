@@ -10,6 +10,13 @@
     margin: 0;
 }
 
+.SidebarRedesigned {
+    background: var(--light-bg-redesigned);
+    width: 220px;
+    height: 100%;
+    border-radius: 32px;
+}
+
 .switchers {
     // position: absolute;
     display: flex;
@@ -63,4 +70,8 @@
     .items {
         margin: 20px auto 0;
     }
+}
+
+.appLogo {
+    padding-top: 20px;
 }

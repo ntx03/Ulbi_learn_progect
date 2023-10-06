@@ -19,6 +19,13 @@
     width: 100%;
 }
 
+.app_redesigned {
+    background: var(--bg-redesigned);
+    min-height: 100vh;
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+}
+
 .content-page {
     width: 100%;
     display: flex;
