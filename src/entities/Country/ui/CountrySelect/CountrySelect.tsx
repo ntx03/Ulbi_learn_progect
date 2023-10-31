@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { HStack } from '@/shared/ui/Stack';
-import ListBox from '@/shared/ui/Popups/ui/ListBox/ListBox';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import ListBox from '@/shared/ui/deprecated/Popups/ui/ListBox/ListBox';
 import { Country } from '../../model/consts/consts';
 
 interface CountrySelectProps {

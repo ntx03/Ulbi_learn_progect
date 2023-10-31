@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';

@@ -13,13 +13,13 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import { useTranslation } from 'react-i18next';
-import Card from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import Card from '@/shared/ui/deprecated/Card/Card';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { type SortOrder } from '@/shared/types/sort';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import Tabs, { type TabItem } from '@/shared/ui/Tabs/Tabs';
+import Tabs, { type TabItem } from '@/shared/ui/deprecated/Tabs/Tabs';
 import { type ArticleSortField, ArticleType, type ArticleView } from '@/entities/Article';
 
 export interface ArticlesPageFiltersProps {

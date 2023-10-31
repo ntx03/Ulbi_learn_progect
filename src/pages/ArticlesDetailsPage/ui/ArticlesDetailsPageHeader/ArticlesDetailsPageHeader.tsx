@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesDetailsPageHeader.module.scss';
 import { memo, useCallback } from 'react';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';

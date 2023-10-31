@@ -13,7 +13,7 @@ import ArticlesDetailsPageHeader from '../ArticlesDetailsPageHeader/ArticlesDeta
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 
 export interface ArticlesDetailsPageProps {

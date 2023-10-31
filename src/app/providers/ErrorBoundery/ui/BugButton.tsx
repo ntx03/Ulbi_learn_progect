@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/deprecated/Button/Button';
 import { useEffect, useState } from 'react';
 
 interface BugButtonProps {

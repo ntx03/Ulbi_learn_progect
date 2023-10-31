@@ -1,7 +1,6 @@
 import { type BuildOptions } from './types/config';
 import MiniCssExctractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack';
-import { buildSvgLoader } from './loaders/buildSvgLoader';
 import { buildBabelLoader } from './loaders/buildBabelLoaders';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
@@ -36,7 +35,27 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             'sass-loader',
         ],
     };
-
+    const svgLoader = {
+        test: /\.svg$/,
+        use: [
+            {
+                loader: '@svgr/webpack',
+                options: {
+                    icon: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                name: 'convertColors',
+                                params: {
+                                    currentColor: true,
+                                },
+                            },
+                        ],
+                    },
+                },
+            },
+        ],
+    };
     // декомпозиция загрузчиков
     const codeBabelLoader = buildBabelLoader({ ...options, isTSX: false });
     const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTSX: true });
@@ -49,11 +68,12 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     // };
 
     return [
-        buildSvgLoader(),
+        // buildSvgLoader(),
         scssLoader,
         fileLoader,
         codeBabelLoader,
         tsxCodeBabelLoader,
+        svgLoader,
         // typescriptLoader
     ];
 }

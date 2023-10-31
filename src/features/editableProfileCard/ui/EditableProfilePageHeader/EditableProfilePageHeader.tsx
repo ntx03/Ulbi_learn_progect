@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './EditableProfilePageHeader.module.scss';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 

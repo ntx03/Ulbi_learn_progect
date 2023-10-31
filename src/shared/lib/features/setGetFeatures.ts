@@ -1,6 +1,6 @@
 import type { FeatureFlag } from '@/shared/types/featureFlag';
 
-let featureFlags: FeatureFlag;
+let featureFlags: FeatureFlag = {};
 
 /**
  * Созраняем переданные фича флаги в переменной

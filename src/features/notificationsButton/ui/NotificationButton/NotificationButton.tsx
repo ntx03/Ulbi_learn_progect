@@ -1,12 +1,12 @@
 import cls from './NotificationsButton.module.scss';
 import { memo, useState } from 'react';
 import { NotificationsList } from '@/entities/Notifications';
-import { Popover } from '@/shared/ui/Popups';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import Icon from '@/shared/ui/Icon/Icon';
+import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import Icon from '@/shared/ui/deprecated/Icon/Icon';
 import NotificationsIcon from '@/shared/assets/icons/bell.svg';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
 
 export interface NotificationButtonProps {
     className?: string;
@@ -24,7 +24,7 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
             onClick={(): void => {
                 setIsOpen(true);
             }}>
-            <Icon Svg={NotificationsIcon} invertedColor={true} />
+            <Icon Svg={NotificationsIcon} width={20} height={20} invertedColor={true} />
         </Button>
     );
     const isMobile = useDevice();

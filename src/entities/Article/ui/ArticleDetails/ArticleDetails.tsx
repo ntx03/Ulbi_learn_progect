@@ -11,13 +11,13 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
-import Skeleton from '@/shared/ui/Skeleton/Skeleton';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import Skeleton from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import Icon from '@/shared/ui/Icon/Icon';
+import Icon from '@/shared/ui/deprecated/Icon/Icon';
 import { type ArticleBlock } from '../../model/types/articles';
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
