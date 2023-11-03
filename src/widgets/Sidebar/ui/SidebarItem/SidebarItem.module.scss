@@ -20,3 +20,28 @@
         display: none;
     }
 }
+
+.itemRedesigned {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding: 0 16px;
+}
+
+.collapsedRedesigned {
+    padding: 0 8px;
+    width: max-content;
+
+    .link {
+        opacity: 0;
+        transition: 0.2s opacity;
+        width: 0;
+        display: none;
+    }
+}
+
+.active {
+    background: linear-gradient(89.98deg, rgb(29 89 255 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+    position: relative;
+    border-left: 2px solid  var(--accent-redesigned);
+}

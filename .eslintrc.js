@@ -106,6 +106,8 @@ module.exports = {
                     'align',
                     'justify',
                     'feature',
+                    'color',
+                    'variant',
                 ],
             },
         ],

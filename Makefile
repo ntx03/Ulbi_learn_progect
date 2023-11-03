@@ -7,6 +7,9 @@ prod:
 dev: 
 	npm run build:dev
 
+fix:
+	npm run fix:all
+
 test:
 	npm run test:unit
 
