@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import cls from './Rating.module.scss';
 import { memo, useCallback, useState } from 'react';
 import Card from '@/shared/ui/deprecated/Card/Card';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import StarRating from '@/shared/ui/deprecated/StarRating/StarRating';
 import Modal from '@/shared/ui/deprecated/Modal/Modal';
