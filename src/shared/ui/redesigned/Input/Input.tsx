@@ -7,7 +7,7 @@ import { Text } from '../Text/Text';
 // Omit исключает ненужные типы из InputHTMLAttributes<HTMLHtmlElement>,
 // которые мы сами задаем в InputProps. Если не использовать Omit
 // и не указать пропсы которые мы переиспользуем сами, то будет ошибка.
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLHtmlElement>, 'onChange' | 'value' | 'readOnly'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLHtmlElement>, 'onChange' | 'value' | 'readOnly' | 'max'>;
 
 export enum InputTheme {
     INVERT = 'invert',
@@ -27,6 +27,7 @@ export interface InputProps extends HTMLInputProps {
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
     sizeInput?: InputSize;
+    max?: boolean;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -44,6 +45,7 @@ export const Input = memo(
         addonRight,
         label,
         sizeInput = 'm',
+        max = false,
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
 
@@ -75,9 +77,10 @@ export const Input = memo(
 
         const Mods = {
             [cls.readonly]: readonly ?? false,
-            [cls.focused]: inFocused,
+            [cls.focused]: inFocused && !readonly,
             [cls.withAddonLeft]: Boolean(addonLeft),
             [cls.withAddonRight]: Boolean(addonRight),
+            [cls.maxWidthInput]: max,
         };
 
         const input = (
@@ -101,7 +104,9 @@ export const Input = memo(
         if (label) {
             return (
                 <HStack gap={'8'} align={'start'} max>
-                    <Text text={label}></Text>
+                    <Text
+                        className={classNames(cls.label, { [cls.readonly]: readonly ?? false }, [])}
+                        text={label}></Text>
                     {input}
                 </HStack>
             );

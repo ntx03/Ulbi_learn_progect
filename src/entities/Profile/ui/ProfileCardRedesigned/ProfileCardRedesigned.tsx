@@ -87,65 +87,70 @@ const ProfileCardRedesigned = ({
                     <Input
                         value={data?.first}
                         label={t('Ваше имя') ?? ''}
-                        // className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeFirstName}
                         readonly={readonly}
                         data-testid='ProfileCard.firstName'
+                        max
                     />
                     <Input
                         value={data?.lastname}
                         label={t('Ваше фамилия') ?? ''}
-                        // className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeLastName}
                         readonly={readonly}
                         data-testid={`ProfileCard.lastName`}
+                        max
                     />
                     <Input
                         value={data?.age}
                         label={t('Ваш возраст') ?? ''}
-                        // className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeAge}
                         readonly={readonly}
+                        max
                     />
                     <Input
                         value={data?.city}
                         label={t('Город') ?? ''}
-                        // className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeCity}
                         readonly={readonly}
+                        max
                     />
                 </VStack>
                 <VStack gap={'16'} max>
                     <Input
                         value={data?.username}
                         label={t('Введите имя пользователя') ?? ''}
-                        //   className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeUsername}
                         readonly={readonly}
+                        max
                     />
                     <Input
                         value={data?.avatar}
                         label={t('Аватар') ?? ''}
-                        //   className={cls.input}
+                        className={cls.input}
                         theme={InputTheme.INVERT}
                         onChange={onChangeAvatar}
                         readonly={readonly}
+                        max
                     />
 
                     <CurrencySelect
-                        //  className={cls.input}
+                        className={cls.input}
                         value={data?.currency}
                         onChange={onChangeCurrency}
                         readonly={readonly}
                     />
                     <CountrySelect
-                        //  className={cls.input}
-                        //  className={cls.input}
+                        className={cls.input}
                         value={data?.country}
                         onChange={onChangeCountry}
                         readonly={readonly}

@@ -44,20 +44,27 @@
     opacity: 0.7;
 }
 
+.button {
+    width: 100px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
 .readonly {
     opacity: 0.6;
+
+    .button {
+        &:hover {
+            color: var(--text-redesigned);
+            fill: var(--text-redesigned);
+        }
+    }
 }
 
 .label {
     margin: auto 5px auto 0;
     font-size: var(--font-size-m);
     color: var(--primary-color);
-    padding: 0;
-}
-
-.button {
-    width: 100px;
-    height: 30px;
-    margin: 0;
     padding: 0;
 }

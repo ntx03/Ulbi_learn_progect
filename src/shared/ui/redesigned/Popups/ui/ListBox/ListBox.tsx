@@ -50,7 +50,15 @@ export default function ListBox<T extends string>({
                 onChange={onChange}
                 disabled={readonly}>
                 <HListbox.Button className={cls.trigger}>
-                    <Button variant={'filled'} className={cls.button} addonRight={<Icon Svg={arrowIcon} />}>
+                    <Button
+                        variant={'filled'}
+                        className={classNames(cls.button, { [cls.readonly]: readonly ?? false }, [])}
+                        addonRight={
+                            <Icon
+                                className={classNames(cls.icon, { [cls.readonly]: readonly ?? false }, [])}
+                                Svg={arrowIcon}
+                            />
+                        }>
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListbox.Button>
