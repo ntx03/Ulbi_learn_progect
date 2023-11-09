@@ -1,14 +1,6 @@
-.ProfileCard {
+.ProfileCardDeprecated {
     padding: 20px;
     border: 2px solid var(--invert-bg-color);
-}
-
-.ProfileCardRedesigned {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
 }
 
 .data {

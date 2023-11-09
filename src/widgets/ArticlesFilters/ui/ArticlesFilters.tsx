@@ -57,6 +57,7 @@ const ArticlesFilters = (props: ArticlesFiltersProps) => {
                 <Input
                     onChange={onChangeSearch}
                     value={search}
+                    sizeInput='s'
                     placeholder={t('Поиск') ?? ''}
                     addonLeft={<Icon Svg={SearchIcon} />}
                 />

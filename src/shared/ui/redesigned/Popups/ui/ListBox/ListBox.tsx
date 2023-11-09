@@ -42,9 +42,7 @@ export default function ListBox<T extends string>({
 
     return (
         <>
-            {label && (
-                <span className={classNames(cls.label, { [cls.readonly]: readonly ?? false }, [])}>{label + '>'}</span>
-            )}
+            {label && <span className={classNames(cls.label, { [cls.readonly]: readonly ?? false }, [])}>{label}</span>}
             <HListbox
                 as={'div'}
                 className={classNames(cls.ListBox, { [cls.readonly]: readonly ?? false }, [className])}

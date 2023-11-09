@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import ListBox from '@/shared/ui/deprecated/Popups/ui/ListBox/ListBox';
+import ListBoxDeprecated from '@/shared/ui/deprecated/Popups/ui/ListBox/ListBox';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Currency } from '../../model/consts/consts';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import ListBox from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 
 interface CurrencySelectProps {
     className?: string;
@@ -23,19 +25,37 @@ const options = [
 const CurrencySelect = memo(({ className, value, onChange, readonly }: CurrencySelectProps) => {
     const { t } = useTranslation('profile');
     return (
-        <HStack className={classNames('', {}, [className])}>
-            {/* <p style={{'margin': '0'}}>{`Укажите валюту>`}</p> */}
-            <ListBox
-                className={classNames('', {}, [])}
-                label={t('Укажите валюту') ?? ''}
-                defaultValue={t('Укажите валюту') ?? ''}
-                readonly={readonly}
-                items={options}
-                value={value}
-                onChange={onChange}
-                direction={'top'}
-            />
-        </HStack>
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <HStack className={classNames('', {}, [className])}>
+                    <ListBox
+                        className={classNames('', {}, [])}
+                        label={t('Валюта') ?? ''}
+                        readonly={readonly}
+                        items={options}
+                        value={value}
+                        onChange={onChange}
+                        direction={'top'}
+                    />
+                </HStack>
+            }
+            off={
+                <HStack className={classNames('', {}, [className])}>
+                    {/* <p style={{'margin': '0'}}>{`Укажите валюту>`}</p> */}
+                    <ListBoxDeprecated
+                        className={classNames('', {}, [])}
+                        label={t('Укажите валюту') ?? ''}
+                        defaultValue={t('Укажите валюту') ?? ''}
+                        readonly={readonly}
+                        items={options}
+                        value={value}
+                        onChange={onChange}
+                        direction={'top'}
+                    />
+                </HStack>
+            }
+        />
     );
 });
 

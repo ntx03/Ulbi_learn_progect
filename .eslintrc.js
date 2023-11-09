@@ -108,6 +108,7 @@ module.exports = {
                     'feature',
                     'color',
                     'variant',
+                    'sizeInput',
                 ],
             },
         ],

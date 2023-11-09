@@ -21,8 +21,8 @@ if (featureState !== 'on' && featureState !== 'off') {
 // этот скрипт умеет автоматом менять начало пути приписывая к нему '@/'
 const project = new Project();
 // проходимся по всем файлам и добавляем их
-project.addSourceFilesAtPaths('./src/**/*.tsx');
-// project.addSourceFilesAtPaths('./src/**/*.tsx');
+project.addSourceFilesAtPaths('src/**/*.tsx');
+project.addSourceFilesAtPaths('src/**/*.ts');
 // получаем все файлы
 const files = project.getSourceFiles();
 

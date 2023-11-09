@@ -1,16 +1,18 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ProfileCard.module.scss';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { Input, InputTheme } from '@/shared/ui/deprecated/Input/Input';
 import { type Profile } from '../../../Profile/model/types/profile';
-import Loader from '@/shared/ui/deprecated/Loader/Loader';
-import Avatar from '@/shared/ui/deprecated/Avatar/Avatar';
-import { type Currency, CurrencySelect } from '@/entities/Currency';
-import { CountrySelect } from '@/entities/Country';
+import { type Currency } from '@/entities/Currency';
 import { type Country } from '@/entities/Country';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import ProfileCardDeprecated, {
+    ProfileCardDeprecatedError,
+    ProfileCardDeprecatedLoader,
+} from '../ProfileCardDeprecated/ProfileCardDeprecated';
+import ProfileCardRedesigned, {
+    ProfileCardRedesignedError,
+    ProfileCardRedesignedSkeleton,
+} from '../ProfileCardRedesigned/ProfileCardRedesigned';
 
-interface ProfileCardProps {
+export interface ProfileCardProps {
     className?: string;
     data?: Profile;
     error?: string;
@@ -44,105 +46,55 @@ const ProfileCard = ({
     const { t } = useTranslation('profile');
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-                <Loader />
-            </div>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={<ProfileCardRedesignedSkeleton />}
+                off={<ProfileCardDeprecatedLoader />}
+            />
         );
     }
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-                <Text
-                    title={t('Произошла ошибка при загрузке профиля')}
-                    text={t('Попробуйте обновить страницу')}
-                    theme={TextTheme.ERROR}
-                    align={TextAlign.CENTER}
-                />
-            </div>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={<ProfileCardRedesignedError />}
+                off={<ProfileCardDeprecatedError />}
+            />
         );
     }
+
     return (
-        <div
-            className={classNames(cls.ProfileCard, { [cls.editing]: !readonly }, [className ?? ''])}
-            data-testid='ProfileCard'>
-            <div className={cls.data}>
-                {data?.avatar && (
-                    <div className={cls.avatarWrapper}>
-                        <Avatar src={data?.avatar} size={100} alt={t('ваш профиль') ?? ''} />
-                    </div>
-                )}
-                <Input
-                    value={data?.first}
-                    placeholder={t('Ваше имя') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeFirstName}
-                    readonly={readonly}
-                    data-testid='ProfileCard.firstName'
-                />
-                <Input
-                    value={data?.lastname}
-                    placeholder={t('Ваше фамилия') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeLastName}
-                    readonly={readonly}
-                    data-testid={`ProfileCard.lastName`}
-                />
-                <Input
-                    value={data?.age}
-                    placeholder={t('Ваш возраст') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeAge}
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <ProfileCardRedesigned
+                    data={data}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCountry={onChangeCountry}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
                     readonly={readonly}
                 />
-                <Input
-                    value={data?.city}
-                    placeholder={t('Город') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeCity}
+            }
+            off={
+                <ProfileCardDeprecated
+                    data={data}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCountry={onChangeCountry}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
                     readonly={readonly}
                 />
-                <Input
-                    value={data?.country}
-                    placeholder={t('Страна') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    // onChange={onChangeCountry}
-                    readonly={readonly}
-                />
-                <Input
-                    value={data?.avatar}
-                    placeholder={t('Аватар') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeAvatar}
-                    readonly={readonly}
-                />
-                <Input
-                    value={data?.username}
-                    placeholder={t('Введите имя пользователя') ?? ''}
-                    className={cls.input}
-                    theme={InputTheme.INVERT}
-                    onChange={onChangeUsername}
-                    readonly={readonly}
-                />
-                <CurrencySelect
-                    className={cls.input}
-                    value={data?.currency}
-                    onChange={onChangeCurrency}
-                    readonly={readonly}
-                />
-                <CountrySelect
-                    className={cls.input}
-                    value={data?.country}
-                    onChange={onChangeCountry}
-                    readonly={readonly}
-                />
-            </div>
-        </div>
+            }
+        />
     );
 };
 

@@ -1,6 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 import React, { type InputHTMLAttributes, memo, type ReactNode, useEffect, useRef, useState } from 'react';
+import { HStack } from '../Stack';
+import { Text } from '../Text/Text';
 
 // Omit исключает ненужные типы из InputHTMLAttributes<HTMLHtmlElement>,
 // которые мы сами задаем в InputProps. Если не использовать Omit
@@ -12,15 +14,19 @@ export enum InputTheme {
     NORMAL = 'normal',
 }
 
+type InputSize = 's' | 'm' | 'l';
+
 export interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
+    label?: string;
     onChange?: (value: string) => void;
     autofocus?: boolean;
     theme?: string;
     readonly?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
+    sizeInput?: InputSize;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -36,6 +42,8 @@ export const Input = memo(
         readonly,
         addonLeft,
         addonRight,
+        label,
+        sizeInput = 'm',
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
 
@@ -72,8 +80,8 @@ export const Input = memo(
             [cls.withAddonRight]: Boolean(addonRight),
         };
 
-        return (
-            <div className={classNames(cls.InputWrapper, Mods, [className ?? ''])}>
+        const input = (
+            <div className={classNames(cls.InputWrapper, Mods, [className ?? '', cls[sizeInput]])}>
                 <div className={cls.withAddonLeft}>{addonLeft}</div>
                 <input
                     ref={ref}
@@ -89,6 +97,17 @@ export const Input = memo(
                 <div className={cls.withAddonRight}>{addonRight}</div>
             </div>
         );
+
+        if (label) {
+            return (
+                <HStack gap={'8'} align={'start'} max>
+                    <Text text={label}></Text>
+                    {input}
+                </HStack>
+            );
+        }
+
+        return input;
     },
 );
 
