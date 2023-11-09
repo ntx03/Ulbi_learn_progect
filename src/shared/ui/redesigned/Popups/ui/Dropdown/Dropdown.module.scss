@@ -1,0 +1,22 @@
+.menu {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 1;
+    border-radius: 18px;
+    border: 1px solid var(--accent-redesigned);
+    margin: 50px 0 0;
+    right: 80%;
+    top: 0%;
+}
+
+.item {
+    padding: 10px 25px;
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--text-redesigned);
+    cursor: pointer;
+}
+
+

@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleList, { type ArticleListProps } from './ArticleList';
 import { type Article } from '../../model/types/articles';
 
-import { ArticleBlockType, ArticleType, ArticleView } from '../..';
+// eslint-disable-next-line
+import { ArticleBlockType, ArticleType, ArticleView } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/ArticleList',

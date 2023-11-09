@@ -1,7 +1,16 @@
 .ArticleViewSelector {
     position: relative;
+    .notSelected {
+        fill: var(--card-bg);
+    }
 }
 
-.notSelected {
-    fill: var(--card-bg);
+.ArticleViewSelectorRedesigned {
+    position: relative;
+    display: flex;
+    .notSelected {
+        fill: var(--light-bg-redesigned);
+
+    }
 }
+

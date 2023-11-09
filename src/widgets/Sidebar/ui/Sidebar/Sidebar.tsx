@@ -57,6 +57,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 <aside
                     data-testid='sidebar'
                     className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className ?? ''])}>
+                    <AppLogo size={collapsed ? 25 : 40} className={cls.appLogo} />
+                    <VStack className={cls.items} gap={'8'}>
+                        {itemsList}
+                    </VStack>
                     <Button
                         data-testid='sidebar-toggle'
                         className={classNames(cls.collapseBtn, {}, [])}

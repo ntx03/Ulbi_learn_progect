@@ -33,8 +33,12 @@ const Page = (props: PageProps) => {
     const location = useLocation();
     const scrollPosition = useSelector((state: StateSchema) => getScrollSaveByPath(state, location.pathname));
     useInfiniteScroll({
-        wrapperRef,
         triggerRef,
+        wrapperRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => wrapperRef,
+        }),
         callback: onScrollEnd,
     });
 
