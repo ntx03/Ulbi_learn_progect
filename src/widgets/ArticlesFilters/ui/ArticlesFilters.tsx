@@ -10,6 +10,8 @@ import { type SortOrder } from '@/shared/types/sort';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import Tabs from '@/shared/ui/redesigned/Tabs/Tabs';
 import { Input } from '@/shared/ui/redesigned/Input/Input';
+import SearchIcon from '@/shared/assets/icons/redisigned/search.svg';
+import Icon from '@/shared/ui/redesigned/Icon/Icon';
 
 export interface ArticlesFiltersProps {
     className?: string;
@@ -51,8 +53,13 @@ const ArticlesFilters = (props: ArticlesFiltersProps) => {
 
     return (
         <Card className={classNames(cls.ArticlesFilters, {}, [className ?? ''])} padding={'24'}>
-            <VStack gap={'32'}>
-                <Input onChange={onChangeSearch} value={search} placeholder={t('Поиск') ?? ''} />
+            <VStack gap={'16'}>
+                <Input
+                    onChange={onChangeSearch}
+                    value={search}
+                    placeholder={t('Поиск') ?? ''}
+                    addonLeft={<Icon Svg={SearchIcon} />}
+                />
                 <Tabs tabs={typeTabs} value={type} direction={'column'} onTabClick={onChangeType} />
                 <ArticleSortSelector
                     sort={sort}

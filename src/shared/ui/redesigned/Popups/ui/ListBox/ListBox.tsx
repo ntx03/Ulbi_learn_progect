@@ -5,6 +5,8 @@ import pCls from '../../styles/popup.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '../../../Button/Button';
 import { type DropdownDirection } from '@/shared/types/ui';
+import Icon from '../../../Icon/Icon';
+import arrowIcon from '../../../../../assets/icons/redisigned/arrow_down.svg';
 
 export interface ListBoxItem<T extends string> {
     value: string;
@@ -50,7 +52,7 @@ export default function ListBox<T extends string>({
                 onChange={onChange}
                 disabled={readonly}>
                 <HListbox.Button className={cls.trigger}>
-                    <Button variant={'filled'} className={cls.button}>
+                    <Button variant={'filled'} className={cls.button} addonRight={<Icon Svg={arrowIcon} />}>
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListbox.Button>

@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
-import React, { type InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import React, { type InputHTMLAttributes, memo, type ReactNode, useEffect, useRef, useState } from 'react';
 
 // Omit исключает ненужные типы из InputHTMLAttributes<HTMLHtmlElement>,
 // которые мы сами задаем в InputProps. Если не использовать Omit
@@ -19,7 +19,8 @@ export interface InputProps extends HTMLInputProps {
     autofocus?: boolean;
     theme?: string;
     readonly?: boolean;
-    'data-testid'?: string;
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
 }
 
 // memo позволяет избежать лишних перерисовок
@@ -30,20 +31,18 @@ export const Input = memo(
         onChange,
         placeholder = '',
         type = 'text',
-        theme = InputTheme.NORMAL,
+        theme,
         autofocus,
         readonly,
-        'data-testid': dataTestId,
+        addonLeft,
+        addonRight,
     }: InputProps) => {
         const ref = useRef<HTMLInputElement>(null);
-        const [inFocused, setInFocused] = useState(false);
-        const [caretPosition, setCaretPosition] = useState(0);
 
-        const isCaretVisible = inFocused && !readonly;
+        const [inFocused, setInFocused] = useState(false);
+
         const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
             onChange?.(e.target.value);
-            //  ОПРЕДЕЛЯЕМ МЕСТОПОЛОЖЕНИЕ КОРРЕТКИ ПОСЛЕ ПОСЛЕДНЕГО СИМВОЛА
-            setCaretPosition(e.target.value.length);
         };
         // Если убираем мышку с инпута, то убираем фокус
         const onBlur = () => {
@@ -53,10 +52,7 @@ export const Input = memo(
         const onFocus = () => {
             setInFocused(true);
         };
-        // при помощи onSelect при клике мышкой на конкретный символ, определяем местоположение корретки
-        const onSelect = (e: any) => {
-            setCaretPosition(e?.target?.selectionStart || 0);
-        };
+
         // при монтировании компонента устанавливаем фокус
         useEffect(() => {
             if (autofocus) {
@@ -68,37 +64,29 @@ export const Input = memo(
                 setInFocused(false);
             };
         }, [autofocus]);
+
+        const Mods = {
+            [cls.readonly]: readonly ?? false,
+            [cls.focused]: inFocused,
+            [cls.withAddonLeft]: Boolean(addonLeft),
+            [cls.withAddonRight]: Boolean(addonRight),
+        };
+
         return (
-            <div
-                className={classNames(cls.InputWrapper, { [cls[theme]]: true, [cls.readonly]: readonly ?? false }, [
-                    className ?? '',
-                ])}>
-                {placeholder && (
-                    <div
-                        className={classNames(cls.placeholder, { [cls[theme]]: true }, [
-                            className ?? '',
-                        ])}>{`${placeholder} >`}</div>
-                )}
-                <div className={classNames(cls.caretWrapper, { [cls[theme]]: true }, [className ?? ''])}>
-                    <input
-                        ref={ref}
-                        type={type}
-                        value={value}
-                        onChange={onChangeHandler}
-                        className={cls.input}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                        onSelect={onSelect}
-                        readOnly={readonly}
-                        data-testid={dataTestId}
-                    />
-                    {isCaretVisible && (
-                        <span
-                            className={classNames(cls.caret, { [cls[theme]]: true }, [className ?? ''])}
-                            style={{ left: `${caretPosition * 9}px` }}
-                        />
-                    )}
-                </div>
+            <div className={classNames(cls.InputWrapper, Mods, [className ?? ''])}>
+                <div className={cls.withAddonLeft}>{addonLeft}</div>
+                <input
+                    ref={ref}
+                    type={type}
+                    value={value}
+                    onChange={onChangeHandler}
+                    className={cls.input}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    readOnly={readonly}
+                    placeholder={placeholder}
+                />
+                <div className={cls.withAddonRight}>{addonRight}</div>
             </div>
         );
     },
