@@ -2,11 +2,13 @@
     position: relative;
     width: max-content;
 }
+
 .menu {
     border-radius: 18px;
     border: 1px solid var(--accent-redesigned);
     overflow: hidden;
 }
+
 .trigger {
     background: none;
     outline: none;
@@ -15,20 +17,11 @@
     border: none;
     cursor: pointer;
 }
+
 .active {
     background: var(--light-bg-redesigned);
     width: 100%;
     overflow: hidden;
-
-    //&:first-child {
-    //    border-top-left-radius: 8px;
-    //    border-top-right-radius: 8px;
-    //}
-    //
-    //&:last-child {
-    //    border-bottom-left-radius: 8px;
-    //    border-bottom-right-radius: 8px;
-    //}
 }
 
 .top {

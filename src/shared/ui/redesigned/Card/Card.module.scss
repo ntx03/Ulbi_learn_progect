@@ -1,7 +1,7 @@
 .Card {
     padding: 15px;
-
 }
+
 .withoutPaddings {
     padding: 0;
 }
@@ -12,28 +12,31 @@
 
 .normal {
     background-color: var(--dark-bg-redesigned);
+    border-radius: 12px;
 }
 
 .outlined {
     border: 1px solid var(--accent-redesigned);
 }
+
 .max {
     width: 100%;
 }
+
 .gap_0 {
     padding: 0;
 }
+
 .gap_8 {
     padding: 8px;
 }
+
 .gap_16 {
     padding: 16px;
 }
+
 .gap_24 {
     padding: 24px;
-}
-.normal {
-    border-radius: 12px;
 }
 
 .round {

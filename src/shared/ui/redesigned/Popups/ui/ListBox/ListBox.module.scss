@@ -35,9 +35,11 @@
     margin: 0;
     text-align: center;
 }
+
 .selected {
     background: var(--light-bg-redesigned);
 }
+
 .disabled {
     opacity: 0.7;
 }
