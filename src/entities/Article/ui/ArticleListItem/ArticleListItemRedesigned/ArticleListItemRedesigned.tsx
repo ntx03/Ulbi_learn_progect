@@ -24,7 +24,9 @@ const ArticleListItemRedesigned = ({ className, article, view, target }: Article
     const [isHover, bindHover] = useHover();
     const { t } = useTranslation('article');
 
-    const types: JSX.Element = <Text text={article.type.join(',')} variant={'primary'} className={cls.types} />;
+    const types: JSX.Element = (
+        <Text text={article.type.join(',')} variant={'primary'} className={cls.types} size={'m'} />
+    );
     const views: JSX.Element = (
         <HStack gap={'8'}>
             <Icon Svg={eye} />
@@ -78,10 +80,10 @@ const ArticleListItemRedesigned = ({ className, article, view, target }: Article
         <AppLink
             to={getArticlesDetailsPath(article.id)}
             {...bindHover}
-            className={classNames(cls.ArticleListItem, {}, [className ?? '', cls[view]])}
+            className={classNames(cls.ArticleListItemRedesigned, {}, [className ?? '', cls[view]])}
             target={target}>
-            <Card>
-                <div className={cls.imageWrapper}>
+            <Card border={'round'} padding={'0'} className={cls.cardWrapper}>
+                <VStack>
                     <AppImage
                         src={article.img}
                         className={cls.img}
@@ -89,14 +91,18 @@ const ArticleListItemRedesigned = ({ className, article, view, target }: Article
                         fallback={<Skeleton width={200} height={200} />}
                         errorFallback={<Text text={t('Ошибка при загрузке...') ?? ''} />}
                     />
-                    <Text text={article.createdAt} className={cls.date}></Text>
-                </div>
-
-                <div className={cls.infoWrapper}>
-                    {types}
-                    {views}
-                </div>
-                <Text text={article.title} className={cls.title} />
+                    <VStack>
+                        <Text text={article.subtitle} size={'l'} className={cls.subtitle} />
+                        <HStack justify={'between'} max className={cls.articleInfo}>
+                            <Text text={article.createdAt} size={'m'}></Text>
+                            <HStack>{views}</HStack>
+                        </HStack>
+                        <HStack className={cls.userInfo}>
+                            <Avatar size={32} src={article.user.avatar} />
+                            <Text bold text={article.user.username} size={'m'} />
+                        </HStack>
+                    </VStack>
+                </VStack>
             </Card>
         </AppLink>
     );
