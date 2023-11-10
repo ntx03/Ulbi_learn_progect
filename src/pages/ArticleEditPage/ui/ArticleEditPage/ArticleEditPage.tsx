@@ -9,6 +9,9 @@ export interface ArticleEditPageProps {
     className?: string;
 }
 
+/**
+ * Редактирование или создание новой статьи (страница)
+ */
 const ArticleEditPage = ({ className }: ArticleEditPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();

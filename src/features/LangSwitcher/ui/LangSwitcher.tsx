@@ -11,6 +11,9 @@ interface LangSwitcherProps {
     short: boolean;
 }
 
+/**
+ * Переключатель языка
+ */
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation('translation');
 

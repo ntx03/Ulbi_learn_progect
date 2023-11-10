@@ -10,6 +10,9 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
+/**
+ * Компонент с рекомендацией статей
+ */
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation('article');

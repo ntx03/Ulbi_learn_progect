@@ -8,6 +8,9 @@ interface ArticlePageGreetingProps {
     className?: string;
 }
 
+/**
+ * Приветствие нового пользователя, если он зашел на страницу со статьями первый раз
+ */
 export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
     const { className } = props;
     const { t } = useTranslation('article');

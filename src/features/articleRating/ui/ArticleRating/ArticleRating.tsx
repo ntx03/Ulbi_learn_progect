@@ -12,6 +12,10 @@ export interface ArticleRatingProps {
     articleId?: string;
 }
 
+/**
+ * Отображение и оценка рейтинга статьи
+ * @param articleId - id статьи
+ */
 const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
     const { t } = useTranslation('article');
     const userData = useSelector(getUserAuthData);

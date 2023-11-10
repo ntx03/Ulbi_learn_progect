@@ -22,6 +22,9 @@ export interface ArticlesDetailsPageProps {
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,
 };
+/**
+ * Это компонент для отобрадения статьи целиком вместе с рейтингами, комментариями
+ */
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();

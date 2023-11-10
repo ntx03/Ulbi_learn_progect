@@ -1,17 +1,31 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import { memo } from 'react';
-import Card from '@/shared/ui/deprecated/Card/Card';
-
-import Skeleton from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import CardRedesigned from '@/shared/ui/redesigned/Card/Card';
+import CardDeprecated from '@/shared/ui/deprecated/Card/Card';
+import SkeletonDeprecated from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import SkeletonRedesigned from '@/shared/ui/redesigned/Skeleton/Skeleton';
 import { ArticleView } from '../../model/consts/consts';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface ArticleListItemSkeletonProps {
     className?: string;
     view: ArticleView;
 }
 
+/**
+ * Отображение скелетона при загрузке списка статей (для плитки и списка)
+ * @param view - big or small
+ */
 const ArticleListItemSkeleton = ({ className, view }: ArticleListItemSkeletonProps) => {
+    const Skeleton = toggleFeatures({
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+        name: 'isAppRedesigned',
+    });
+
+    const Card = toggleFeatures({ on: () => CardRedesigned, off: () => CardDeprecated, name: 'isAppRedesigned' });
+
     if (view === ArticleView.BIG) {
         return (
             <div className={classNames(cls.ArticleListItemSkeleton, {}, [className ?? '', cls[view]])}>

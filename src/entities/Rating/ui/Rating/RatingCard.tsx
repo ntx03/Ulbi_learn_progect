@@ -20,6 +20,9 @@ interface RatingProps {
     rate?: number;
 }
 
+/**
+ * Карточка с выставлением или отображением рейтинга
+ */
 export const RatingCard = memo((props: RatingProps) => {
     const { className, onCancel, onAccept, feedbackTitle, hasFeedback, title, rate } = props;
     const { t } = useTranslation();

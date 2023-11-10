@@ -45,9 +45,13 @@
 }
 
 .outline {
-    border: 2px solid var(--invert-primary-color);
-    color: var(--invert-primary-color);
+    border: 1px solid var(--icon-redesigned);
+    border-radius: 34px;
     background: none;
+
+    &:hover {
+        border: 1px solid var(--accent-redesigned);
+    }
 }
 
 .square {

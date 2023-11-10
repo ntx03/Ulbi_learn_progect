@@ -12,6 +12,9 @@ interface AppLinkProps extends LinkProps {
     activeClassName?: string;
 }
 
+/**
+ * Ссылка для перехода на страницу или другое
+ */
 const AppLink = memo((props: AppLinkProps) => {
     const { activeClassName = '', to, className, children, variant = 'primary', ...otherProps } = props;
 

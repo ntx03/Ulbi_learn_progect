@@ -15,6 +15,9 @@ export interface ArticlesDetailsPageHeaderProps {
     className?: string;
 }
 
+/**
+ * Это компонент загаловка статьи, сожеджит кнопки назад, и редактировать (для автора статьи)
+ */
 const ArticlesDetailsPageHeader = ({ className }: ArticlesDetailsPageHeaderProps) => {
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const error = useSelector(getArticleDetailsError);

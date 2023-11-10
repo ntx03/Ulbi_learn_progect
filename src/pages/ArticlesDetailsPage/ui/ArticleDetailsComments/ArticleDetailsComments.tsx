@@ -17,6 +17,11 @@ export interface ArticleDetailsCommentsProps {
     id: string;
 }
 
+/**
+ * Компонент отображающий комментрии к статье
+ * @param id - статьи  к которой относятся комментарии
+ * @constructor
+ */
 const ArticleDetailsComments = ({ className, id }: ArticleDetailsCommentsProps) => {
     const { t } = useTranslation('article');
     const dispatch = useAppDispatch();

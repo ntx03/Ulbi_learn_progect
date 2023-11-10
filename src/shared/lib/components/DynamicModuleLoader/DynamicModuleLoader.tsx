@@ -15,6 +15,9 @@ interface DynamicModuleLoaderProps {
     children: React.ReactNode;
 }
 
+/**
+ * Компонент который динамически при размонтировании убирает стейт из redux
+ */
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: DynamicModuleLoaderProps) => {
     const { children, reducers, removeAfterUnmount } = props;
 
@@ -28,7 +31,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props: Dynamic
         Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
             const mounted = mountedReducers[name];
 
-            // добавляем новый редюсаер если его нет
+            // добавляем новый редюсер если его нет
             if (!mounted) {
                 store.reducerManager.add(name, reducer);
                 dispatch({ type: `@INIT ${name} reducer` });

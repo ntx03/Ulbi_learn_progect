@@ -16,6 +16,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     addonRight?: ReactNode;
 }
 
+/**
+ * Компонент кнопки редизайненной с различными параметрами.
+ * По умолчанию: variant = 'outline' , size = 'm'
+ * variant? =  'clear' | 'outline' | 'filled'
+ * size? = 'm' | 'l' | 'xl';
+ * square? =  boolean
+ * disabled? = boolean
+ * addonLeft?: ReactNode
+ * addonRight?: ReactNode
+ */
 export const Button = memo((props: ButtonProps) => {
     const {
         className = '',

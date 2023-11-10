@@ -43,6 +43,15 @@ export interface FlexProps extends DivProps {
     max?: boolean;
 }
 
+/**
+ * обертка flex для блоков
+ * Параметры по умолчанию justify = 'start', direction = 'row',  align = 'center', gap = '8', max = false
+ * Justify = 'start' | 'center' | 'end' | 'between';
+ * Align = 'start' | 'center' | 'end';
+ * Direction = 'row' | 'column';
+ * Gap = '4' | '8' | '16' | '24' | '32';
+ * Max = true: width: 100%;
+ */
 const Flex = (props: FlexProps) => {
     const {
         className,

@@ -32,7 +32,10 @@ export interface ArticleDetailsProps {
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
 };
-
+/**
+ * Компонент самой статьи состоящей из разных блоков (текст, код, изображение)
+ * @param id - статьи
+ */
 export const ArticleDetails = ({ className, id }: ArticleDetailsProps) => {
     const { t } = useTranslation('article');
     const dispatch = useAppDispatch();

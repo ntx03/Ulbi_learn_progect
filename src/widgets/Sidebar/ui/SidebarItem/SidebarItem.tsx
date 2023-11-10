@@ -15,6 +15,9 @@ interface SidebarItemProps {
     collapsed: boolean;
 }
 
+/**
+ * Позиция из списка меню навигации по страницам сайта (состоит из названия и иконки)
+ */
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const isAuth = useSelector(getUserAuthData);
     const { t } = useTranslation('translation');

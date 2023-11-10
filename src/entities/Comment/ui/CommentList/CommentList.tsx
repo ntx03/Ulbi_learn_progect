@@ -12,6 +12,11 @@ export interface CommentListProps {
     isLoading?: boolean;
 }
 
+/**
+ * Список комментариев к статье
+ * @param comments - комменты которе есть к статье
+ * @param isLoading - состояние загрузки (true or false)
+ */
 const CommentList = ({ className, comments = [], isLoading }: CommentListProps) => {
     const { t } = useTranslation();
 

@@ -17,6 +17,11 @@ export interface AddCommentFormProps {
 const reducers: ReducerList = {
     addCommentForm: addCommentFormReducer,
 };
+/**
+ * Форма для отправки комментария к статье
+ * @param onSendComment
+ * @constructor
+ */
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
     const { t } = useTranslation('article');
     const text = useSelector(getAddCommentFormText);

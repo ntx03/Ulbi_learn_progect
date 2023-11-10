@@ -90,7 +90,7 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
-        'unused-imports/no-unused-imports': 'error',
+        // 'unused-imports/no-unused-imports': 'error',
         // правило подсвечивает если нет перевода в i18next в тексте компонета
         'i18next/no-literal-string': [
             'error',
@@ -109,6 +109,7 @@ module.exports = {
                     'color',
                     'variant',
                     'sizeInput',
+                    'size',
                 ],
             },
         ],

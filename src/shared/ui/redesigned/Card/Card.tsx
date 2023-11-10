@@ -20,7 +20,13 @@ const mapPaddingToClass: Record<CardPadding, string> = {
     '16': 'gap_16',
     '24': 'gap_24',
 };
-
+/**
+ * Компонет карточки. Задает задний фон, скругления, бордеры.
+ * @param variant 'normal' | 'outlined' | 'light'
+ * @param max width: 100% or false
+ * @param padding '0' | '8' | '16' | '24';
+ * @param border 'round' | 'normal';
+ */
 const Card = ({
     className,
     children,
