@@ -9,7 +9,7 @@ import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/
 import IconDeprecated from '@/shared/ui/deprecated/Icon/Icon';
 import { ArticleView } from '@/entities/Article';
 import { toggleFeatures } from '@/shared/lib/features';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import Icon from '@/shared/ui/redesigned/Icon/Icon';
 import Card from '@/shared/ui/redesigned/Card/Card';
 import { HStack } from '@/shared/ui/redesigned/Stack';

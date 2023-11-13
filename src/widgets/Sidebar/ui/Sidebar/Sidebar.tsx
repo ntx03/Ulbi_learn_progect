@@ -8,7 +8,7 @@ import SidebarItem from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
 import Icon from '@/shared/ui/redesigned/Icon/Icon';
 import ArrowIcon from '../../../../shared/assets/icons/redisigned/arrow_down.svg';

@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import ViewSelectorContainer from '../ViewSelectorContainer/ViewSelectorContainer';
 import FiltersContainer from '../FiltersContainer/FiltersContainer';

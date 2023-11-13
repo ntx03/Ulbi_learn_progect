@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { type Profile } from '../../../Profile/model/types/profile';
 import { type Currency } from '@/entities/Currency';
 import { type Country } from '@/entities/Country';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import ProfileCardDeprecated, {
     ProfileCardDeprecatedError,
     ProfileCardDeprecatedLoader,

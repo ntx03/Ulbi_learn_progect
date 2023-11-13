@@ -3,7 +3,7 @@ import cls from './LangSwitcher.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { memo } from 'react';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { Button } from '@/shared/ui/redesigned/Button/Button';
 
 interface LangSwitcherProps {

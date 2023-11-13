@@ -5,7 +5,7 @@ import type { Notifications } from '../../model/types/notifications';
 import CardDeprecated, { CardTheme } from '@/shared/ui/deprecated/Card/Card';
 import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { Text } from '@/shared/ui/redesigned/Text/Text';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import Card from '@/shared/ui/redesigned/Card/Card';
 
 export interface NotificationsItemProps {

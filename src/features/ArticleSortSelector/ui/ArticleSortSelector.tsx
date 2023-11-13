@@ -5,7 +5,7 @@ import Select, { type SelectOption } from '@/shared/ui/deprecated/Select/Select'
 import { useMemo } from 'react';
 import { type SortOrder } from '@/shared/types/sort';
 import { ArticleSortField } from '@/entities/Article';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import ListBox from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text/Text';

@@ -19,3 +19,9 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlag) {
 export function getFeaturesFlag(flag: keyof FeatureFlag) {
     return featureFlags[flag];
 }
+/**
+ * получаем все вича-флаги
+ */
+export function getAllFeaturesFlag() {
+    return featureFlags;
+}

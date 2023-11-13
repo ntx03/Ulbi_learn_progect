@@ -12,7 +12,7 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/notificationsButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getArticleCreatePath } from '@/shared/const/router';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 interface NavbarProps {
     className?: string;

@@ -24,6 +24,16 @@ interface ListBoxProps<T extends string> {
     label?: string;
 }
 
+/**
+ * Кнопка с выпадающим списком (заредизайненная)
+ * @param items - элементы выпадающего списка
+ * @param value - значение элементов выпадающего списка
+ * @param defaultValue - значение по умолчанию
+ * @param onChange - функция отрабатывает при нажатии на список
+ * @param readonly - флаг при true делает компонент только для чтения
+ * @param direction - направление выпадения списка (по умолчаню 'bottomLeft')
+ * @param label - заголовок компонента
+ */
 export default function ListBox<T extends string>({
     items,
     className,

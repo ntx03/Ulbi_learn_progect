@@ -1,7 +1,7 @@
 import { type HTMLAttributeAnchorTarget, memo } from 'react';
 import { type Article } from '../../model/types/articles';
 import { type ArticleView } from '../../model/consts/consts';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import ArticleListItemDeprecated from './ArticleListItemDeprecated/ArticleListItemDeprecated';
 import ArticleListItemRedesigned from './ArticleListItemRedesigned/ArticleListItemRedesigned';
 

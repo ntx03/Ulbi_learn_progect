@@ -14,7 +14,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 export interface ArticlesDetailsPageProps {
     className?: string;

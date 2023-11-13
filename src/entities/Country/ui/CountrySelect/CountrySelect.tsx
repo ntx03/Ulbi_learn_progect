@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import ListBoxDeprecated from '@/shared/ui/deprecated/Popups/ui/ListBox/ListBox';
 import { Country } from '../../model/consts/consts';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import ListBox from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 
 interface CountrySelectProps {

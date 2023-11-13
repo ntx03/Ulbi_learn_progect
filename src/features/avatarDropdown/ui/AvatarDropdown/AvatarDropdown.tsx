@@ -6,8 +6,8 @@ import AvatarDeprecated from '@/shared/ui/deprecated/Avatar/Avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, userActions } from '@/entities/User';
 import { useTranslation } from 'react-i18next';
-import { getAdminPanelPath, getProfilePath } from '@/shared/const/router';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { getAdminPanelPath, getProfilePath, getSettingsPath } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import Avatar from '@/shared/ui/redesigned/Avatar/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
 import { useNavigate } from 'react-router-dom';
@@ -29,6 +29,9 @@ const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
     const getAdmin = () => {
         navigate(getAdminPanelPath());
     };
+    const getSettings = () => {
+        navigate(getSettingsPath());
+    };
 
     if (authData) {
         const getProfile = () => {
@@ -48,6 +51,11 @@ const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
                 content: t('Профиль пользователя'),
                 href: getProfilePath(authData.id),
                 onClick: getProfile,
+            },
+            {
+                content: t('Настройки'),
+                href: getSettingsPath(),
+                onClick: getSettings,
             },
             {
                 content: t('Выйти'),
