@@ -25,10 +25,22 @@
 .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--invert-bg-color);
     transition: 0.3s transform;
     transform: scale(0.1);
     max-width: 60%;
+}
+
+.modalNew {
+    .content {
+        background: var(--light-bg-redesigned);
+        color: var(--text-redesigned);
+    }
+}
+
+.modalOld {
+    .content {
+        background: var(--invert-bg-color);
+    }
 }
 
 .opened {

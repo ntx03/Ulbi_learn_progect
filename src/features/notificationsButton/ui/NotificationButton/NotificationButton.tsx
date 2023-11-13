@@ -7,7 +7,7 @@ import IconDeprecated from '@/shared/ui/deprecated/Icon/Icon';
 import NotificationsIconDeprecated from '@/shared/assets/icons/bell.svg';
 import NotificationIcon from '@/shared/assets/icons/redisigned/bell.svg';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer/Drawer';
 import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import Icon from '@/shared/ui/redesigned/Icon/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';

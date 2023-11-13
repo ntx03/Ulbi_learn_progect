@@ -32,13 +32,13 @@ function App() {
             on={
                 // eslint-disable-next-line i18next/no-literal-string
                 <Suspense fallback='Перевод...'>
-                    <div className={classNames('app_redesigned', {}, [theme])}>
+                    <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
                         <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
                     </div>
                 </Suspense>
             }
             off={
-                <div className={classNames('app', {}, [theme])}>
+                <div id={'app'} className={classNames('app', {}, [theme])}>
                     {/* eslint-disable-next-line i18next/no-literal-string */}
                     <Suspense fallback='Перевод...'>
                         <Navbar />

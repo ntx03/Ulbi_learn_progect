@@ -1780,7 +1780,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_turquoise_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpen": true
@@ -1797,7 +1797,7 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
