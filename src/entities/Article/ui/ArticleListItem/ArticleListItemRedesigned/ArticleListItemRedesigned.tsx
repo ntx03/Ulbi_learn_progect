@@ -13,7 +13,6 @@ import Card from '@/shared/ui/redesigned/Card/Card';
 import Avatar from '@/shared/ui/redesigned/Avatar/Avatar';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import Skeleton from '@/shared/ui/redesigned/Skeleton/Skeleton';
-import ArticleTextBlockComponent from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import AppLink from '@/shared/ui/redesigned/AppLink/ui/AppLink/AppLink';
 import { getArticlesDetailsPath } from '@/shared/const/router';
 import { Button } from '@/shared/ui/redesigned/Button/Button';
@@ -98,8 +97,8 @@ const ArticleListItemRedesigned = ({ className, article, view, target }: Article
                             <HStack>{views}</HStack>
                         </HStack>
                         <HStack className={cls.userInfo}>
-                            <Avatar size={32} src={article.user.avatar} />
-                            <Text bold text={article.user.username} size={'m'} />
+                            <Avatar size={32} src={article.user?.avatar} />
+                            <Text bold text={article.user?.username} size={'m'} />
                         </HStack>
                     </VStack>
                 </VStack>
