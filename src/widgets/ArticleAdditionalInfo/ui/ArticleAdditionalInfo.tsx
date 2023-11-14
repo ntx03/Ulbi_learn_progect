@@ -21,11 +21,11 @@ const ArticleAdditionalInfo = ({ className, author, views, createdAt, onEdit }: 
 
     return (
         <VStack gap={'32'} className={classNames('', {}, [className ?? ''])}>
-            <HStack>
-                <Avatar src={author.avatar} size={32} />
-                <Text text={author.username} bold />
-                <Text text={createdAt} bold />
-            </HStack>
+            {/* <HStack> */}
+            {/*    <Avatar src={author.avatar} size={32} /> */}
+            {/*    <Text text={author.username} bold /> */}
+            {/*    <Text text={createdAt} bold /> */}
+            {/* </HStack> */}
             <Button onClick={onEdit}>{t('Редактировать статью')}</Button>
             <Text text={t('{{count}} просмотров', { count: views })} />
         </VStack>

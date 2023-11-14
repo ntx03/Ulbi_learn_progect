@@ -16,41 +16,41 @@
 
 .size_s {
     .title {
-        font-size: var(--font-size-s);
+        font-size: var(--font-size-l);
     }
 
     .text {
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-s);
     }
 }
 
 .size_m {
     .title {
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-l);
     }
 
     .text {
-        font-size: var(--font-size-l);
+        font-size: var(--font-size-m);
     }
 }
 
 .size_l {
     .title {
-        font-size: var(--font-size-l);
+        font-size: var(--font-size-xl);
     }
 
     .text {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-sizel);
     }
 }
 
 .size_xl {
     .title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-xxl);
     }
 
     .text {
-        font-size: var(--font-size-xxl);
+        font-size: var(--font-size-xl);
     }
 }
 

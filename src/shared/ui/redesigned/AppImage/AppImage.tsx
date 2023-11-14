@@ -4,7 +4,7 @@ import { type ImgHTMLAttributes, type ReactElement, useLayoutEffect, useState } 
 export interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
     fallback: ReactElement;
-    errorFallback: ReactElement;
+    errorFallback?: ReactElement;
 }
 
 const AppImage = ({ className, src, alt = 'image', fallback, errorFallback, ...otherProps }: AppImageProps) => {
