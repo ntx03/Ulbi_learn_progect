@@ -43,7 +43,6 @@ const ProfileCard = ({
     onChangeCurrency,
     readonly,
 }: ProfileCardProps) => {
-    const { t } = useTranslation('profile');
     if (isLoading) {
         return (
             <ToggleFeatures

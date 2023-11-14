@@ -3,6 +3,11 @@
     border: 1px solid var(--primary-color);
 }
 
+.CommentCardRedesigned {
+    box-sizing: border-box;
+    max-width: 860px;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -10,6 +15,10 @@
 
 .text {
     margin: 10px 0 0;
+}
+
+.textRedesigned {
+    overflow-wrap: anywhere;
 }
 
 .username {

@@ -1,8 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
 import { memo, useState } from 'react';
-import StarIcon from '../../../assets/icons/star.svg';
-import Icon from '../Icon/Icon';
+import StarIconDeprecated from '../../../assets/icons/star.svg';
+import StarIcon from '../../../assets/icons/redisigned/star_fill.svg';
+import IconDeprecated from '../Icon/Icon';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
+import Icon from '../../redesigned/Icon/Icon';
 
 export interface StarRatingProps {
     className?: string;
@@ -12,10 +15,7 @@ export interface StarRatingProps {
 }
 
 const stars = [1, 2, 3, 4, 5];
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
+
 const StarRating = ({ className, size = 30, selectedStars = 0, onSelect }: StarRatingProps) => {
     const [currentStarsCount, setСurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
@@ -41,10 +41,19 @@ const StarRating = ({ className, size = 30, selectedStars = 0, onSelect }: StarR
     };
 
     return (
-        <div className={classNames(cls.StarRating, {}, [className ?? ''])}>
-            {stars.map((starNumber) => (
-                <Icon
-                    className={classNames(
+        <div
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.StarRatingRedesigned,
+                    off: () => cls.StarRating,
+                }),
+                {},
+                [className ?? ''],
+            )}>
+            {stars.map((starNumber) => {
+                const commonProps = {
+                    className: classNames(
                         cls.starIcon,
                         {
                             [cls.hovered]: currentStarsCount >= starNumber,
@@ -52,16 +61,28 @@ const StarRating = ({ className, size = 30, selectedStars = 0, onSelect }: StarR
                             [cls.selected]: isSelected,
                         },
                         [''],
-                    )}
-                    Svg={StarIcon}
-                    key={starNumber}
-                    width={size}
-                    height={size}
-                    onMouseLeave={onLeave}
-                    onMouseEnter={onHover(starNumber)}
-                    onClick={onClick(starNumber)}
-                />
-            ))}
+                    ),
+                    Svg: toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => StarIcon,
+                        off: () => StarIconDeprecated,
+                    }),
+                    width: size,
+                    height: size,
+                    onMouseLeave: onLeave,
+                    onMouseEnter: onHover(starNumber),
+                    onClick: onClick(starNumber),
+                    // 'data-selected': currentStarsCount >= starNumber,
+                };
+                return (
+                    <ToggleFeatures
+                        feature={'isAppRedesigned'}
+                        on={<Icon {...commonProps} clickable />}
+                        off={<IconDeprecated {...commonProps} />}
+                        key={starNumber}
+                    />
+                );
+            })}
         </div>
     );
 };

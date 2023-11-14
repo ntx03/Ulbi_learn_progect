@@ -12,7 +12,6 @@ interface ArticlePageGreetingProps {
  * Приветствие нового пользователя, если он зашел на страницу со статьями первый раз
  */
 export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
-    const { className } = props;
     const { t } = useTranslation('article');
     const [isOpen, setISOpen] = useState(false);
     const { isArticlesPageWasOpen } = useJsonSettings();

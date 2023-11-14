@@ -1,4 +1,3 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useState } from 'react';
 import ListBox from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 import { getFeaturesFlag, updateFeatureFlag } from '@/shared/lib/features';

@@ -1,4 +1,3 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import Card from '@/shared/ui/redesigned/Card/Card';

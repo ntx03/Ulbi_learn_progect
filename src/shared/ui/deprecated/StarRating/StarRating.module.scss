@@ -2,20 +2,30 @@
     stroke: var(--primary-color);
     width: max-content;
     display: flex;
+
+    .hovered {
+        fill: var(--primary-color);
+    }
 }
 
-.starIcon {
-    cursor: pointer;
+.StarRatingRedesigned {
+    stroke: var(--icon-redesigned);
+    width: max-content;
+    display: flex;
+
+    .hovered {
+        fill: var(--icon-redesigned);
+    }
 }
 
 .normal {
     fill: none;
 }
 
-.hovered {
-    fill: var(--primary-color);
-}
-
 .selected {
     cursor: auto;
+}
+
+.starIcon {
+    cursor: pointer;
 }

@@ -19,7 +19,6 @@ export interface ArticlesPageFiltersProps {
 const ArticlesPageFilters = ({ className }: ArticlesPageFiltersProps) => {
     const { sort, order, onChangeOrder, onChangeSort, onChangeSearch, onChangeType, onChangeView, view, type, search } =
         useArticleFilters();
-    const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
 
     const typeTabs = useMemo<TabItem[]>(

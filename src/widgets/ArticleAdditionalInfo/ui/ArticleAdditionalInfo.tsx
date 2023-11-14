@@ -1,9 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleAdditionalInfo.module.scss';
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { type User } from '@/entities/User';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import Avatar from '@/shared/ui/redesigned/Avatar/Avatar';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/redesigned/Button/Button';

@@ -1,6 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Text, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -11,6 +12,8 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 export interface ArticleDetailsCommentsProps {
     className?: string;
@@ -36,11 +39,22 @@ const ArticleDetailsComments = ({ className, id }: ArticleDetailsCommentsProps) 
         dispatch(fetchCommentsByArticleId(id));
     });
     return (
-        <div className={classNames('', {}, [className ?? ''])}>
-            <Text size={TextSize.L} className={''} title={t('Комментарии')} theme={TextTheme.PRIMARY} />
+        <VStack max gap={'16'} className={classNames('', {}, [className ?? ''])}>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={<Text size={'l'} className={''} title={t('Комментарии')} variant={'primary'} bold />}
+                off={
+                    <TextDeprecated
+                        size={TextSize.L}
+                        className={''}
+                        title={t('Комментарии')}
+                        theme={TextTheme.PRIMARY}
+                    />
+                }
+            />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList isLoading={isLoading} comments={comments} />
-        </div>
+        </VStack>
     );
 };
 

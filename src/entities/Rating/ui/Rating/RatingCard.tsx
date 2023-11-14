@@ -2,14 +2,18 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './Rating.module.scss';
 import { memo, useCallback, useState } from 'react';
-import Card from '@/shared/ui/deprecated/Card/Card';
+import CardDeprecated from '@/shared/ui/deprecated/Card/Card';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated, TextSize, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import StarRating from '@/shared/ui/deprecated/StarRating/StarRating';
 import Modal from '@/shared/ui/redesigned/Modal/Modal';
-import { Input } from '@/shared/ui/deprecated/Input/Input';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
-
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input/Input';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Button } from '@/shared/ui/redesigned/Button/Button';
+import Card from '@/shared/ui/redesigned/Card/Card';
 interface RatingProps {
     className?: string;
     title?: string;
@@ -54,32 +58,65 @@ export const RatingCard = memo((props: RatingProps) => {
     }, [onCancel, starsCount]);
 
     const modalContent = (
-        <VStack max gap={'32'}>
-            <Text title={feedbackTitle}></Text>
-            <Input placeholder={t('ваш отзыв') ?? ''} onChange={setFeetback} />
-            <HStack max gap={'16'} justify={'end'}>
-                <Button onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>
-                    {t('Закрыть')}
-                </Button>
-                <Button onClick={acceptHandler} theme={ButtonTheme.OUTLINE}>
-                    {t('Отправить')}
-                </Button>
-            </HStack>
-        </VStack>
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <VStack max gap={'32'}>
+                    <Text title={feedbackTitle} size={'m'}></Text>
+                    <Input placeholder={t('ваш отзыв') ?? ''} onChange={setFeetback} className={cls.inputRedesigned} />
+                    <HStack max gap={'16'} justify={'center'}>
+                        <Button onClick={cancelHandler}>{t('Закрыть')}</Button>
+                        <Button onClick={acceptHandler}>{t('Отправить')}</Button>
+                    </HStack>
+                </VStack>
+            }
+            off={
+                <VStack max gap={'32'}>
+                    <TextDeprecated title={feedbackTitle}></TextDeprecated>
+                    <InputDeprecated placeholder={t('ваш отзыв') ?? ''} onChange={setFeetback} />
+                    <HStack max gap={'16'} justify={'end'}>
+                        <ButtonDeprecated onClick={cancelHandler} theme={ButtonTheme.OUTLINE_RED}>
+                            {t('Закрыть')}
+                        </ButtonDeprecated>
+                        <ButtonDeprecated onClick={acceptHandler} theme={ButtonTheme.OUTLINE}>
+                            {t('Отправить')}
+                        </ButtonDeprecated>
+                    </HStack>
+                </VStack>
+            }
+        />
     );
-    return (
-        <Card className={classNames(cls.Rating, {}, [className])}>
-            <VStack align={'center'} gap={'8'}>
-                <Text
-                    title={starsCount ? t('Спасибо за оценку!') : title}
-                    theme={TextTheme.PRIMARY}
-                    size={TextSize.L}
+    const cardContent = (
+        <>
+            <VStack align={'center'} gap={'8'} max>
+                <ToggleFeatures
+                    feature={'isAppRedesigned'}
+                    on={<Text title={starsCount ? t('Спасибо за оценку!') : title} variant={'primary'} size={'l'} />}
+                    off={
+                        <TextDeprecated
+                            title={starsCount ? t('Спасибо за оценку!') : title}
+                            theme={TextTheme.PRIMARY}
+                            size={TextSize.L}
+                        />
+                    }
                 />
+
                 <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
             </VStack>
             <Modal isOpen={isModalOpen} lazy>
                 {modalContent}
             </Modal>
-        </Card>
+        </>
+    );
+    return (
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <Card max border={'round'} padding={'24'} className={classNames(cls.RatingRedesigned, {}, [className])}>
+                    {cardContent}
+                </Card>
+            }
+            off={<CardDeprecated className={classNames(cls.Rating, {}, [className])}>{cardContent}</CardDeprecated>}
+        />
     );
 });
