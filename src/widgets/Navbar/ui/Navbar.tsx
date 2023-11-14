@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import { memo, useCallback, useState } from 'react';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
@@ -13,6 +13,8 @@ import { NotificationButton } from '@/features/notificationsButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getArticleCreatePath } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
+import { Button } from '@/shared/ui/redesigned/Button/Button';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
     className?: string;
@@ -31,6 +33,12 @@ const Navbar = memo(({ className }: NavbarProps) => {
     const authData = useSelector(getUserAuthData);
 
     const { t } = useTranslation('translation');
+
+    const mainClass = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => cls.navbarRedesigned,
+        off: () => cls.navbar,
+    });
 
     if (authData) {
         return (
@@ -62,11 +70,21 @@ const Navbar = memo(({ className }: NavbarProps) => {
         );
     }
     return (
-        <header className={classNames(cls.navbar, {}, [className ?? ''])}>
+        <header className={classNames(mainClass, {}, [className ?? ''])}>
             <div className={cls.links}></div>
-            <Button onClick={onOpen} theme={ButtonTheme.OUTLINE} className={cls.button}>
-                {t('Войти')}
-            </Button>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <Button onClick={onOpen} variant={'outline'} className={cls.button}>
+                        {t('Войти')}
+                    </Button>
+                }
+                off={
+                    <ButtonDeprecated onClick={onOpen} theme={ButtonTheme.OUTLINE} className={cls.button}>
+                        {t('Войти')}
+                    </ButtonDeprecated>
+                }
+            />
             {/* eslint-disable-next-line i18next/no-literal-string */}
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose}></LoginModal>}
         </header>

@@ -9,9 +9,19 @@
     font-size: var(--font-m);
 }
 
+.inputRedesigned {
+    width: 95%;
+}
+
 .loginBtn {
     margin: 15px auto 0;
     width: 100px;
     border-radius: 10px;
     align-items: center;
+}
+
+.loginBtnRedesigned {
+    width: 100px;
+    margin: auto;
+    display: block;
 }
