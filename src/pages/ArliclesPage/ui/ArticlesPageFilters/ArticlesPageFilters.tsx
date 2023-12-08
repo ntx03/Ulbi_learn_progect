@@ -2,8 +2,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesPageFilters.module.scss';
 import { memo, useMemo } from 'react';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-
 import { useTranslation } from 'react-i18next';
 import Card from '@/shared/ui/deprecated/Card/Card';
 import { Input } from '@/shared/ui/deprecated/Input/Input';
@@ -16,6 +14,9 @@ export interface ArticlesPageFiltersProps {
     className?: string;
 }
 
+/**
+ * Блок с фильтрацией и сортировкой статей
+ */
 const ArticlesPageFilters = ({ className }: ArticlesPageFiltersProps) => {
     const { sort, order, onChangeOrder, onChangeSort, onChangeSearch, onChangeType, onChangeView, view, type, search } =
         useArticleFilters();

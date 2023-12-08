@@ -7,6 +7,9 @@ export interface FiltersContainerProps {
     className?: string;
 }
 
+/**
+ * Блок с фильтрами статей
+ */
 const FiltersContainer = ({ className }: FiltersContainerProps) => {
     const { type, sort, order, search, onChangeSearch, onChangeOrder, onChangeType, onChangeSort } =
         useArticleFilters();

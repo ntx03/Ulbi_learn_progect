@@ -7,7 +7,7 @@ interface UseHoverBind {
 
 type UseHoverResult = [boolean, UseHoverBind];
 /**
- * Хук отлавливает наверен курсор пользователя на элемент иоли нет
+ * Хук отлавливает наверен курсор пользователя на элемент или нет
  */
 export const useHover = (): UseHoverResult => {
     const [isHover, setIsHover] = useState(false);

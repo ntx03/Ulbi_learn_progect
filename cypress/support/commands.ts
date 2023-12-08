@@ -3,7 +3,7 @@ import { USER_LOCALSTORAGE_KEY } from '../../src/shared/const/localstorage';
 Cypress.Commands.add('login', (username = 'user', password = '123') => {
     cy.request({
         method: 'POST',
-        url: 'http://localhost:8000/login',
+        url: 'http://localhost:7000/login',
         body: {
             username,
             password,

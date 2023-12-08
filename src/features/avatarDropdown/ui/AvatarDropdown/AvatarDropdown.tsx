@@ -16,6 +16,9 @@ export interface AvatarDropdownProps {
     className?: string;
 }
 
+/**
+ * Выпадающий список при клике на аватарку если пользователь авторизован
+ */
 const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
     const isAdmin = useSelector(isUserAdmin);
     const { t } = useTranslation('translation');

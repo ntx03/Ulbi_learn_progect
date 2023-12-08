@@ -9,6 +9,9 @@ export interface ForbiddenPageProps {
     className?: string;
 }
 
+/**
+ * Страница с информарованием ограничения доступа
+ */
 const ForbiddenPage = ({ className }: ForbiddenPageProps) => {
     const { t } = useTranslation();
     return (

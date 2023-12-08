@@ -6,6 +6,9 @@ interface UpdateFeatureFlagsOptions {
     features: Partial<FeatureFlag>;
 }
 
+/**
+ * Обновление фичей флага пользователя (передает фичи, и id пользователя)
+ */
 const featureFlagsApi = rtkQueryApi.injectEndpoints({
     endpoints: (build) => ({
         // userId and articleId - это ло что нужно будет передать в хук useGetArticleRating

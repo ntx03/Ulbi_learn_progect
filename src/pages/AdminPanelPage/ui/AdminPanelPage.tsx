@@ -8,6 +8,9 @@ export interface AdminPanelPageProps {
     className?: string;
 }
 
+/**
+ * Старница с админ панелью
+ */
 const AdminPanelPage = ({ className }: AdminPanelPageProps) => {
     const { t } = useTranslation();
     return (

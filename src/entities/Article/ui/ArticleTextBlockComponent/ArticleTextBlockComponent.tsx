@@ -11,6 +11,10 @@ interface ArticleTextBlockComponentProps {
     block: ArticleTextBlock;
 }
 
+/**
+ * Отображение блока с текстом статьи
+ * @param block - блок статьи с текстом
+ */
 const ArticleTextBlockComponent = ({ className, block }: ArticleTextBlockComponentProps) => {
     return (
         <div className={classNames(cls.ArticleTextBlockComponent, {}, [className ?? ''])}>

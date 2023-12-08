@@ -4,14 +4,11 @@ import Modal from '@/shared/ui/redesigned/Modal/Modal';
 import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-interface ArticlePageGreetingProps {
-    className?: string;
-}
 
 /**
  * Приветствие нового пользователя, если он зашел на страницу со статьями первый раз
  */
-export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
+export const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation('article');
     const [isOpen, setISOpen] = useState(false);
     const { isArticlesPageWasOpen } = useJsonSettings();

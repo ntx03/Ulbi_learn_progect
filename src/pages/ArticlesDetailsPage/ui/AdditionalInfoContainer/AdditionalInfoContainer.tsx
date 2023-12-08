@@ -7,6 +7,9 @@ import cls from './AdditionalInfoContainer.module.scss';
 import { getArticleEditPath } from '@/shared/const/router';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Карточка редактирования статьи (с блоком просмотров)
+ */
 const AdditionalInfoContainer = () => {
     const article = useSelector(getArticleDetailsData);
     const navigate = useNavigate();

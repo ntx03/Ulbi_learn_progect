@@ -19,6 +19,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Button } from '@/shared/ui/redesigned/Button/Button';
 import Input from '@/shared/ui/redesigned/Input/Input';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 export interface LoginFormProps {
     className?: string;
@@ -28,6 +29,10 @@ export interface LoginFormProps {
 const initialReducers: ReducerList = {
     loginForm: loginReducer,
 };
+/**
+ * Форма модалки для авторизации
+ * @param  onSuccess - функция которая будет работать после успешной авторизации(в данном случае в пропсе закрываем модалку)
+ */
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation('translation');
 
@@ -36,7 +41,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
-
+    const forceUpdate = useForceUpdate();
     // получаем username из инпута
     const onChangeUsername = useCallback(
         (value: string) => {
@@ -61,8 +66,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         );
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
+            forceUpdate();
         }
-    }, [onSuccess, dispatch, username, password]);
+    }, [forceUpdate, onSuccess, dispatch, username, password]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

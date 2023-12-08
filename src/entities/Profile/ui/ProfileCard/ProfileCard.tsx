@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { type Profile } from '../../../Profile/model/types/profile';
 import { type Currency } from '@/entities/Currency';
 import { type Country } from '@/entities/Country';
@@ -28,6 +27,21 @@ export interface ProfileCardProps {
     readonly?: boolean;
 }
 
+/**
+ * Карточка профиля пользователя
+ * @param data - данные профиля
+ * @param isLoading - состояние загрузки
+ * @param error - состояние ошибки
+ * @param onChangeLastName - функция которая заберет данные с input или select
+ * @param onChangeFirstName - функция которая заберет данные с input или select
+ * @param onChangeAge - функция которая заберет данные с input или select
+ * @param onChangeCity - функция которая заберет данные с input или select
+ * @param onChangeUsername - функция которая заберет данные с input или select
+ * @param onChangeAvatar - функция которая заберет данные с input или select
+ * @param onChangeCountry - функция которая заберет данные с input или select
+ * @param onChangeCurrency - функция которая заберет данные с input или select
+ * @param readonly - true or false
+ */
 const ProfileCard = ({
     className,
     data,

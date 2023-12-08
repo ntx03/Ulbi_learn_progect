@@ -38,7 +38,11 @@ const viewTypes = [
         }),
     },
 ];
-
+/**
+ * Переключатель вида отображения статей
+ * @param view - тип вида статьи big or small
+ * @param onViewClick - функция которая работает при клике и меняет вид
+ */
 const ArticleViewSelector = ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);

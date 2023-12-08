@@ -20,6 +20,9 @@ interface NavbarProps {
     className?: string;
 }
 
+/**
+ * Заголовок приложения с кнопкой уведомлений и меню пользователя и конопкой авторизации и выхода из приложения
+ */
 const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
 

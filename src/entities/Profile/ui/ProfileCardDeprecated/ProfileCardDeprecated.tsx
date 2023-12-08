@@ -31,6 +31,22 @@ export const ProfileCardDeprecatedError = () => {
         </div>
     );
 };
+
+/**
+ * Форма карточки профиля пользователя (старый дизайн)
+ * @param data - данные профиля
+ * @param isLoading - состояние загрузки
+ * @param error - состояние ошибки
+ * @param onChangeLastName - функция которая заберет данные с input или select
+ * @param onChangeFirstName - функция которая заберет данные с input или select
+ * @param onChangeAge - функция которая заберет данные с input или select
+ * @param onChangeCity - функция которая заберет данные с input или select
+ * @param onChangeUsername - функция которая заберет данные с input или select
+ * @param onChangeAvatar - функция которая заберет данные с input или select
+ * @param onChangeCountry - функция которая заберет данные с input или select
+ * @param onChangeCurrency - функция которая заберет данные с input или select
+ * @param readonly - true or false
+ */
 const ProfileCardDeprecated = ({
     className,
     data,
@@ -47,26 +63,6 @@ const ProfileCardDeprecated = ({
     readonly,
 }: ProfileCardProps) => {
     const { t } = useTranslation('profile');
-
-    // if (isLoading) {
-    //     return (
-    //         <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-    //             <LoaderDeprecated />
-    //         </div>
-    //     );
-    // }
-    // if (error) {
-    //     return (
-    //         <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-    //             <TextDeprecated
-    //                 title={t('Произошла ошибка при загрузке профиля')}
-    //                 text={t('Попробуйте обновить страницу')}
-    //                 theme={TextTheme.ERROR}
-    //                 align={TextAlign.CENTER}
-    //             />
-    //         </div>
-    //     );
-    // }
     return (
         <div
             className={classNames(cls.ProfileCardDeprecated, { [cls.editing]: !readonly }, [className ?? ''])}

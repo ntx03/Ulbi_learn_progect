@@ -12,6 +12,9 @@ export interface NotificationsListProps {
     className?: string;
 }
 
+/**
+ * Список уведомлений
+ */
 const NotificationsList = ({ className }: NotificationsListProps) => {
     const { data, isLoading } = useNotifications(null, {
         pollingInterval: 5000,

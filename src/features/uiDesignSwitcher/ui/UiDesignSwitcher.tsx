@@ -13,6 +13,9 @@ export interface uiDesignSwitcherProps {
     className?: string;
 }
 
+/**
+ * Переключатель дизайна (старый, новый)
+ */
 const UiDesignSwitcher = ({ className }: uiDesignSwitcherProps) => {
     const { t } = useTranslation('translation');
     const dispatch = useAppDispatch();

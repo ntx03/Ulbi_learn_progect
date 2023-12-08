@@ -14,6 +14,13 @@ export interface ArticleListProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
+/**
+ * Список статей
+ * @param articles - массив со статьями
+ * @param view - тип отображения статьи  BIG = 'big', SMALL = 'small',
+ * @param isLoading - идет загрузка иил нет
+ * @param target - по умолчанию _blank
+ */
 const ArticleList = ({
     className,
     articles,

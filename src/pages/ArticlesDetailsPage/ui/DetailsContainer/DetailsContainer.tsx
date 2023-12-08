@@ -8,6 +8,9 @@ export interface DetailsContainerProps {
     className?: string;
 }
 
+/**
+ * Компонент с карточкой статьи целиком и блоком оценки статьи
+ */
 const DetailsContainer = ({ className }: DetailsContainerProps) => {
     const { id } = useParams<{ id: string }>();
     return (

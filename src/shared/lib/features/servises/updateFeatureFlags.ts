@@ -8,6 +8,10 @@ interface UpdateFeatureFlagsOptions {
     userId: string;
     newFeatures: FeatureFlag;
 }
+
+/**
+ * api обновления фича флага при помощи  AsyncThunk
+ */
 export const updateFeatureFlag = createAsyncThunk<void, UpdateFeatureFlagsOptions, ThunkConfig<string>>(
     'user/saveJsonSettings',
     async ({ userId, newFeatures }, thunkApi) => {

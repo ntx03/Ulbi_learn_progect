@@ -17,7 +17,7 @@ export default (env: buildEnv) => {
     const mode: BuildMode = env.mode || 'development';
     // режим разработчика или продакшион
     const isDev = mode === 'development';
-    const apiUrl = env.apiUrl || 'http://localhost:8000';
+    const apiUrl = env.apiUrl || 'http://localhost:7000';
 
     // порт
     const PORT = env.port || 3000;

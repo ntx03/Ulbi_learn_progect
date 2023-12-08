@@ -11,6 +11,11 @@ interface LoginModalProps {
     onClose: () => void;
 }
 
+/**
+ * Модальное окно с формой авторизации
+ * @param isOpen - открыта или нет
+ * @param onClose - setIsOpen сеттер useState
+ */
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
     return (
         <Modal className={classNames(cls.LoginModal, {}, [className ?? ''])} isOpen={isOpen} onClose={onClose} lazy>

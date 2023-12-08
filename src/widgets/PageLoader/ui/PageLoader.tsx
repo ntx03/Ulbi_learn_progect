@@ -7,6 +7,9 @@ interface PageLoaderProps {
     className?: string;
 }
 
+/**
+ * Страница информарования загрузки
+ */
 export const PageLoader = memo(({ className }: PageLoaderProps) => {
     return (
         <div className={classNames(cls.PageLoader, {}, [className ?? ''])}>

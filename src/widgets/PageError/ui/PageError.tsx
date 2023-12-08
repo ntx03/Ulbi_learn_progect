@@ -10,6 +10,9 @@ interface PageErrorProps {
 const reloadPage = (): void => {
     location.reload();
 };
+/**
+ * Компонент появляется при ошибке в приложении
+ */
 const PageError = ({ className }: PageErrorProps) => {
     return (
         <div className={classNames(cls.PageError, {}, [className ?? ''])}>

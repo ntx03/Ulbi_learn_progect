@@ -18,6 +18,9 @@ export interface ArticleInfiniteListProps {
     className?: string;
 }
 
+/**
+ * Лист со статьями
+ */
 const ArticleInfiniteList = ({ className }: ArticleInfiniteListProps) => {
     const dispatch = useAppDispatch();
     // получаем из стейта Redux все статьи

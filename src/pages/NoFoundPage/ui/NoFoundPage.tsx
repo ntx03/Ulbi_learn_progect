@@ -8,6 +8,9 @@ interface NoFoundPageProps {
     className?: string;
 }
 
+/**
+ * Страница с информированием об отсутсвии запрашиваемой страницы
+ */
 export const NoFoundPage = memo(({ className }: NoFoundPageProps) => {
     const { t } = useTranslation('translation');
     return (

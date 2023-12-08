@@ -2,8 +2,6 @@ import React, { type FC, type ReactNode, useEffect, useMemo, useState } from 're
 import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
 import { useJsonSettings } from '@/entities/User';
-// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-// eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
 
 interface ThemeProviderProps {
     initialTheme?: Theme;
@@ -23,6 +21,11 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
             setThemeInited(true);
         }
     }, [defaultTheme, isThemeInited]);
+
+    // навешиваем класс с темой на body для того, чтобы цвета на скролле  переключались  с темой
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
 
     const defaultProps = useMemo(
         () => ({

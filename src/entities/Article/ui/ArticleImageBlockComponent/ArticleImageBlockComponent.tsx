@@ -11,6 +11,10 @@ interface ArticleImageBlockComponentProps {
     block: ArticleImageBlock;
 }
 
+/**
+ * блок статьи с текстом
+ * @param block - блок статьи
+ */
 const ArticleImageBlockComponent = ({ className, block }: ArticleImageBlockComponentProps) => {
     return (
         <div className={classNames(cls.ArticleImageBlockComponent, {}, [className ?? ''])}>

@@ -20,6 +20,11 @@ export interface CommentCardProps {
     isLoading?: boolean;
 }
 
+/**
+ * Компонент с текстом комментария к статье
+ * @param comment - содержание комментария
+ * @param isLoading - состояние загрузки
+ */
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
     const Skeleton = toggleFeatures({
         name: 'isAppRedesigned',

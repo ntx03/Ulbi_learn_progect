@@ -6,6 +6,9 @@ export interface ThemeContentProps {
     setTheme: (theme: Theme) => void;
 }
 
+/**
+ * передаем тему через контекст
+ */
 export const ThemeContext = createContext<ThemeContentProps>({
     theme: Theme.DARK,
     setTheme: () => Theme.DARK,

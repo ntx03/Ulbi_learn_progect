@@ -10,6 +10,9 @@ export interface SettingsPageProps {
     className?: string;
 }
 
+/**
+ * Страница с настройками пользователя
+ */
 const SettingsPage = ({ className }: SettingsPageProps) => {
     const { t } = useTranslation('');
     return (

@@ -19,6 +19,12 @@ import { Button } from '@/shared/ui/redesigned/Button/Button';
 import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 
+/**
+ * Превью отображаемой статьи  с общими данными о ней
+ * @param article - содержание статьи
+ * @param view - вид статьи (bid или small)
+ * @param target - как открываем статью (target = '_blank')
+ */
 const ArticleListItemRedesigned = ({ className, article, view, target }: ArticleListItemProps) => {
     const [isHover, bindHover] = useHover();
     const { t } = useTranslation('article');

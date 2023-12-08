@@ -17,6 +17,14 @@ interface ArticleSortSelectorProps {
     onChangeOrder: (newOrder: SortOrder) => void;
     onChangeSort: (newSort: ArticleSortField) => void;
 }
+
+/**
+ * Блок с сортировкой статей
+ * @param onChangeSort - забираем с поля value
+ * @param sort - value sort
+ * @param onChangeOrder - забираем с поля value
+ * @param order - value order
+ */
 const ArticleSortSelector = ({ className, onChangeSort, sort, onChangeOrder, order }: ArticleSortSelectorProps) => {
     const { t } = useTranslation('article');
 

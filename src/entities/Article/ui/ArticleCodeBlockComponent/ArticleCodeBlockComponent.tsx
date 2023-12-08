@@ -9,6 +9,10 @@ interface ArticleCodeBlockComponentProps {
     block: ArticleCodeBlock;
 }
 
+/**
+ * Блок с кодом в статье
+ * @param block - часть статьи с кодом
+ */
 const ArticleCodeBlockComponent = ({ className, block }: ArticleCodeBlockComponentProps) => {
     return (
         <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className ?? ''])}>

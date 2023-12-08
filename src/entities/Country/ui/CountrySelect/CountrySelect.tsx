@@ -21,6 +21,13 @@ const options = [
     { value: Country.Russia, content: Country.Russia },
     { value: Country.Kazakhstan, content: Country.Kazakhstan },
 ];
+
+/**
+ * Выпадающий список с выбором страны
+ * @param value - value select
+ * @param onChange - забираем выбранное значение
+ * @param readonly - только для чтения
+ */
 const CountrySelect = memo(({ className, value, onChange, readonly }: CountrySelectProps) => {
     const { t } = useTranslation('profile');
     return (

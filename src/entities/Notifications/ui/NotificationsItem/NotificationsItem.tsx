@@ -13,6 +13,10 @@ export interface NotificationsItemProps {
     item: Notifications;
 }
 
+/**
+ * Компонент с уведомленим о событии
+ * @param item - объект с уведомлением id: string; title: string; description: string; href?: string;
+ */
 const NotificationsItem = ({ className, item }: NotificationsItemProps) => {
     const content = (
         <ToggleFeatures

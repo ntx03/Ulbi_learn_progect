@@ -6,6 +6,9 @@ export interface ViewSelectorContainerProps {
     className?: string;
 }
 
+/**
+ * Блок с переключателями вида статей
+ */
 const ViewSelectorContainer = ({ className }: ViewSelectorContainerProps) => {
     const { view, onChangeView } = useArticleFilters();
     return <ArticleViewSelector view={view} onViewClick={onChangeView} className={className} />;

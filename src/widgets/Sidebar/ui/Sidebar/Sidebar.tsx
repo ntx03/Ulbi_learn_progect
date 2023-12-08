@@ -17,6 +17,9 @@ interface SidebarProps {
     className?: string;
 }
 
+/**
+ * Меню с навигацией, сменой темы и языка
+ */
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const sidebarItemList = useSelector(getSidebarItems);

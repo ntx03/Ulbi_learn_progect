@@ -26,6 +26,12 @@ interface RatingProps {
 
 /**
  * Карточка с выставлением или отображением рейтинга
+ * @param title - заголовок карточки рейтинга после выбора количества звезд
+ * @param feedbackTitle - заголовок модалки отзыва
+ * @param hasFeedback? - открывать модальное окно для коментария оценки ( если нет, то модалка не будет открываться для сбора комментариев)
+ * @param onCancel - функция когда пользователь не хочет писать комментарий и нажимает на кнопку закрыть
+ * @param onAccept? - функция когда пользователь пишет комментарий к отзыву
+ * @param rate - количество звезд
  */
 export const RatingCard = memo((props: RatingProps) => {
     const { className, onCancel, onAccept, feedbackTitle, hasFeedback, title, rate } = props;

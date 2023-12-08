@@ -19,6 +19,9 @@ const defaultAsyncReducers: ReducerList = {
     addCommentForm: addCommentFormReducer,
     articleDetailsPage: articleDetailsPageReducer,
 };
+/**
+ * Обертка редакса строрибука
+ */
 export const ReduxDecorator =
     (state: DeepPartial<StateSchema>, asyncReducers?: ReducerList) => (StoryComponent: StoryFn) => {
         return (

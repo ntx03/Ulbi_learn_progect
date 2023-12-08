@@ -12,7 +12,7 @@ interface LangSwitcherProps {
 }
 
 /**
- * Переключатель языка
+ * Иконка переключения  языка
  */
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation('translation');

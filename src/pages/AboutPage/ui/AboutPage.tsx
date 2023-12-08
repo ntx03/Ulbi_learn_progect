@@ -9,6 +9,9 @@ interface AboutPageProps {
     className?: string;
 }
 
+/**
+ * Страница "о нас"
+ */
 export const AboutPage = memo(({ className }: AboutPageProps) => {
     const { t } = useTranslation();
     return (

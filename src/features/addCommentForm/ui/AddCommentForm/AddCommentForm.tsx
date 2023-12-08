@@ -25,8 +25,7 @@ const reducers: ReducerList = {
 };
 /**
  * Форма для отправки комментария к статье
- * @param onSendComment
- * @constructor
+ * @param onSendComment - функция для отправки текста коментария
  */
 const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
     const { t } = useTranslation('article');

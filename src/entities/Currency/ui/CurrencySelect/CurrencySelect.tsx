@@ -22,6 +22,12 @@ const options = [
     },
     { value: Currency.RUB, content: Currency.RUB },
 ];
+/**
+ * Выпадающий список с выбором валюты
+ * @param value - value select
+ * @param onChange - забираем выбранное значение
+ * @param readonly - только для чтения
+ */
 const CurrencySelect = memo(({ className, value, onChange, readonly }: CurrencySelectProps) => {
     const { t } = useTranslation('profile');
     return (

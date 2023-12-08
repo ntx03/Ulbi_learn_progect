@@ -53,6 +53,21 @@ export const ProfileCardRedesignedError = () => {
     );
 };
 
+/**
+ * Форма карточки профиля пользователя
+ * @param data - данные профиля
+ * @param isLoading - состояние загрузки
+ * @param error - состояние ошибки
+ * @param onChangeLastName - функция которая заберет данные с input или select
+ * @param onChangeFirstName - функция которая заберет данные с input или select
+ * @param onChangeAge - функция которая заберет данные с input или select
+ * @param onChangeCity - функция которая заберет данные с input или select
+ * @param onChangeUsername - функция которая заберет данные с input или select
+ * @param onChangeAvatar - функция которая заберет данные с input или select
+ * @param onChangeCountry - функция которая заберет данные с input или select
+ * @param onChangeCurrency - функция которая заберет данные с input или select
+ * @param readonly - true or false
+ */
 const ProfileCardRedesigned = ({
     className,
     data,

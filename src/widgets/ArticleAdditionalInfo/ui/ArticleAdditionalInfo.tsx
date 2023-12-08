@@ -14,16 +14,17 @@ export interface ArticleAdditionalInfoProps {
     onEdit: () => void;
 }
 
+/**
+ * Блок редактирования статьи
+ * @param author - автор статьи
+ * @param views - количество просмотров
+ * @param onEdit - функция вызываемая при нажатии на кнопку редактирования статьи
+ */
 const ArticleAdditionalInfo = ({ className, author, views, createdAt, onEdit }: ArticleAdditionalInfoProps) => {
     const { t } = useTranslation('article');
 
     return (
         <VStack gap={'32'} className={classNames('', {}, [className ?? ''])}>
-            {/* <HStack> */}
-            {/*    <Avatar src={author.avatar} size={32} /> */}
-            {/*    <Text text={author.username} bold /> */}
-            {/*    <Text text={createdAt} bold /> */}
-            {/* </HStack> */}
             <Button onClick={onEdit}>{t('Редактировать статью')}</Button>
             <Text text={t('{{count}} просмотров', { count: views })} />
         </VStack>

@@ -26,6 +26,9 @@ export interface ArticlesFiltersProps {
     value?: string;
 }
 
+/**
+ * Виждет с фильтрами, сортировкой и поиском статей
+ */
 const ArticlesFilters = (props: ArticlesFiltersProps) => {
     const { className, type, onChangeType, sort, onChangeOrder, order, onChangeSort, onChangeSearch, search } = props;
     const { t } = useTranslation('article');

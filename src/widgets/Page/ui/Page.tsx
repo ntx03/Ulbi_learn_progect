@@ -19,10 +19,7 @@ export interface PageProps extends TestsProps {
 }
 
 /**
- * Обертка для страниц
- * @param className
- * @param children
- * @constructor
+ * Обертка для страниц со встаренным скроллом и триггером конца страницы
  */
 const Page = (props: PageProps) => {
     const { className, children, onScrollEnd } = props;

@@ -26,6 +26,9 @@ interface EditableProfileCardProps {
     id?: string;
 }
 
+/**
+ * Компонент профиля пользователя самый основной (в него входят все остальные компоненты касающиеся профиля пользователя)
+ */
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile');

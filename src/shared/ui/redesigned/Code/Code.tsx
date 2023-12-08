@@ -12,6 +12,11 @@ export interface CodeProps {
     className?: string;
     text: string;
 }
+
+/**
+ * Компонент для отображения блока с кодом в статье
+ * @param text - код для отображения
+ */
 const Code = ({ className, text }: CodeProps) => {
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(text);

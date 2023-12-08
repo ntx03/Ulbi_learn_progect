@@ -1,5 +1,11 @@
 export type Mods = Record<string, boolean | string | undefined>;
 
+/**
+ * Функция для удобного добавления классов стилей css
+ * @param cls - объект с основными стилями компонента (модульный подход) cls: string
+ * @param mods - модивикаторы стилей которые будут отображаться в зависимости от условия по умолчанию {} Mods = Record<string, boolean | string | undefined>
+ * @param additional - навешиваемые стили, которые не зависят от булевых условий, и работают постоянно Array<string | undefined>
+ */
 export function classNames(cls: string, mods: Mods = {}, additional: Array<string | undefined> = []): string {
     return [
         // основной класс cls он будет постоянный во всем проекте у компонента, где мы применяем эту функцию

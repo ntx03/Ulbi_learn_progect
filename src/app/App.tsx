@@ -15,7 +15,7 @@ import { MainLayout } from '@/shared/layouts/MainLayout';
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
-    // инициализайия пользователя
+    // инициализация пользователя
     const inited = useSelector(getUserInited);
 
     useEffect(() => {
@@ -51,19 +51,6 @@ function App() {
             }
         />
     );
-
-    // return (
-    //     <div className={classNames('app', {}, [theme])}>
-    //         {/* eslint-disable-next-line i18next/no-literal-string */}
-    //         <Suspense fallback='Перевод...'>
-    //             <Navbar />
-    //             <div className='content-page'>
-    //                 <Sidebar />
-    //                 <AppRouter />
-    //             </div>
-    //         </Suspense>
-    //     </div>
-    // );
 }
 
 export default App;

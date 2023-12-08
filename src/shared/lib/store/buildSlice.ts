@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useMemo } from 'react';
 
 /**
- *
+ * Забыл что такое
  * @param options
  */
 export function buildSlice<State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(

@@ -10,6 +10,13 @@ export interface MainLayoutProps {
     toolbar?: ReactElement;
 }
 
+/**
+ * Каркас для отображения компонентов станицы в новом дизайне
+ * @param content - основной контент который будет находится посередине (ReactElement)
+ * @param toolbar - панель инструментов (ReactElement)
+ * @param header - заголовок расположен справа от основного контента (ReactElement)
+ * @param sidebar - панель от основного контента слева (ReactElement)
+ */
 const MainLayout = ({ className, content, toolbar, header, sidebar }: MainLayoutProps) => {
     return (
         <div className={classNames(cls.MainLayout, {}, [className ?? ''])}>

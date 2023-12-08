@@ -18,6 +18,13 @@ import { getArticlesDetailsPath } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { type ArticleListItemProps } from '../ArticleListItem';
 
+/**
+ * Превью отображаемой статьи  с общими данными о ней
+ * @deprecated
+ * @param article - содержание статьи
+ * @param view - вид статьи (bid или small)
+ * @param target - как открываем статью (target = '_blank')
+ */
 const ArticleListItemDeprecated = ({ className, article, view, target }: ArticleListItemProps) => {
     const [isHover, bindHover] = useHover();
     const { t } = useTranslation('article');

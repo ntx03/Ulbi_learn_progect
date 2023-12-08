@@ -23,7 +23,6 @@ import { renderBlock } from './renderBlock';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text/Text';
 import Avatar from '@/shared/ui/redesigned/Avatar/Avatar';
-import Icon from '@/shared/ui/redesigned/Icon/Icon';
 import AppImage from '@/shared/ui/redesigned/AppImage/AppImage';
 import Skeleton from '@/shared/ui/redesigned/Skeleton/Skeleton';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
@@ -33,9 +32,11 @@ export interface ArticleDetailsProps {
     className?: string;
     id: string;
 }
+
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
 };
+
 const Redesigned = () => {
     const article = useSelector(getArticleDetailsData);
     return (

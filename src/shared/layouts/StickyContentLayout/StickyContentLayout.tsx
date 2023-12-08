@@ -9,6 +9,12 @@ export interface StickyContentLayoutProps {
     right?: ReactElement;
 }
 
+/**
+ * Каркас для отображения компонентов станицы в старом дизайне
+ * @param content основной контент в центре
+ * @param right - контент справа
+ * @param left - контент слева
+ */
 const StickyContentLayout = ({ className, content, right, left }: StickyContentLayoutProps) => {
     return (
         <div className={classNames(cls.StickyContentLayout, {}, [className ?? ''])}>

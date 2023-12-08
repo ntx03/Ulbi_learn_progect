@@ -8,11 +8,10 @@ interface ToggleFeaturesProps {
 }
 
 /**
- * для компонентов переключатель по фича влагу (именно для компонентов!)
+ * Для компонентов переключатель по фича влагу (именно для компонентов!)
  * @param on - компонент при фича флаге true
  * @param feature - фича флаг для компонента
  * @param off - компонент при фича флаге false
- * @constructor
  */
 export const ToggleFeatures = ({ on, feature, off }: ToggleFeaturesProps) => {
     if (getFeaturesFlag(feature)) {

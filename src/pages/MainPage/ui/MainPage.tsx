@@ -9,16 +9,14 @@ import { Counter } from '@/entities/Counter';
 interface MainPageProps {
     className?: string;
 }
-// const counter = ToggleFeatures({
-//     name: 'isCounterEnabled',
-//     on: () => <Counter />,
-//     off: () => null,
-// });
+
+/**
+ * Главная страница сайта
+ */
 export const MainPage = memo(({ className }: MainPageProps) => {
     const { t } = useTranslation('main');
     return (
         <Page data-testid={'MainPage'} className={classNames(cls.MainPage, {}, [className ?? ''])}>
-            {/* <BugButton/> */}
             <VStack max>
                 <p className='title'>{t('Главная страница')}</p>
                 <Counter />

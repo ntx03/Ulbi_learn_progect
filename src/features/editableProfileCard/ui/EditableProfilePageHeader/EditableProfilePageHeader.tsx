@@ -21,6 +21,9 @@ interface ProfilePageHeaderProps {
     className?: string;
 }
 
+/**
+ * Компонент с блоком кнопок редактирования профиля пользователя
+ */
 const EditableProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);

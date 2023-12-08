@@ -38,10 +38,25 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--card-bg);
+    background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
+    background: var(--icon-redesigned);
+    border-radius: 20px;
+    border: 2.5px solid var(--accent-redesigned);
+}
+
+.app *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.app *::-webkit-scrollbar-track {
+    background: var(--card-bg);
+}
+
+.app *::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 20px;
     border: 2.5px solid var(--card-bg);

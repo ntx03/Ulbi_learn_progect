@@ -21,6 +21,9 @@ interface ArticlePageProps {
     className?: string;
 }
 
+/**
+ * Страница со статьями
+ */
 const ArticlePage = ({ className }: ArticlePageProps) => {
     const reducers: ReducerList = {
         articlesPage: articlesPageReducer,

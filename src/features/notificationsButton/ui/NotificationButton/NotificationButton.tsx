@@ -16,6 +16,9 @@ export interface NotificationButtonProps {
     className?: string;
 }
 
+/**
+ * Кнопка переключения вида статей
+ */
 const NotificationButton = ({ className }: NotificationButtonProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const onClose = () => {

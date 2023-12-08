@@ -45,7 +45,7 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
         // анализируем бандл сайта если false то не открывается
         plugins.push(
             new BundleAnalyzerPlugin({
-                openAnalyzer: false,
+                openAnalyzer: true,
             }),
         );
         // этот плагин пересобирает проект если есть изменения в коде (например поменяли стили scss)
