@@ -28,7 +28,7 @@
         "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
         "server": "node ./json-server/index.js",
         "prepare": "husky install",
-        "create": "node ./scripts/createSlice/index.js",
+        "generate:slice": "node ./scripts/createSlice/index.js",
         "remove-feature-by-flag": "ts-node ./scripts/remove-feature.ts"
     },
     "lint-staged": {

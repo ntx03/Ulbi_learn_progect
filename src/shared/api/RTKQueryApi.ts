@@ -18,7 +18,3 @@ export const rtkQueryApi = createApi({
     }),
     endpoints: (builder) => ({}),
 });
-
-// Export hooks for usage in functional ui, which are
-// auto-generated based on the defined endpoints
-// export const { useGetPokemonByNameQuery } = pokemonApi
