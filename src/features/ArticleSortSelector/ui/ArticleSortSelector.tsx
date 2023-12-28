@@ -66,7 +66,7 @@ const ArticleSortSelector = ({ className, onChangeSort, sort, onChangeOrder, ord
             on={
                 <div className={classNames(cls.ArticleSortSelectorRedesigned, {}, [className ?? ''])}>
                     <VStack gap={'8'}>
-                        <Text title={t('Сортировать по')} />
+                        <Text title={t('Сортировать по')} size={'s'} bold />
                         <ListBox items={sortFieldOption} value={sort} onChange={onChangeSort} />
                         <ListBox items={orderOption} value={order} onChange={onChangeOrder} />
                     </VStack>

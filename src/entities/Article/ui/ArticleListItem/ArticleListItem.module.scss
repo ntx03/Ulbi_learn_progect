@@ -60,7 +60,7 @@
 }
 
 .small {
-    width: 230px;
+    width: 250px;
     cursor: pointer;
     transition: 0.5s;
 
@@ -113,4 +113,8 @@
     .title {
         margin: 8px 0 0;
     }
+}
+
+.skeletonRedesignedContainer {
+    padding: 20px 0;
 }

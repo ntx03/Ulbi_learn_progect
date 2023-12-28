@@ -22,8 +22,7 @@ export interface CommentListProps {
  */
 const CommentList = ({ className, comments = [], isLoading }: CommentListProps) => {
     const { t } = useTranslation();
-
-    if (isLoading) {
+    const CommentCardSkeleton = () => {
         return (
             <div className={classNames(cls.CommentList, {}, [className ?? ''])}>
                 <CommentCard isLoading={true} />
@@ -31,6 +30,10 @@ const CommentList = ({ className, comments = [], isLoading }: CommentListProps) 
                 <CommentCard isLoading={true} />
             </div>
         );
+    };
+
+    if (isLoading) {
+        return <CommentCardSkeleton />;
     }
     const commentContent = () => {
         return (

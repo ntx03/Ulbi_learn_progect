@@ -12,8 +12,11 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import skeleton from '@/shared/ui/redesigned/Skeleton/Skeleton';
+import skeletonDeprecated from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import { getArticleDetailsIsLoading } from '@/entities/Article';
 
 export interface ArticleDetailsCommentsProps {
     className?: string;
@@ -31,13 +34,25 @@ const ArticleDetailsComments = ({ className, id }: ArticleDetailsCommentsProps) 
 
     // получаем список коментариев при помощи адаптера
     const comments = useSelector(getArticleComments.selectAll);
+    const isLoadingArticle = useSelector(getArticleDetailsIsLoading);
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const onSendComment = (text: string) => {
         dispatch(addCommentForArticle(text));
     };
+
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => skeleton,
+        off: () => skeletonDeprecated,
+    });
+
+    if (isLoadingArticle) {
+        return <Skeleton width={'96%'} height={100} />;
+    }
+
     return (
         <VStack max gap={'16'} className={classNames('', {}, [className ?? ''])}>
             <ToggleFeatures

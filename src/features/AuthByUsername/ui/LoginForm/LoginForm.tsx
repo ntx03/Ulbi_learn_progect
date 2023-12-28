@@ -85,7 +85,6 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                             placeholder={t('Имя пользователя логин') ?? ''}
                             onChange={onChangeUsername}
                             value={username}
-                            max
                         />
                         <Input
                             type='text'

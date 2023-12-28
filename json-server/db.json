@@ -1782,6 +1782,24 @@
       "userId": "2",
       "text": "asdasdasdasdasdasdasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
       "id": "1jHGv8L"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "Отличная статья! Помогла мне разобраться во всем!",
+      "id": "gi7-Upt"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "text": "И второй!!!:))",
+      "id": "CCUKFGq"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "Это прорыв, а не рывок!",
+      "id": "WhKs_S2"
     }
   ],
   "users": [
@@ -1818,7 +1836,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpen": true
@@ -1859,13 +1877,13 @@
     },
     {
       "id": "2",
-      "first": "Семён",
-      "lastname": "Качур",
-      "age": 31,
+      "first": "Ален",
+      "lastname": "Лелон",
+      "age": 45,
       "currency": "USD",
-      "country": "Russia",
-      "city": "Новосибирск",
-      "username": "user",
+      "country": "USA",
+      "city": "NY",
+      "username": "alen",
       "avatar": "https://cdn2.iconfinder.com/data/icons/men-avatars/33/man_2-1024.png"
     },
     {

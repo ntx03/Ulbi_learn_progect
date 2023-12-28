@@ -20,7 +20,7 @@ import HStack from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import VStack from '@/shared/ui/redesigned/Stack/VStack/VStack';
 
 /**
- * Превью отображаемой статьи  с общими данными о ней
+ * Превью отображаемой статьи  с общими данными о ней ( или маленькое превью или большое)
  * @param article - содержание статьи
  * @param view - вид статьи (bid или small)
  * @param target - как открываем статью (target = '_blank')

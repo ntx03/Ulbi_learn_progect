@@ -36,7 +36,7 @@ const ArticleList = ({
         <div className={classNames(cls.ArticleList, {}, [className ?? ''])}>
             {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading &&
-                new Array(view === ArticleView.SMALL ? 9 : 3)
+                new Array(view === ArticleView.SMALL ? 9 : 2)
                     .fill(0)
                     .map((i, index) => <ArticleListItemSkeleton view={view} key={index} />)}
         </div>

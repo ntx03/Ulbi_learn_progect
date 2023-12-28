@@ -35,6 +35,7 @@ const ArticleInfiniteList = ({ className }: ArticleInfiniteListProps) => {
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
+
     return (
         <div className={classNames('', {}, [className ?? ''])}>
             <ArticleList view={view} articles={articles} isLoading={isLoading} className={cls.list} />

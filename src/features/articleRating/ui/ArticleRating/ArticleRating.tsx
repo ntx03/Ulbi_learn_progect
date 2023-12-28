@@ -7,6 +7,8 @@ import { useGetArticleRating, useRateArticle } from '../../api/ArticleRatingApi'
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import Skeleton from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
+import SkeletonRedesigned from '@/shared/ui/redesigned/Skeleton/Skeleton';
 export interface ArticleRatingProps {
     className?: string;
     articleId?: string;
@@ -58,8 +60,16 @@ const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
         [handleRateArticle],
     );
 
-    if (isLoading) {
+    const LoadingSkeleton = () => {
         return <Skeleton width={'100%'} height={120} />;
+    };
+    const LoadingSkeletonRedesigned = () => {
+        return <SkeletonRedesigned width={'96%'} height={120} />;
+    };
+    if (isLoading) {
+        return (
+            <ToggleFeatures feature={'isAppRedesigned'} on={<LoadingSkeletonRedesigned />} off={<LoadingSkeleton />} />
+        );
     }
 
     return (

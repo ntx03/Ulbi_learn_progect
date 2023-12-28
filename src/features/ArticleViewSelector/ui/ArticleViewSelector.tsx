@@ -13,6 +13,10 @@ import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/
 import Icon from '@/shared/ui/redesigned/Icon/Icon';
 import Card from '@/shared/ui/redesigned/Card/Card';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { articlesPageActions, initArticlesPage } from '@/pages/ArliclesPage';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSearchParams } from 'react-router-dom';
 
 export interface ArticleViewSelectorProps {
     className?: string;
@@ -44,8 +48,15 @@ const viewTypes = [
  * @param onViewClick - функция которая работает при клике и меняет вид
  */
 const ArticleViewSelector = ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+    const dispatch = useAppDispatch();
     const onClick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
+        dispatch(articlesPageActions.setPage(1));
+        if (newView === ArticleView.BIG) {
+            dispatch(articlesPageActions.setLimit(4));
+        } else {
+            dispatch(articlesPageActions.setLimit(7));
+        }
     };
 
     return (

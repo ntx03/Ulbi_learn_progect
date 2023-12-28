@@ -1,6 +1,8 @@
 .ListBox {
     position: relative;
     margin: 0;
+    border: 2px var(--accent-redesigned) solid;
+    border-radius: 24px;
 }
 
 .trigger {
@@ -21,12 +23,19 @@
     padding-left: 0;
     width: 100%;
     margin: 5px 0;
+    border: 2px var(--accent-redesigned) solid;
+}
+
+.icon {
+    padding: 0;
+    margin: 0;
 }
 
 .item {
     padding: 10px 0;
     min-width: 100%;
     text-align: center;
+    color: var(--text-redesigned);
 }
 
 .active {
@@ -45,14 +54,14 @@
 }
 
 .button {
-    width: 100px;
-    height: 30px;
+    width: max-content;
+    height: max-content;
     margin: 0;
-    padding: 0;
+    padding: 5px 5px 5px 15px;
 }
 
 .readonly {
-    opacity: 0.6;
+    opacity: 0.4;
 
     .button {
         &:hover {
@@ -65,6 +74,6 @@
 .label {
     margin: auto 5px auto 0;
     font-size: var(--font-size-m);
-    color: var(--primary-color);
+    color: var(--text-redesigned);
     padding: 0;
 }

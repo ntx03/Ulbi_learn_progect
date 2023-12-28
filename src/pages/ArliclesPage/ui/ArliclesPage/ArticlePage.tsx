@@ -22,7 +22,7 @@ interface ArticlePageProps {
 }
 
 /**
- * Страница со статьями
+ * Страница со списком статей, фильтрами, переключателями вида статей
  */
 const ArticlePage = ({ className }: ArticlePageProps) => {
     const reducers: ReducerList = {

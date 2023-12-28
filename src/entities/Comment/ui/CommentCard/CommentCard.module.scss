@@ -1,6 +1,6 @@
 .CommentCard {
     padding: 10px;
-    border: 1px solid var(--primary-color);
+    width: 100%;
 }
 
 .CommentCardRedesigned {
@@ -26,5 +26,5 @@
 }
 
 .isLoading {
-    border: 0.1px solid var(--primary-color);
+    width: 95%;
 }

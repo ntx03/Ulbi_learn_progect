@@ -26,13 +26,13 @@ export interface CommentCardProps {
  * @param isLoading - состояние загрузки
  */
 const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
+    console.log(isLoading);
     const Skeleton = toggleFeatures({
         name: 'isAppRedesigned',
         on: () => SkeletonRedesigned,
         off: () => SkeletonDeprecated,
     });
-
-    if (isLoading) {
+    const CommentCardSkeleton = () => {
         return (
             <div className={classNames(cls.CommentCard, {}, [className ?? '', cls.isLoading])}>
                 <div className={cls.header}>
@@ -41,6 +41,26 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
                 </div>
                 <Skeleton width={'100%'} height={50} className={cls.text} />
             </div>
+        );
+    };
+
+    const CommentCardSkeletonRedesigned = () => {
+        return (
+            <div className={classNames(cls.CommentCard, {}, [className ?? '', cls.isLoading])}>
+                <HStack gap={'16'}>
+                    <Skeleton width={30} height={30} border={'50%'} />
+                    <Skeleton width={'100%'} height={70} className={cls.text} />
+                </HStack>
+            </div>
+        );
+    };
+    if (isLoading) {
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={<CommentCardSkeletonRedesigned />}
+                off={<CommentCardSkeleton />}
+            />
         );
     }
     if (!comment) {

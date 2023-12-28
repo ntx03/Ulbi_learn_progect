@@ -33,6 +33,7 @@ const articlesPageSlice = createSlice({
         sort: ArticleSortField.CREATED,
         order: 'asc',
         type: ArticleType.ALL,
+        limit: 4,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -54,10 +55,15 @@ const articlesPageSlice = createSlice({
         setType: (state, action: PayloadAction<ArticleType>) => {
             state.type = action.payload;
         },
+        setLimit: (state, action: PayloadAction<number>) => {
+            state.limit = action.payload;
+        },
         initState: (state) => {
+            console.log('init');
             const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
+            console.log('state limit init', state.limit);
             state._inited = true;
         },
     },
@@ -74,6 +80,8 @@ const articlesPageSlice = createSlice({
                 state.isLoading = false;
                 // commentsAdapter сам добавляет id и enteties для нормализации данных
                 // articlesAdapter.addMany(state, action.payload)
+                // @ts-ignore
+                console.log(state.limit);
                 if (state.limit !== undefined) {
                     state.hasMore = action.payload.length >= state.limit;
                 }

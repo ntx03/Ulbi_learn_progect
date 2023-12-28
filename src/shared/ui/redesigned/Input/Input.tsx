@@ -103,7 +103,7 @@ export const Input = memo(
 
         if (label) {
             return (
-                <HStack gap={'8'} align={'start'} max>
+                <HStack gap={'8'} align={'center'} max>
                     <Text
                         className={classNames(cls.label, { [cls.readonly]: readonly ?? false }, [])}
                         text={label}></Text>
