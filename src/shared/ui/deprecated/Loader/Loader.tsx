@@ -15,7 +15,7 @@ export enum LoaderTheme {
  * Устарел, используем новые компоненты из папки redesigned
  * @deprecated
  */
-export const Loader = memo(({ className, theme = LoaderTheme.INVERT }: LoaderProps) => {
+export const Loader = memo(({ className, theme = LoaderTheme.NORMAL }: LoaderProps) => {
     return <div className={classNames(cls.Loader, { [cls[theme]]: true }, [className ?? ''])}></div>;
 });
 

@@ -1,0 +1,39 @@
+.Loader {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.Loader::after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid var(--accent-redesigned);
+    border-color: var(--accent-redesigned) transparent var(--accent-redesigned) transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+.Loader-normal::after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid var(--secondary-color);
+    border-color: var(--secondary-color) transparent var(--secondary-color) transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

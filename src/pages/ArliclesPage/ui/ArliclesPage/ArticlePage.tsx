@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import { getArticlesPageError } from '../../model/selectors/articlesPageSelectors/articlesPageSelectors';
 import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import { useTranslation } from 'react-i18next';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
 import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';
@@ -17,6 +16,7 @@ import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import ViewSelectorContainer from '../ViewSelectorContainer/ViewSelectorContainer';
 import FiltersContainer from '../FiltersContainer/FiltersContainer';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 interface ArticlePageProps {
     className?: string;
 }
@@ -41,10 +41,11 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     if (error) {
         return (
             <Page className={classNames(cls.ArliclesPage, {}, [className ?? ''])}>
-                <Text title={t('Произошла непредвиденная ошибка')} theme={TextTheme.ERROR} />
+                <Text title={t('Произошла непредвиденная ошибка')} variant={'error'} />
             </Page>
         );
     }
+
     const content = (
         <ToggleFeatures
             feature={'isAppRedesigned'}
@@ -75,6 +76,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
             }
         />
     );
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             {content}

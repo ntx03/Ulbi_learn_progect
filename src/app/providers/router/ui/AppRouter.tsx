@@ -7,7 +7,7 @@ import { type AppRoutesProps } from '@/shared/types/router';
 
 function AppRouter(): JSX.Element {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-        const element: JSX.Element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>;
+        const element: JSX.Element = <Suspense fallback={<div></div>}>{route.element}</Suspense>;
         return (
             <Route
                 key={route.path}

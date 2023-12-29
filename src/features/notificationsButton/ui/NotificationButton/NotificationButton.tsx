@@ -17,14 +17,15 @@ export interface NotificationButtonProps {
 }
 
 /**
- * Кнопка переключения вида статей
+ * Кнопка с уведомлениями (колокольчик около значка с аватаркой справа)
  */
 const NotificationButton = ({ className }: NotificationButtonProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const onClose = () => {
         setIsOpen(false);
     };
-    // это просто кнопка с иконкой
+
+    // это просто кнопка с иконкой для вызова дропдауна с уведомлениями
     const triggerComponent = (
         <ToggleFeatures
             feature={'isAppRedesigned'}
@@ -51,6 +52,7 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
         />
     );
     const isMobile = useDevice();
+
     if (isMobile) {
         return (
             <>
@@ -62,6 +64,7 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
             </>
         );
     }
+
     return (
         <ToggleFeatures
             feature={'isAppRedesigned'}

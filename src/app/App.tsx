@@ -8,13 +8,13 @@ import { useSelector } from 'react-redux';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Loader from '@/shared/ui/deprecated/Loader/Loader';
 import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 import { MainLayout } from '@/shared/layouts/MainLayout';
-
+import { PageLoader } from '@/widgets/PageLoader';
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
+
     // инициализация пользователя
     const inited = useSelector(getUserInited);
 
@@ -23,7 +23,7 @@ function App() {
     }, [dispatch]);
 
     if (!inited) {
-        return <Loader />;
+        return <PageLoader />;
     }
 
     return (

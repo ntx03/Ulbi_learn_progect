@@ -19,7 +19,7 @@ export function useArticleFilters() {
     const dispatch = useAppDispatch();
 
     const fetchData = useCallback(() => {
-        dispatch(fetchArticlesList({ replace: true }));
+        dispatch(fetchArticlesList({ replace: false }));
     }, [dispatch]);
 
     const debouncedFetchData = useDebounce(fetchData, 1000);
