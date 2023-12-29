@@ -3,7 +3,7 @@ import { DefinePlugin } from 'webpack';
 import { type BuildPaths } from '../build/types/config';
 import path from 'path';
 import { buildScssLoader } from '../build/loaders/buildScssLoader';
-import { buildSvgLoader } from '../build/loaders/buildSvgLoader';
+import { buildSvgLoaderForStoryBook } from '../build/loaders/buildSvgLoaderForStoryBook';
 
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
@@ -27,7 +27,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
         return rule;
     });
 
-    config.module!.rules.push(buildSvgLoader());
+    config.module!.rules.push(buildSvgLoaderForStoryBook());
 
     config.module!.rules.push(buildScssLoader(true));
 

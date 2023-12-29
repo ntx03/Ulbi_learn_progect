@@ -13,6 +13,7 @@ export default (env: buildEnv) => {
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
     };
+
     // переключает режим development или production
     const mode: BuildMode = env.mode || 'development';
     // режим разработчика или продакшион

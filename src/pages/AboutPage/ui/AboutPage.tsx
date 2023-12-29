@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Page } from '@/widgets/Page';
 import { RatingCard } from '@/entities/Rating';
+import { BugButton } from '@/app/providers/ErrorBoundery';
 
 interface AboutPageProps {
     className?: string;
